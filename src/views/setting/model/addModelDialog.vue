@@ -29,7 +29,6 @@ import { ElMessage } from "element-plus";
 import { ref } from "vue";
 interface RowData {
   id: number;
-  name: string;
   type: string;
   modelType: string;
   model: string;

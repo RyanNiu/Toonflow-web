@@ -165,7 +165,7 @@ yarn install
 yarn dev
 ```
 
-The dev server runs at `http://localhost:5173` by default, with hot module replacement (HMR) enabled.
+The dev server runs at `http://localhost:9999` by default, with hot module replacement (HMR) enabled.
 
 ### 4. Build for Production
 

@@ -77,6 +77,7 @@ export const manufacturerLabels: Record<string, string> = {
   gemini: "Gemini Veo",
   xai: "XAI",
   grsai: "Grsai",
+  zzgf: "ZZGF",
   other: "其他",
 };
 
@@ -742,6 +743,7 @@ export const manufacturerConfigs: Record<string, ManufacturerConfig> = {
   gemini: generateManufacturerConfig("gemini"),
   runninghub: generateManufacturerConfig("runninghub"),
   grsai: generateManufacturerConfig("grsai"),
+  zzgf: generateManufacturerConfig("zzgf"),
   // apimart: generateManufacturerConfig("apimart"),
   other: generateManufacturerConfig("other"),
 };

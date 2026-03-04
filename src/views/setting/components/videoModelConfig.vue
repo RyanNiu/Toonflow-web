@@ -85,6 +85,7 @@ function getManufacturerTheme(
     anthropic: "warning",
     runninghub: "warning",
     gemini: "success",
+    zzgf: "primary",
   };
   return themes[manufacturer] || "default";
 }
@@ -103,6 +104,7 @@ function getManufacturerName(manufacturer: string): string {
     anthropic: "Anthropic",
     runninghub: "RunningHUB",
     gemini: "Gemini",
+    zzgf: "ZZGF",
     other: "其他",
   };
   return names[manufacturer] || manufacturer;

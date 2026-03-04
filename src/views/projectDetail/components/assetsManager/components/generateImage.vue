@@ -250,7 +250,7 @@ function handleSelect(item: ImageState, index: number) {
 function setPreviewVisible(value: boolean) {
   previewVisible.value = value;
 }
-let timer: number = -1;
+let timer: ReturnType<typeof setTimeout> | null = null;
 // 获取图片列表
 const assetsId = ref();
 async function fetchImages(id: number) {

@@ -83,6 +83,7 @@
 <script setup lang="ts">
 import { ref, computed, watch, h } from "vue";
 import { message, Modal } from "ant-design-vue";
+import { ElMessage } from "element-plus";
 import axios from "@/utils/axios";
 
 // 提示词数据结构

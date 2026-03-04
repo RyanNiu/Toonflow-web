@@ -165,7 +165,7 @@ yarn install
 yarn dev
 ```
 
-开发服务器默认运行在 `http://localhost:5173`，支持热模块替换（HMR）。
+开发服务器默认运行在 `http://localhost:9999`，支持热模块替换（HMR）。
 
 ### 4. 构建生产版本
 

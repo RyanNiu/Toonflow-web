@@ -3,10 +3,7 @@
     <t-form label-align="top">
       <!-- 主题模式切换 -->
       <t-form-item label="主题模式（切换后建议重启）">
-        <t-radio-group
-          v-model="themeSetting.mode"
-          variant="default-filled"
-          @change="(val, ctx) => handleModeChange(val as string, ctx.e as MouseEvent)">
+        <t-radio-group v-model="themeSetting.mode" variant="default-filled" @change="handleModeChange">
           <t-radio-button value="light">
             <template #label>
               <t-icon name="sunny" />
@@ -59,7 +56,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, watch } from "vue";
+import { computed, watch } from "vue";
+type RadioGroupChangeContext = {
+  e?: MouseEvent;
+};
 import { useTheme, themeSetting } from "@/utils/theme";
 
 const { applyThemeMode, applyThemeColor, toggleThemeWithTransition } = useTheme();
@@ -79,7 +79,8 @@ const themeColors = [
 const isCustomColor = computed(() => !themeColors.some((c) => c.value.toLowerCase() === themeSetting.value.primaryColor.toLowerCase()));
 
 // 处理主题模式切换
-const handleModeChange = (mode: string, event?: MouseEvent) => {
+const handleModeChange = (mode: string, context?: RadioGroupChangeContext) => {
+  const event = (context?.e ?? undefined) as MouseEvent | undefined;
   toggleThemeWithTransition(event, () => applyThemeMode(mode));
 };
 

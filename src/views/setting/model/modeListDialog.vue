@@ -144,7 +144,8 @@ const websites = ref<Record<string, string>>({
   anthropic: "",
   runninghub: "https://www.runninghub.cn/enterprise-api/consumerApi",
   gemini: "https://ai.google.dev/gemini-api/docs/api-key?hl=zh-cn",
-  grsai:"https://grsai.ai/zh/dashboard/api-keys"
+  grsai: "https://grsai.ai/zh/dashboard/api-keys",
+  zzgf: "https://ai.t8star.cn",
 });
 
 const currentWebsite = computed(() => {
@@ -167,6 +168,7 @@ const manufacturerNames: Record<string, string> = {
   modelScope: "魔塔",
   xai: "XAI",
   grsai: "Grsai",
+  zzgf: "ZZGF",
   other: "其他",
 };
 
@@ -186,9 +188,10 @@ function getManufacturerColor(manufacturer: string): string {
     gemini: "lime",
     modelScope: "#634BFE",
     xai: "red",
-    grsai: "#2B7FFF",
-    other: "default",
-  };
+  grsai: "#2B7FFF",
+  zzgf: "#2B7FFF",
+  other: "default",
+};
   return colors[manufacturer] || "default";
 }
 
@@ -261,6 +264,11 @@ const manufacturerDefaultBaseUrls: Record<string, Record<string, string>> = {
     text: "https://grsai.dakka.com.cn/v1",
     image: "https://grsai.dakka.com.cn/v1/draw/nano-banana|https://grsai.dakka.com.cn/v1/draw/result",
     video: "https://grsai.dakka.com.cn/v1/video/{model}|https://grsai.dakka.com.cn/v1/draw/result",
+  },
+  zzgf: {
+    text: "https://ai.t8star.cn/v1",
+    image: "https://ai.t8star.cn",
+    video: "https://ai.t8star.cn",
   },
   other: {
     text: "",
@@ -555,6 +563,7 @@ const videoModelPresets = ref<Record<string, { label: string; value: string }[]>
   //   { label: "vidu2.0", value: "vidu2.0" },
   // ],
 });
+
 
 // 生成视频模型卡片列表
 const videoModels = computed<ModelCard[]>(() => {

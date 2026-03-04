@@ -62,7 +62,7 @@ function getProviderLogo(manufacturer: string) {
       return providersLogo[key as keyof typeof providersLogo];
     }
   }
-  return null;
+  return providersLogo.default || null;
 }
 
 const configingModel = ref<ModelType>();

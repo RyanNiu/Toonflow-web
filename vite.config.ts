@@ -9,6 +9,10 @@ import { viteSingleFile } from "vite-plugin-singlefile";
 
 export default defineConfig({
   base: "./",
+  server: {
+    port: 9999,
+    strictPort: true,
+  },
   plugins: [
     vue(),
     AutoImport({
@@ -40,7 +44,6 @@ export default defineConfig({
         }),
       ],
     }),
-    viteSingleFile(),
   ],
   resolve: {
     alias: {

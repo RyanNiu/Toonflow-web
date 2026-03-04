@@ -13,7 +13,7 @@
                 :multiple="false"
                 :max="1"
                 :before-upload="handleBeforeUpload"
-                :request-method="() => Promise.resolve({ status: 'success' })"
+                :request-method="handleRequestMethod"
                 style="display: none" />
               <div class="dragIcon">
                 <i-upload-one theme="outline" size="32" fill="var(--td-brand-color)" />
@@ -198,6 +198,9 @@ function handleSubmit() {
   }
   emit("select", selectedRows.value);
 }
+
+// 请求方法
+const handleRequestMethod = () => Promise.resolve({ status: "success" });
 </script>
 
 <style lang="scss" scoped>
