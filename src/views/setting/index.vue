@@ -45,11 +45,11 @@
           <dbConfig />
         </skeleton>
       </t-tab-panel>
-      <t-tab-panel value="about" label="关于">
+      <!-- <t-tab-panel value="about" label="关于">
         <skeleton title="关于" divider>
           <about />
         </skeleton>
-      </t-tab-panel>
+      </t-tab-panel> -->
       <t-tab-panel value="logout" label="退出登录">
         <skeleton title="退出登录" divider>
           <logoutConfig />

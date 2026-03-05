@@ -152,7 +152,7 @@
           </div>
         </a-card>
       </div>
-      <div class="about">
+      <!-- <div class="about">
         <a-card title="关于" style="width: 100%">
           <div class="aboutData">
             <div class="aboutInfo">
@@ -228,7 +228,7 @@
             </div>
           </div>
         </a-card>
-      </div>
+      </div> -->
     </div>
 
     <PromptEditor v-model="promptEditorShow" />

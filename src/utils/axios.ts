@@ -57,7 +57,8 @@ function appendTokenToUrl(url: string, token: string, baseUrl: string): string {
   try {
     if (!url.startsWith("http")) return url;
     const parsed = new URL(url);
-    const baseParsed = new URL(baseUrl);
+    const cleanBaseUrl = baseUrl && baseUrl.includes("://:") ? baseUrl.replace("://:", "://localhost:") : baseUrl;
+    const baseParsed = new URL(cleanBaseUrl);
     if (parsed.origin !== baseParsed.origin) return url;
     if (parsed.searchParams.has("token")) return url;
     if (!/^\/(\d+)\//.test(parsed.pathname)) return url;

@@ -21,7 +21,8 @@ class WsClient {
   constructor(url: string, options: WsOptions = {}) {
     const { wsBaseUrl } = storeToRefs(settingStore());
 
-    const fullUrl = new URL(url, wsBaseUrl.value);
+    const cleanWsBaseUrl = wsBaseUrl.value && wsBaseUrl.value.includes("://:") ? wsBaseUrl.value.replace("://:", "://localhost:") : wsBaseUrl.value;
+    const fullUrl = new URL(url, cleanWsBaseUrl);
     const token = localStorage.getItem("token");
     if (token) fullUrl.searchParams.set("token", token);
     this.url = fullUrl.toString();
