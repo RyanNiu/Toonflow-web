@@ -369,6 +369,17 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .mainElement {
+  :deep(.ant-btn) {
+    border-radius: var(--radius-md);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    font-weight: 800;
+  }
+
+  :deep(.ant-btn-primary) {
+    background: var(--color-primary);
+    box-shadow: var(--shadow-hard);
+  }
+
   .buttonGroup {
     gap: 5px;
   }
@@ -399,12 +410,16 @@ onMounted(() => {
     width: 100px;
     height: 100px;
     object-fit: contain;
+    border-radius: var(--radius-md);
+    border: var(--border-width-strong) solid var(--color-border-strong);
   }
 
   .noImage {
     width: 100px;
     height: 100px;
     background-color: var(--color-surface-alt);
+    border-radius: var(--radius-md);
+    border: var(--border-width-strong) solid var(--color-border-strong);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -420,10 +435,12 @@ onMounted(() => {
     padding: 8px;
     cursor: pointer;
     font-size: 21px;
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-alt);
 
     &:hover {
-      border-radius: 999px;
-      background-color: var(--color-primary-soft-2);
+      transform: translate(-2px, -2px);
     }
 
     &.edit,
@@ -440,31 +457,34 @@ onMounted(() => {
     text-align: center;
     padding: 56px 0;
     background: var(--color-surface);
-    border-radius: 16px;
-    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-lg);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    box-shadow: var(--shadow-hard);
 
     .emptyIcon {
       width: 96px;
       height: 96px;
-      background: var(--color-surface-alt);
-      border-radius: 50%;
+      background: var(--color-accent);
+      border-radius: var(--radius-md);
+      border: var(--border-width-strong) solid var(--color-border-strong);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--color-text-weak);
+      color: var(--color-border-strong);
       font-size: 45px;
       margin: 0 auto 18px;
     }
 
     .emptyTitle {
       font-size: 17px;
-      font-weight: 500;
+      font-weight: 800;
       color: var(--color-text);
       margin-bottom: 7px;
     }
 
     .emptyDesc {
       color: var(--color-text-muted);
+      font-weight: 600;
       margin-bottom: 17px;
       font-size: 14px;
     }

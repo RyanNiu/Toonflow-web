@@ -191,15 +191,16 @@ function handleDeleteConfig(configId: number) {
     align-items: center;
     justify-content: space-between;
     padding: 16px 20px;
-    background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-surface-alt) 50%, var(--color-surface-soft) 100%);
-    border-radius: 16px;
-    border: 1px solid rgba(var(--color-primary-rgb), 0.1);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    box-shadow: var(--shadow-hard);
 
     .title {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 600;
+      font-weight: 800;
       font-size: 16px;
       color: var(--color-text);
 
@@ -209,22 +210,24 @@ function handleDeleteConfig(configId: number) {
         justify-content: center;
         width: 36px;
         height: 36px;
-        background: var(--gradient-primary);
-        border-radius: 10px;
-        box-shadow: var(--shadow-card);
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        box-shadow: var(--shadow-hard);
 
         .icon {
-          color: var(--color-surface);
+          color: var(--color-border-strong);
         }
       }
 
       .count {
         padding: 2px 10px;
-        background: rgba(var(--color-primary-rgb), 0.1);
-        color: var(--color-primary);
-        border-radius: 20px;
-        font-size: 13px;
-        font-weight: 500;
+        background: var(--color-accent);
+        color: var(--color-border-strong);
+        border-radius: var(--radius-pill);
+        font-size: 12px;
+        font-weight: 800;
+        border: var(--border-width-strong) solid var(--color-border-strong);
       }
     }
 
@@ -233,19 +236,19 @@ function handleDeleteConfig(configId: number) {
       align-items: center;
       gap: 8px;
       padding: 10px 20px;
-      background: var(--gradient-primary);
+      background: var(--color-primary);
       color: var(--color-surface);
-      border: none;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 500;
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 800;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: var(--shadow-card-hover);
+      box-shadow: var(--shadow-hard);
 
       &:hover:not(:disabled) {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-card-hover);
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-hard-hover);
       }
 
       &:active:not(:disabled) {
@@ -272,17 +275,16 @@ function handleDeleteConfig(configId: number) {
     .video-card {
       position: relative;
       background: var(--color-surface);
-      border-radius: 16px;
+      border-radius: var(--radius-lg);
       overflow: hidden;
       cursor: pointer;
       transition: all 0.3s ease;
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-card);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
 
       &:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-card-hover);
-        border-color: rgba(var(--color-primary-rgb), 0.2);
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-hard-hover);
 
         .play-overlay {
           opacity: 1;
@@ -309,12 +311,13 @@ function handleDeleteConfig(configId: number) {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(var(--color-primary-rgb), 0.9);
-        border-radius: 6px;
-        color: var(--color-surface);
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        color: var(--color-border-strong);
         font-size: 12px;
-        font-weight: 600;
+        font-weight: 800;
         z-index: 10;
+        border: var(--border-width-strong) solid var(--color-border-strong);
       }
 
       .delete-btn {
@@ -326,9 +329,9 @@ function handleDeleteConfig(configId: number) {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(var(--color-error-rgb), 0.9);
-        border: none;
-        border-radius: 8px;
+        background: var(--color-error);
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        border-radius: var(--radius-md);
         color: var(--color-surface);
         cursor: pointer;
         opacity: 0;
@@ -336,8 +339,7 @@ function handleDeleteConfig(configId: number) {
         z-index: 10;
 
         &:hover {
-          background: var(--color-error);
-          transform: scale(1.1);
+          transform: translate(-2px, -2px);
         }
       }
 
@@ -346,7 +348,7 @@ function handleDeleteConfig(configId: number) {
         width: 100%;
         height: 180px;
         overflow: hidden;
-        background: linear-gradient(135deg, var(--color-surface-soft), var(--color-surface-alt));
+        background: var(--color-surface-alt);
 
         .cover-image {
           width: 100%;
@@ -368,16 +370,16 @@ function handleDeleteConfig(configId: number) {
           .play-button {
             width: 60px;
             height: 60px;
-            background: rgba(var(--color-primary-rgb), 0.9);
-            border-radius: 50%;
+            background: var(--color-accent);
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(4px);
+            border: var(--border-width-strong) solid var(--color-border-strong);
             transition: transform 0.2s ease;
 
             &:hover {
-              transform: scale(1.1);
+              transform: translate(-2px, -2px);
             }
           }
         }
@@ -387,12 +389,12 @@ function handleDeleteConfig(configId: number) {
           bottom: 10px;
           right: 10px;
           padding: 4px 10px;
-          background: rgba(var(--color-ink-rgb), 0.75);
+          background: var(--color-border-strong);
           color: var(--color-surface);
-          border-radius: 6px;
-          font-size: 12px;
-          font-weight: 500;
-          backdrop-filter: blur(4px);
+          border-radius: var(--radius-md);
+          font-size: 11px;
+          font-weight: 800;
+          border: var(--border-width-strong) solid var(--color-border-strong);
         }
 
         .status-badge {
@@ -400,12 +402,13 @@ function handleDeleteConfig(configId: number) {
           top: 10px;
           left: 10px;
           padding: 4px 10px;
-          border-radius: 6px;
+          border-radius: var(--radius-md);
           font-size: 12px;
-          font-weight: 500;
+          font-weight: 800;
+          border: var(--border-width-strong) solid var(--color-border-strong);
 
           &.success {
-            background: rgba(var(--color-success-rgb), 0.9);
+            background: var(--color-success);
             color: var(--color-surface);
           }
         }
@@ -429,14 +432,15 @@ function handleDeleteConfig(configId: number) {
             }
 
             .status-text {
-              color: var(--color-text-muted);
+              color: var(--color-text);
               font-size: 14px;
-              font-weight: 500;
+              font-weight: 800;
             }
 
             .status-hint {
-              color: var(--color-text-weak);
+              color: var(--color-text-muted);
               font-size: 12px;
+              font-weight: 600;
             }
           }
 
@@ -479,24 +483,25 @@ function handleDeleteConfig(configId: number) {
           .resolution-tag,
           .duration-tag {
             padding: 2px 8px;
-            border-radius: 4px;
+            border-radius: var(--radius-pill);
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 800;
+            border: var(--border-width-strong) solid var(--color-border-strong);
           }
 
           .manufacturer-tag {
-            background: rgba(var(--color-primary-rgb), 0.1);
-            color: var(--color-primary);
+            background: var(--color-accent);
+            color: var(--color-border-strong);
           }
 
           .resolution-tag {
-            background: rgba(var(--color-primary-rgb), 0.1);
-            color: var(--color-primary);
+            background: var(--color-surface-alt);
+            color: var(--color-text);
           }
 
           .duration-tag {
-            background: rgba(var(--color-success-rgb), 0.1);
-            color: var(--color-success);
+            background: var(--color-primary);
+            color: var(--color-surface);
           }
         }
 
@@ -504,6 +509,7 @@ function handleDeleteConfig(configId: number) {
           margin: 0;
           font-size: 14px;
           color: var(--color-text-muted);
+          font-weight: 600;
           line-height: 1.6;
           display: -webkit-box;
           -webkit-line-clamp: 2;
@@ -520,33 +526,36 @@ function handleDeleteConfig(configId: number) {
       align-items: center;
       justify-content: center;
       padding: 60px 20px;
-      background: linear-gradient(135deg, var(--color-surface-alt), var(--color-surface-soft));
-      border-radius: 16px;
-      border: 2px dashed var(--color-border);
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: var(--border-width-strong) dashed var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
 
       .empty-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, var(--color-primary-soft), var(--color-primary-soft-2));
-        border-radius: 50%;
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--color-primary);
+        color: var(--color-border-strong);
         margin-bottom: 20px;
       }
 
       .empty-title {
         margin: 0 0 8px;
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 800;
         color: var(--color-text);
       }
 
       .empty-desc {
         margin: 0;
         font-size: 14px;
-        color: var(--color-text-weak);
+        color: var(--color-text-muted);
+        font-weight: 600;
       }
     }
   }

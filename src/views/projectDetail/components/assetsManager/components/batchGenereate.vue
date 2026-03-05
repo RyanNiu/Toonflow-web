@@ -347,10 +347,10 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-bottom: var(--border-width-strong) solid var(--color-border-strong);
   margin: -20px -24px 0;
-  border-radius: 8px 8px 0 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 
   .header-left {
     display: flex;
@@ -364,14 +364,15 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: var(--gradient-primary);
-    border-radius: 10px;
-    color: var(--color-surface);
+    background: var(--color-accent);
+    border-radius: var(--radius-md);
+    color: var(--color-border-strong);
+    border: var(--border-width-strong) solid var(--color-border-strong);
   }
 
   .header-title {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--color-text);
   }
 
@@ -381,15 +382,14 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
     justify-content: center;
     width: 32px;
     height: 32px;
-    border: none;
-    border-radius: 8px;
-    background: transparent;
-    color: var(--color-text-muted);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    background: var(--color-accent);
+    color: var(--color-border-strong);
     cursor: pointer;
 
     &:hover {
-      background: var(--color-surface);
-      color: var(--color-primary);
+      transform: translate(-2px, -2px);
     }
   }
 }
@@ -408,7 +408,7 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   align-items: center;
   justify-content: space-between;
   padding: 16px 0;
-  border-bottom: 1px solid var(--color-border-soft);
+  border-bottom: var(--border-width-strong) solid var(--color-border-strong);
   flex-shrink: 0;
 
   .toolbar-left {
@@ -418,11 +418,12 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
 
     .select-info {
       font-size: 13px;
-      color: var(--color-text-muted);
+      color: var(--color-text);
+      font-weight: 700;
 
       strong {
         color: var(--color-primary);
-        font-weight: 600;
+        font-weight: 800;
       }
     }
   }
@@ -438,8 +439,8 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
-  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  border: var(--border-width-strong) solid var(--color-border-strong);
   margin-top: 16px;
 }
 
@@ -448,8 +449,8 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   align-items: center;
   padding: 12px 16px;
   background: var(--color-surface-alt);
-  border-bottom: 1px solid var(--color-border);
-  font-weight: 600;
+  border-bottom: var(--border-width-strong) solid var(--color-border-strong);
+  font-weight: 800;
   font-size: 13px;
   color: var(--color-text-muted);
   flex-shrink: 0;
@@ -473,18 +474,18 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   display: flex;
   align-items: stretch;
   padding: 16px;
-  border-bottom: 1px solid var(--color-border-soft);
+  border-bottom: var(--border-width-strong) solid var(--color-border-strong);
   background: var(--color-surface);
   box-sizing: border-box;
-  border-left: 3px solid transparent;
+  border-left: var(--border-width-strong) solid transparent;
 
   &:hover {
-    background: var(--color-surface-alt);
+    background: var(--color-accent-soft);
   }
 
   &.selected {
-    background: var(--color-primary-soft);
-    border-left-color: var(--color-primary);
+    background: var(--color-accent-soft);
+    border-left-color: var(--color-border-strong);
   }
 
   &:last-child {
@@ -560,9 +561,9 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
 .img-wrapper {
   width: 80px;
   height: 80px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px dashed var(--color-border);
+  border: var(--border-width-strong) dashed var(--color-border-strong);
   background: var(--color-surface-alt);
   display: flex;
   align-items: center;
@@ -570,7 +571,7 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
 
   &.has-image {
     border-style: solid;
-    border-color: var(--color-primary-soft-2);
+    border-color: var(--color-border-strong);
   }
 
   :deep(.ant-image) {
@@ -590,18 +591,20 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
     align-items: center;
     justify-content: center;
     gap: 4px;
-    color: var(--color-text-weak);
+    color: var(--color-text-muted);
     font-size: 12px;
+    font-weight: 700;
   }
 }
 
 .input-field {
   width: 100%;
-  border-radius: 6px !important;
+  border-radius: var(--radius-md) !important;
+  border: var(--border-width-strong) solid var(--color-border-strong) !important;
 
   &:focus {
     border-color: var(--color-primary) !important;
-    box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.1) !important;
+    box-shadow: 3px 3px 0 rgba(var(--color-primary-rgb), 0.6) !important;
   }
 }
 
@@ -619,7 +622,8 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   align-items: center;
   justify-content: center;
   padding: 60px 0;
-  color: var(--color-text-weak);
+  color: var(--color-text-muted);
+  font-weight: 700;
 
   p {
     margin-top: 12px;
@@ -637,7 +641,9 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
 
 <style>
 .batch-generate-modal .ant-modal-content {
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
+  border: var(--border-width-strong) solid var(--color-border-strong);
+  box-shadow: var(--shadow-hard-hover);
   overflow: hidden;
 }
 

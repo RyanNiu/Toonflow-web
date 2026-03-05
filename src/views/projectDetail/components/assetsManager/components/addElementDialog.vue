@@ -136,6 +136,25 @@ function handleSave() {
 </script>
 
 <style lang="scss" scoped>
+.titHeader {
+  background: var(--color-surface) !important;
+  border-bottom: var(--border-width-strong) solid var(--color-border-strong);
+  box-shadow: var(--shadow-hard);
+}
+
+.closePoint {
+  width: 36px;
+  height: 36px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  border: var(--border-width-strong) solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
 .modelBody {
   padding: 0 24px;
   .typeSelectBox {
@@ -145,15 +164,15 @@ function handleSave() {
       flex: 1;
       text-align: center;
       background: var(--color-surface);
-      border: 2px solid var(--color-border);
-      border-radius: 14px;
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      border-radius: var(--radius-lg);
       cursor: pointer;
       padding: 14px 0 10px 0;
       transition: all 0.18s;
       user-select: none;
       .active {
-        border-color: var(--color-primary);
-        background: var(--color-primary-soft);
+        border-color: var(--color-border-strong);
+        background: var(--color-accent);
       }
       .tabSub {
         color: var(--color-text-muted);
@@ -161,9 +180,9 @@ function handleSave() {
         margin-top: 4px;
       }
       .tabMain {
-        font-weight: 600;
+        font-weight: 800;
         font-size: 17px;
-        color: var(--color-primary);
+        color: var(--color-text);
       }
       &:not(.active) .tabMain {
         color: var(--color-text);
@@ -180,8 +199,8 @@ function handleSave() {
     .picturePreview {
       width: 132px;
       height: 132px;
-      border: 1.5px dashed var(--color-border);
-      border-radius: 14px;
+      border: var(--border-width-strong) dashed var(--color-border-strong);
+      border-radius: var(--radius-lg);
       background: var(--color-surface-alt);
       display: flex;
       align-items: center;
@@ -191,7 +210,8 @@ function handleSave() {
         width: 130px;
         height: 130px;
         object-fit: cover;
-        border-radius: 12px;
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
       }
     }
     .uploadSide {
@@ -200,10 +220,11 @@ function handleSave() {
       align-items: flex-start;
       margin-left: 12px;
       .ant-btn {
-        background: var(--color-surface-soft);
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
+        background: var(--color-accent);
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        border-radius: var(--radius-md);
         color: var(--color-text);
+        font-weight: 800;
       }
       .tipTxt {
         color: var(--color-text-muted);
@@ -217,6 +238,18 @@ function handleSave() {
     margin-bottom: 25px;
     display: flex;
     justify-content: flex-end;
+    gap: 12px;
+
+    :deep(.ant-btn) {
+      border-radius: var(--radius-md);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      font-weight: 800;
+    }
+
+    :deep(.ant-btn-primary) {
+      background: var(--color-primary);
+      box-shadow: var(--shadow-hard);
+    }
   }
 }
 .titHeader {

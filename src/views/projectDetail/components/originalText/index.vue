@@ -21,13 +21,7 @@
     </t-card>
 
     <!-- 表格 -->
-    <t-table
-      :data="originalList"
-      :columns="columns"
-      row-key="id"
-      hover
-      max-height="500"
-      style="margin-top: 12px">
+    <t-table :data="originalList" :columns="columns" row-key="id" hover max-height="500" style="margin-top: 12px">
       <template #chapterData="{ row }">
         <t-tooltip :content="row.chapterData" placement="top">
           <span class="ellipsis-text">{{ row.chapterData }}</span>
@@ -150,27 +144,35 @@ onMounted(getNovel);
 <style lang="scss" scoped>
 .overviewHeader {
   margin-bottom: 32px;
+  padding: 18px 22px;
+  background: var(--color-surface);
+  border: var(--border-width-strong) solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hard);
   .overviewTitle {
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--td-text-color-primary);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--color-text);
     margin-bottom: 8px;
   }
   .overviewSub {
-    color: var(--td-text-color-secondary);
+    color: var(--color-text-muted);
+    font-weight: 600;
   }
 }
 
 .summaryCard {
-  background: var(--td-bg-color-secondarycontainer);
-  border-radius: 0.75rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: var(--border-width-strong) solid var(--color-border-strong);
+  box-shadow: var(--shadow-hard);
 
   .summaryIcon {
-    color: var(--td-brand-color);
+    color: var(--color-accent);
   }
   .summaryTitle {
-    font-weight: 600;
-    color: var(--td-text-color-primary);
+    font-weight: 800;
+    color: var(--color-text);
     font-size: 1rem;
   }
 }
@@ -180,6 +182,22 @@ onMounted(getNovel);
   justify-content: space-around;
   align-items: center;
   gap: 8px;
+}
+
+:deep(.t-table) {
+  border: var(--border-width-strong) solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hard);
+  overflow: hidden;
+}
+
+:deep(.t-table__header) {
+  background: var(--color-surface-alt);
+  font-weight: 800;
+}
+
+:deep(.t-table__row:hover) {
+  background: var(--color-accent-soft);
 }
 
 .ellipsis-text {

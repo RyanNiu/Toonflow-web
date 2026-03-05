@@ -123,29 +123,41 @@ function deleteProject(projectId: string | undefined) {
 
   .header {
     margin-bottom: 2rem;
+    padding: 18px 22px;
+    background: var(--color-surface);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-hard);
     display: flex;
     align-items: center;
     justify-content: space-between;
     .title {
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--td-text-color-primary);
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--color-text);
       margin-bottom: 0.5rem;
     }
     .sub {
-      color: var(--td-text-color-secondary);
+      color: var(--color-text-muted);
+      font-weight: 600;
     }
     .addBtn {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--td-bg-color-container);
-      border: 1px solid var(--td-border-level-1-color);
-      border-radius: 0.5rem;
-      color: var(--td-brand-color);
-      font-weight: 500;
+      background: var(--color-accent);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      color: var(--color-border-strong);
+      font-weight: 800;
       padding: 0.5rem 1rem;
       cursor: pointer;
+      box-shadow: var(--shadow-hard);
+      transition: transform 0.12s ease;
+
+      &:hover {
+        transform: translate(-2px, -2px);
+      }
 
       .addIcon {
         margin-right: 0.25rem;
@@ -156,28 +168,34 @@ function deleteProject(projectId: string | undefined) {
   .empty {
     text-align: center;
     padding: 4rem 0;
+    background: var(--color-surface);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-hard);
 
     .emptyIcon {
       width: 6rem;
       height: 6rem;
-      background: var(--td-bg-color-secondarycontainer);
-      border-radius: 9999px;
+      background: var(--color-accent);
+      border-radius: var(--radius-md);
+      border: var(--border-width-strong) solid var(--color-border-strong);
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 1rem;
       .iconEmpty {
-        color: var(--td-text-color-placeholder);
+        color: var(--color-border-strong);
       }
     }
     .emptyTitle {
       font-size: 1.125rem;
-      font-weight: 500;
-      color: var(--td-text-color-primary);
+      font-weight: 800;
+      color: var(--color-text);
       margin-bottom: 0.5rem;
     }
     .emptyDesc {
-      color: var(--td-text-color-secondary);
+      color: var(--color-text-muted);
+      font-weight: 600;
       margin-bottom: 1.5rem;
     }
   }
@@ -196,14 +214,15 @@ function deleteProject(projectId: string | undefined) {
     }
 
     .card {
-      background: var(--td-bg-color-container);
-      border-radius: 1rem;
-      border: 1px solid var(--td-border-level-1-color);
-      transition: box-shadow 0.3s;
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
+      transition: transform 0.12s ease;
       height: 100%;
       cursor: pointer;
       &:hover {
-        box-shadow: var(--td-shadow-2);
+        transform: translate(-2px, -2px);
       }
       .content {
         padding: 1.5rem;
@@ -222,19 +241,20 @@ function deleteProject(projectId: string | undefined) {
             .folderIcon {
               width: 3rem;
               height: 3rem;
-              background: linear-gradient(135deg, var(--td-brand-color) 0%, var(--td-brand-color-5) 100%);
-              border-radius: 0.75rem;
+              background: var(--color-accent);
+              border-radius: var(--radius-md);
+              border: var(--border-width-strong) solid var(--color-border-strong);
               display: flex;
               align-items: center;
               justify-content: center;
               .iconFolder {
-                color: var(--td-text-color-anti);
+                color: var(--color-border-strong);
               }
             }
 
             .name {
-              font-weight: 600;
-              color: var(--td-text-color-primary);
+              font-weight: 800;
+              color: var(--color-text);
             }
             .status {
               display: flex;
@@ -243,7 +263,8 @@ function deleteProject(projectId: string | undefined) {
               margin-top: 0.25rem;
               .desc {
                 font-size: 0.75rem;
-                color: var(--td-text-color-secondary);
+                color: var(--color-text-muted);
+                font-weight: 600;
               }
             }
           }
@@ -257,15 +278,15 @@ function deleteProject(projectId: string | undefined) {
             position: relative;
             .delBtn {
               padding: 0.5rem;
-              color: var(--td-error-color);
-              border-radius: 0.5rem;
-              background: none;
-              border: none;
+              color: var(--color-error);
+              border-radius: var(--radius-md);
+              background: var(--color-surface-alt);
+              border: var(--border-width-strong) solid var(--color-border-strong);
               transition:
                 color 0.2s,
                 background 0.2s;
               &:hover {
-                background: var(--td-error-color-light);
+                transform: translate(-2px, -2px);
                 cursor: pointer;
               }
             }
@@ -273,7 +294,8 @@ function deleteProject(projectId: string | undefined) {
         }
 
         .summary {
-          color: var(--td-text-color-secondary);
+          color: var(--color-text-muted);
+          font-weight: 600;
           margin-bottom: 1rem;
           font-size: 0.9375rem;
           line-clamp: 2;
@@ -286,17 +308,18 @@ function deleteProject(projectId: string | undefined) {
           display: flex;
           align-items: center;
           gap: 1.5rem;
-          color: var(--td-text-color-secondary);
+          color: var(--color-text-muted);
           font-size: 0.9375rem;
         }
         .time {
           margin-top: 1rem;
           padding-top: 1rem;
-          border-top: 1px solid var(--td-border-level-1-color);
+          border-top: var(--border-width-strong) solid var(--color-border-strong);
           display: flex;
           align-items: center;
           justify-content: space-between;
-          color: var(--td-text-color-secondary);
+          color: var(--color-text-muted);
+          font-weight: 600;
           font-size: 0.8125rem;
         }
       }

@@ -304,15 +304,16 @@ function handleImageError(e: Event) {
     justify-content: space-between;
     padding: 16px 20px;
     margin-top: 20px;
-    background: linear-gradient(135deg, var(--color-success-soft) 0%, var(--color-surface-alt) 50%, var(--color-surface-soft) 100%);
-    border-radius: 16px;
-    border: 1px solid rgba(var(--color-success-rgb), 0.15);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    box-shadow: var(--shadow-hard);
 
     .title {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 600;
+      font-weight: 800;
       font-size: 16px;
       color: var(--color-text);
 
@@ -322,22 +323,24 @@ function handleImageError(e: Event) {
         justify-content: center;
         width: 36px;
         height: 36px;
-        background: var(--color-success);
-        border-radius: 10px;
-        box-shadow: var(--shadow-card);
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        box-shadow: var(--shadow-hard);
 
         .icon {
-          color: var(--color-surface);
+          color: var(--color-border-strong);
         }
       }
 
       .count-badge {
         padding: 2px 10px;
-        background: rgba(var(--color-success-rgb), 0.1);
-        color: var(--color-success);
-        border-radius: 20px;
-        font-size: 13px;
-        font-weight: 500;
+        background: var(--color-accent);
+        color: var(--color-border-strong);
+        border-radius: var(--radius-pill);
+        font-size: 12px;
+        font-weight: 800;
+        border: var(--border-width-strong) solid var(--color-border-strong);
       }
     }
 
@@ -346,19 +349,19 @@ function handleImageError(e: Event) {
       align-items: center;
       gap: 8px;
       padding: 10px 20px;
-      background: var(--color-success);
+      background: var(--color-primary);
       color: var(--color-surface);
-      border: none;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 500;
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 800;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: var(--shadow-card-hover);
+      box-shadow: var(--shadow-hard);
 
       &:hover:not(:disabled) {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-card-hover);
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-hard-hover);
       }
 
       &:disabled {
@@ -376,14 +379,15 @@ function handleImageError(e: Event) {
     align-items: center;
     justify-content: space-between;
     padding: 20px 24px;
-    border-bottom: 1px solid var(--color-border-soft);
+    border-bottom: var(--border-width-strong) solid var(--color-border-strong);
+    background: var(--color-surface);
 
     .modal-title {
       display: flex;
       align-items: center;
       gap: 12px;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 800;
       color: var(--color-text);
     }
 
@@ -393,24 +397,23 @@ function handleImageError(e: Event) {
       justify-content: center;
       width: 36px;
       height: 36px;
-      background: var(--color-surface-alt);
-      border: none;
-      border-radius: 10px;
-      color: var(--color-text-muted);
+      background: var(--color-accent);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      color: var(--color-border-strong);
       cursor: pointer;
       transition: all 0.2s ease;
 
       &:hover {
-        background: var(--color-border);
-        color: var(--color-text);
+        transform: translate(-2px, -2px);
       }
     }
   }
 
   .action-bar {
     padding: 16px 24px;
-    background: var(--color-surface-soft);
-    border-bottom: 1px solid var(--color-border-soft);
+    background: var(--color-surface-alt);
+    border-bottom: var(--border-width-strong) solid var(--color-border-strong);
 
     .select-info {
       display: flex;
@@ -424,17 +427,19 @@ function handleImageError(e: Event) {
 
         .select-count {
           font-size: 14px;
-          color: var(--color-text-muted);
+          color: var(--color-text);
+          font-weight: 700;
 
           strong {
-            color: var(--color-success);
+            color: var(--color-primary);
             font-size: 16px;
           }
         }
 
         .selected-hint {
           font-size: 13px;
-          color: var(--color-text-weak);
+          color: var(--color-text-muted);
+          font-weight: 600;
         }
       }
 
@@ -443,18 +448,17 @@ function handleImageError(e: Event) {
         align-items: center;
         gap: 6px;
         padding: 8px 16px;
-        background: var(--color-surface);
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
+        background: var(--color-accent);
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        border-radius: var(--radius-md);
         font-size: 14px;
-        font-weight: 500;
-        color: var(--color-text);
+        font-weight: 800;
+        color: var(--color-border-strong);
         cursor: pointer;
         transition: all 0.2s ease;
 
         &:hover {
-          border-color: var(--color-success);
-          color: var(--color-success);
+          transform: translate(-2px, -2px);
         }
       }
     }
@@ -492,16 +496,16 @@ function handleImageError(e: Event) {
     .video-card {
       position: relative;
       background: var(--color-surface);
-      border-radius: 14px;
+      border-radius: var(--radius-lg);
       overflow: hidden;
       cursor: pointer;
       transition: all 0.3s ease;
-      border: 2px solid var(--color-border-soft);
-      box-shadow: var(--shadow-card);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
 
       &:hover:not(.disabled) {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-card-hover);
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-hard-hover);
 
         .thumb-overlay {
           opacity: 1;
@@ -509,8 +513,8 @@ function handleImageError(e: Event) {
       }
 
       &.selected {
-        border-color: var(--color-success);
-        box-shadow: 0 0 0 3px rgba(var(--color-success-rgb), 0.15);
+        border-color: var(--color-border-strong);
+        box-shadow: var(--shadow-hard);
 
         .select-indicator {
           opacity: 1;
@@ -537,16 +541,17 @@ function handleImageError(e: Event) {
         z-index: 10;
         width: 28px;
         height: 28px;
-        background: var(--color-success);
-        border-radius: 50%;
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--color-surface);
+        color: var(--color-border-strong);
         opacity: 0;
         transform: scale(0.5);
         transition: all 0.2s ease;
-        box-shadow: 0 2px 8px rgba(var(--color-success-rgb), 0.4);
+        box-shadow: var(--shadow-hard);
       }
 
       .unavailable-badge {
@@ -555,11 +560,12 @@ function handleImageError(e: Event) {
         right: 12px;
         z-index: 10;
         padding: 4px 10px;
-        background: rgba(var(--color-error-rgb), 0.9);
+        background: var(--color-error);
         color: var(--color-surface);
-        border-radius: 6px;
+        border-radius: var(--radius-md);
         font-size: 12px;
-        font-weight: 500;
+        font-weight: 800;
+        border: var(--border-width-strong) solid var(--color-border-strong);
       }
 
       .thumb-wrapper {
@@ -567,7 +573,7 @@ function handleImageError(e: Event) {
         width: 100%;
         height: 140px;
         overflow: hidden;
-        background: linear-gradient(135deg, var(--color-surface-alt), var(--color-surface-soft));
+        background: var(--color-surface-alt);
 
         .video-thumb {
           width: 100%;
@@ -589,12 +595,13 @@ function handleImageError(e: Event) {
           .play-icon {
             width: 50px;
             height: 50px;
-            background: rgba(var(--color-surface-rgb), 0.95);
-            border-radius: 50%;
+            background: var(--color-accent);
+            border-radius: var(--radius-md);
+            border: var(--border-width-strong) solid var(--color-border-strong);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-success);
+            color: var(--color-border-strong);
           }
         }
       }
@@ -605,7 +612,7 @@ function handleImageError(e: Event) {
         .video-title {
           margin: 0 0 10px;
           font-size: 14px;
-          font-weight: 600;
+          font-weight: 800;
           color: var(--color-text);
         }
 
@@ -619,18 +626,19 @@ function handleImageError(e: Event) {
             align-items: center;
             gap: 4px;
             padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 500;
+            border-radius: var(--radius-pill);
+            font-size: 11px;
+            font-weight: 800;
+            border: var(--border-width-strong) solid var(--color-border-strong);
 
             &.resolution {
-              background: var(--color-success-soft);
-              color: var(--color-success);
+              background: var(--color-accent);
+              color: var(--color-border-strong);
             }
 
             &.model {
-              background: var(--color-primary-soft);
-              color: var(--color-primary);
+              background: var(--color-surface-alt);
+              color: var(--color-text);
             }
           }
         }
@@ -647,26 +655,28 @@ function handleImageError(e: Event) {
       .empty-icon {
         width: 80px;
         height: 80px;
-        background: var(--color-success-soft);
-        border-radius: 50%;
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--color-success);
+        color: var(--color-border-strong);
         margin-bottom: 20px;
       }
 
       .empty-title {
         margin: 0 0 8px;
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 800;
         color: var(--color-text);
       }
 
       .empty-desc {
         margin: 0;
         font-size: 14px;
-        color: var(--color-text-weak);
+        color: var(--color-text-muted);
+        font-weight: 600;
       }
     }
   }
@@ -677,23 +687,22 @@ function handleImageError(e: Event) {
     justify-content: flex-end;
     gap: 12px;
     padding: 20px 24px;
-    border-top: 1px solid var(--color-border-soft);
-    background: var(--color-surface-soft);
+    border-top: var(--border-width-strong) solid var(--color-border-strong);
+    background: var(--color-surface-alt);
 
     .cancel-btn {
       padding: 10px 24px;
       background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--color-text-muted);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--color-text);
       cursor: pointer;
       transition: all 0.2s ease;
 
       &:hover {
-        background: var(--color-surface-alt);
-        color: var(--color-text);
+        transform: translate(-2px, -2px);
       }
     }
 
@@ -702,19 +711,19 @@ function handleImageError(e: Event) {
       align-items: center;
       gap: 8px;
       padding: 10px 24px;
-      background: var(--color-success);
-      border: none;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 500;
+      background: var(--color-primary);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 800;
       color: var(--color-surface);
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: var(--shadow-card-hover);
+      box-shadow: var(--shadow-hard);
 
       &:hover:not(:disabled) {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-card-hover);
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-hard-hover);
       }
 
       &:disabled {
@@ -731,7 +740,9 @@ function handleImageError(e: Event) {
 .download-modal {
   .ant-modal-content {
     padding: 0;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    box-shadow: var(--shadow-hard-hover);
     overflow: hidden;
   }
 

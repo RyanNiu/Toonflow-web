@@ -470,16 +470,17 @@ watch(batchShow, (val) => {
 
 <style lang="scss" scoped>
 .element-manager {
-  margin-top: 20px;
+  margin-top: 0;
   // 头部
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 24px;
-    background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-surface-alt) 50%, var(--color-surface-soft) 100%);
-    border-radius: 16px;
-    border: 1px solid rgba(var(--color-primary-rgb), 0.1);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    box-shadow: var(--shadow-hard);
     margin-bottom: 20px;
 
     .header-content {
@@ -493,17 +494,18 @@ watch(batchShow, (val) => {
         justify-content: center;
         width: 48px;
         height: 48px;
-        background: var(--gradient-primary);
-        border-radius: 14px;
-        color: var(--color-surface);
-        box-shadow: var(--shadow-card-hover);
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        color: var(--color-border-strong);
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        box-shadow: var(--shadow-hard);
       }
 
       .header-text {
         .title {
           margin: 0 0 4px;
           font-size: 20px;
-          font-weight: 700;
+          font-weight: 800;
           color: var(--color-text);
         }
 
@@ -511,6 +513,7 @@ watch(batchShow, (val) => {
           margin: 0;
           font-size: 14px;
           color: var(--color-text-muted);
+          font-weight: 600;
         }
       }
     }
@@ -521,19 +524,23 @@ watch(batchShow, (val) => {
         flex-direction: column;
         align-items: center;
         padding: 12px 24px;
-        background: var(--color-surface);
-        border-radius: 12px;
-        box-shadow: var(--shadow-card);
+        background: var(--color-surface-alt);
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        box-shadow: var(--shadow-hard);
 
         .stat-value {
           font-size: 24px;
-          font-weight: 700;
-          color: var(--color-primary);
+          font-weight: 800;
+          color: var(--color-text);
         }
 
         .stat-label {
           font-size: 12px;
-          color: var(--color-text-weak);
+          color: var(--color-text-muted);
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
           margin-top: 2px;
         }
       }
@@ -547,17 +554,18 @@ watch(batchShow, (val) => {
     justify-content: space-between;
     padding: 16px 20px;
     background: var(--color-surface);
-    border-radius: 14px;
-    border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-card);
+    border-radius: var(--radius-lg);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    box-shadow: var(--shadow-hard);
     margin-bottom: 20px;
 
     .tab-group {
       display: flex;
       gap: 8px;
       padding: 4px;
-      background: var(--color-surface-soft);
-      border-radius: 12px;
+      background: var(--color-surface-alt);
+      border-radius: var(--radius-md);
+      border: var(--border-width-strong) solid var(--color-border-strong);
 
       .tab-btn {
         display: flex;
@@ -565,23 +573,25 @@ watch(batchShow, (val) => {
         gap: 8px;
         padding: 10px 18px;
         background: transparent;
-        border: none;
-        border-radius: 10px;
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--color-text-muted);
+        border: var(--border-width-strong) solid transparent;
+        border-radius: var(--radius-md);
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--color-text);
         cursor: pointer;
         transition: all 0.25s ease;
 
         &:hover {
-          color: var(--color-primary);
-          background: rgba(var(--color-primary-rgb), 0.08);
+          transform: translate(-2px, -2px);
+          border-color: var(--color-border-strong);
+          background: var(--color-surface);
         }
 
         &.active {
-          background: var(--gradient-primary);
-          color: var(--color-surface);
-          box-shadow: var(--shadow-card-hover);
+          background: var(--color-accent);
+          color: var(--color-border-strong);
+          border-color: var(--color-border-strong);
+          box-shadow: var(--shadow-hard);
         }
       }
     }
@@ -595,32 +605,32 @@ watch(batchShow, (val) => {
         align-items: center;
         gap: 8px;
         padding: 10px 20px;
-        border: none;
-        border-radius: 10px;
-        font-size: 14px;
-        font-weight: 500;
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        border-radius: var(--radius-md);
+        font-size: 13px;
+        font-weight: 800;
         cursor: pointer;
         transition: all 0.25s ease;
 
         &.primary {
-          background: var(--gradient-primary);
+          background: var(--color-primary);
           color: var(--color-surface);
-          box-shadow: var(--shadow-card-hover);
+          box-shadow: var(--shadow-hard);
 
           &:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-card-hover);
+            transform: translate(-2px, -2px);
+            box-shadow: var(--shadow-hard-hover);
           }
         }
 
         &.secondary {
-          background: var(--color-primary-soft);
-          color: var(--color-primary);
-          border: 1px solid rgba(var(--color-primary-rgb), 0.2);
+          background: var(--color-accent);
+          color: var(--color-border-strong);
+          border-color: var(--color-border-strong);
 
           &:hover:not(:disabled) {
-            background: rgba(var(--color-primary-rgb), 0.15);
-            border-color: rgba(var(--color-primary-rgb), 0.3);
+            transform: translate(-2px, -2px);
+            box-shadow: var(--shadow-hard);
           }
         }
 
@@ -639,8 +649,9 @@ watch(batchShow, (val) => {
     .script-selector {
       padding: 16px 20px;
       background: var(--color-surface);
-      border-radius: 14px;
-      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
       margin-bottom: 20px;
 
       .script-label {
@@ -648,8 +659,8 @@ watch(batchShow, (val) => {
         align-items: center;
         gap: 8px;
         margin-bottom: 14px;
-        font-size: 14px;
-        font-weight: 600;
+        font-size: 13px;
+        font-weight: 800;
         color: var(--color-text);
       }
 
@@ -660,25 +671,23 @@ watch(batchShow, (val) => {
 
         .script-btn {
           padding: 8px 18px;
-          background: var(--color-surface-soft);
-          border: 1px solid var(--color-border);
-          border-radius: 8px;
-          font-size: 13px;
-          color: var(--color-text-muted);
+          background: var(--color-surface-alt);
+          border: var(--border-width-strong) solid var(--color-border-strong);
+          border-radius: var(--radius-md);
+          font-size: 12px;
+          color: var(--color-text);
           cursor: pointer;
           transition: all 0.2s ease;
 
           &:hover {
-            border-color: var(--color-primary);
-            color: var(--color-primary);
-            background: var(--color-primary-soft);
+            transform: translate(-2px, -2px);
           }
 
           &.active {
-            background: var(--gradient-primary);
-            color: var(--color-surface);
-            border-color: transparent;
-            box-shadow: var(--shadow-card);
+            background: var(--color-accent);
+            color: var(--color-border-strong);
+            border-color: var(--color-border-strong);
+            box-shadow: var(--shadow-hard);
           }
         }
       }
@@ -691,9 +700,10 @@ watch(batchShow, (val) => {
       align-items: center;
       justify-content: center;
       padding: 80px 40px;
-      background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
-      border-radius: 20px;
-      border: 2px dashed var(--color-border);
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: var(--border-width-strong) dashed var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
 
       .empty-icon {
         width: 100px;
@@ -701,23 +711,25 @@ watch(batchShow, (val) => {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, var(--color-primary-soft), var(--color-primary-soft-2));
-        border-radius: 50%;
-        color: var(--color-primary);
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        color: var(--color-border-strong);
+        border: var(--border-width-strong) solid var(--color-border-strong);
         margin-bottom: 24px;
       }
 
       .empty-title {
         margin: 0 0 8px;
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 800;
         color: var(--color-text);
       }
 
       .empty-desc {
         margin: 0 0 24px;
         font-size: 14px;
-        color: var(--color-text-weak);
+        color: var(--color-text-muted);
+        font-weight: 600;
         text-align: center;
         max-width: 300px;
       }
@@ -727,19 +739,19 @@ watch(batchShow, (val) => {
         align-items: center;
         gap: 8px;
         padding: 12px 28px;
-        background: var(--gradient-primary);
+        background: var(--color-primary);
         color: var(--color-surface);
-        border: none;
-        border-radius: 12px;
-        font-size: 15px;
-        font-weight: 500;
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        border-radius: var(--radius-md);
+        font-size: 14px;
+        font-weight: 800;
         cursor: pointer;
         transition: all 0.25s ease;
-        box-shadow: var(--shadow-card-hover);
+        box-shadow: var(--shadow-hard);
 
         &:hover {
-          transform: translateY(-3px);
-          box-shadow: var(--shadow-card-hover);
+          transform: translate(-2px, -2px);
+          box-shadow: var(--shadow-hard-hover);
         }
       }
     }
@@ -747,10 +759,10 @@ watch(batchShow, (val) => {
     // 表格
     .table-wrapper {
       background: var(--color-surface);
-      border-radius: 16px;
-      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      border: var(--border-width-strong) solid var(--color-border-strong);
       overflow: hidden;
-      box-shadow: var(--shadow-card);
+      box-shadow: var(--shadow-hard);
 
       .name-cell {
         .name-text {
@@ -767,8 +779,8 @@ watch(batchShow, (val) => {
           width: 100px;
           height: 100px;
           object-fit: cover;
-          border-radius: 10px;
-          border: 1px solid var(--color-border);
+          border-radius: var(--radius-md);
+          border: var(--border-width-strong) solid var(--color-border-strong);
         }
 
         .no-image {
@@ -779,10 +791,11 @@ watch(batchShow, (val) => {
           align-items: center;
           justify-content: center;
           gap: 6px;
-          background: linear-gradient(135deg, var(--color-surface-soft), var(--color-surface-alt));
-          border-radius: 10px;
-          color: var(--color-text-weak);
+          background: var(--color-surface-alt);
+          border-radius: var(--radius-md);
+          color: var(--color-text-muted);
           font-size: 12px;
+          border: var(--border-width-strong) solid var(--color-border-strong);
         }
       }
 
@@ -800,24 +813,25 @@ watch(batchShow, (val) => {
       }
 
       .prompt-textarea {
-        border-radius: 8px;
-        border-color: var(--color-border);
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
         font-size: 13px;
 
         &:focus {
           border-color: var(--color-primary);
-          box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+          box-shadow: 3px 3px 0 rgba(var(--color-primary-rgb), 0.6);
         }
       }
 
       .duration-badge {
         display: inline-block;
         padding: 4px 12px;
-        background: linear-gradient(135deg, var(--color-primary-soft), var(--color-primary-soft-2));
-        color: var(--color-primary);
-        border-radius: 20px;
-        font-size: 13px;
-        font-weight: 600;
+        background: var(--color-accent);
+        color: var(--color-border-strong);
+        border-radius: var(--radius-pill);
+        font-size: 12px;
+        font-weight: 800;
+        border: var(--border-width-strong) solid var(--color-border-strong);
       }
 
       .action-cell {
@@ -832,9 +846,9 @@ watch(batchShow, (val) => {
           justify-content: center;
           width: 36px;
           height: 36px;
-          background: transparent;
-          border: none;
-          border-radius: 10px;
+          background: var(--color-surface-alt);
+          border: var(--border-width-strong) solid var(--color-border-strong);
+          border-radius: var(--radius-md);
           cursor: pointer;
           transition: all 0.2s ease;
 
@@ -842,7 +856,7 @@ watch(batchShow, (val) => {
             color: var(--color-primary);
 
             &:hover {
-              background: var(--color-primary-soft);
+              transform: translate(-2px, -2px);
             }
           }
 
@@ -850,7 +864,7 @@ watch(batchShow, (val) => {
             color: var(--color-warning);
 
             &:hover {
-              background: var(--color-warning-soft);
+              transform: translate(-2px, -2px);
             }
           }
 
@@ -858,7 +872,7 @@ watch(batchShow, (val) => {
             color: var(--color-error);
 
             &:hover {
-              background: var(--color-error-soft);
+              transform: translate(-2px, -2px);
             }
           }
         }
@@ -870,14 +884,14 @@ watch(batchShow, (val) => {
 // vxe-table 自定义样式
 :deep(.vxe-table) {
   .vxe-header--column {
-    background: var(--color-surface-soft) !important;
-    font-weight: 600;
+    background: var(--color-surface-alt) !important;
+    font-weight: 800;
     color: var(--color-text);
   }
 
   .vxe-body--row {
     &:hover {
-      background: var(--color-primary-soft) !important;
+      background: var(--color-accent-soft) !important;
     }
 
     &.row--stripe {

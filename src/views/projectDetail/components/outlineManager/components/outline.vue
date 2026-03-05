@@ -485,7 +485,7 @@ defineExpose({ getData });
   max-width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background: var(--td-bg-color-page);
+  background: transparent;
   min-height: 100%;
 }
 
@@ -496,41 +496,41 @@ defineExpose({ getData });
   align-items: center;
   margin-bottom: 20px;
   padding: 24px;
-  background: var(--gradient-primary);
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(var(--color-primary-rgb), 0.25);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: var(--border-width-strong) solid var(--color-border-strong);
+  box-shadow: var(--shadow-hard);
 
   .header-content {
     .page-title {
-      font-size: 22px;
-      font-weight: 700;
+      font-size: 24px;
+      font-weight: 800;
       margin: 0 0 6px;
-      color: var(--color-surface);
+      color: var(--color-text);
     }
     .page-desc {
       margin: 0;
-      opacity: 0.9;
+      opacity: 1;
       font-size: 14px;
-      color: rgba(var(--color-surface-rgb), 0.9);
+      color: var(--color-text-muted);
+      font-weight: 600;
     }
   }
 
   .add-btn {
-    background: rgba(var(--color-surface-rgb), 0.2);
-    border: 1px solid rgba(var(--color-surface-rgb), 0.5);
-    color: var(--color-surface);
+    background: var(--color-accent);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    color: var(--color-border-strong);
     height: 40px;
     padding: 0 20px;
     display: flex;
     align-items: center;
     gap: 6px;
-    font-weight: 500;
+    font-weight: 800;
     transition: all 0.3s;
 
     &:hover {
-      background: rgba(var(--color-surface-rgb), 0.35);
-      border-color: var(--color-surface);
-      transform: translateY(-1px);
+      transform: translate(-2px, -2px);
     }
   }
 }
@@ -543,42 +543,42 @@ defineExpose({ getData });
 }
 
 .outline-card {
-  background: var(--td-bg-color-container);
-  border-radius: 14px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--td-shadow-1);
-  border: 1px solid var(--td-component-stroke);
+  box-shadow: var(--shadow-hard);
+  border: var(--border-width-strong) solid var(--color-border-strong);
   transition: all 0.3s ease;
 
   &:hover {
-    box-shadow: var(--td-shadow-2);
-    border-color: var(--td-brand-color-light-hover);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-hard-hover);
+    transform: translate(-2px, -2px);
   }
 
   .card-header {
     display: flex;
     align-items: center;
     padding: 16px 20px;
-    background: var(--td-brand-color-light);
-    border-bottom: 1px solid var(--td-brand-color-light-hover);
+    background: var(--color-surface-alt);
+    border-bottom: var(--border-width-strong) solid var(--color-border-strong);
 
     .episode-badge {
-      background: var(--gradient-primary);
-      color: var(--color-surface);
+      background: var(--color-accent);
+      color: var(--color-border-strong);
       padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 800;
       margin-right: 14px;
-      box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.3);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
     }
 
     .card-title {
       flex: 1;
       font-size: 16px;
-      font-weight: 600;
-      color: var(--td-text-color-primary);
+      font-weight: 800;
+      color: var(--color-text);
     }
 
     .card-actions {
@@ -588,21 +588,21 @@ defineExpose({ getData });
       .action-btn {
         width: 32px;
         height: 32px;
-        border-radius: 8px;
+        border-radius: var(--radius-md);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--td-text-color-secondary);
+        color: var(--color-text);
+        background: var(--color-surface-alt);
+        border: var(--border-width-strong) solid var(--color-border-strong);
         transition: all 0.2s;
 
         &:hover {
-          background: var(--td-brand-color-light);
-          color: var(--td-brand-color);
+          transform: translate(-2px, -2px);
         }
 
         &.danger:hover {
-          background: var(--td-error-color-light);
-          color: var(--td-error-color);
+          color: var(--color-error);
         }
       }
     }
@@ -618,18 +618,20 @@ defineExpose({ getData });
   display: flex;
   align-items: center;
   padding: 10px 14px;
-  background: var(--td-bg-color-secondarycontainer);
-  border-radius: 10px;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  border: var(--border-width-strong) solid var(--color-border-strong);
   font-size: 13px;
   transition: all 0.2s;
 
   &:hover {
-    background: var(--td-bg-color-secondarycontainer-hover);
+    transform: translate(-2px, -2px);
   }
 
   &.highlight {
-    background: var(--td-brand-color-light);
-    border: 1px solid var(--td-brand-color-light-hover);
+    background: var(--color-accent);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    color: var(--color-border-strong);
   }
 
   .field-icon {

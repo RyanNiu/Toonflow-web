@@ -35,7 +35,9 @@
               padding-right: 16px !important;
               padding-bottom: 12px !important;
               padding-top: 12px !important;
-              background-color: var(--td-bg-color-secondarycontainer) !important;
+              background-color: var(--color-surface-alt) !important;
+              border: var(--border-width-strong) solid var(--color-border-strong) !important;
+              border-radius: var(--radius-md) !important;
               font-size: 1rem !important;
             "
             :autosize="{ minRows: 4, maxRows: 6 }"
@@ -79,7 +81,9 @@
                   padding-right: 16px !important;
                   padding-bottom: 12px !important;
                   padding-top: 12px !important;
-                  background-color: var(--td-bg-color-secondarycontainer) !important;
+                  background-color: var(--color-surface-alt) !important;
+                  border: var(--border-width-strong) solid var(--color-border-strong) !important;
+                  border-radius: var(--radius-md) !important;
                   font-size: 1rem !important;
                 "
                 v-else
@@ -97,7 +101,9 @@
                   padding-right: 16px !important;
                   padding-bottom: 12px !important;
                   padding-top: 12px !important;
-                  background-color: var(--td-bg-color-secondarycontainer) !important;
+                  background-color: var(--color-surface-alt) !important;
+                  border: var(--border-width-strong) solid var(--color-border-strong) !important;
+                  border-radius: var(--radius-md) !important;
                   font-size: 1rem !important;
                 "
                 v-else
@@ -236,14 +242,20 @@ function updateProject() {
 <style lang="scss" scoped>
 .overviewHeader {
   margin-bottom: 32px;
+  padding: 18px 22px;
+  background: var(--color-surface);
+  border: var(--border-width-strong) solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hard);
   .overviewTitle {
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--td-text-color-primary);
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--color-text);
     margin-bottom: 8px;
   }
   .overviewSub {
-    color: var(--td-text-color-secondary);
+    color: var(--color-text-muted);
+    font-weight: 600;
   }
 }
 .overviewBody {
@@ -261,11 +273,11 @@ function updateProject() {
       grid-template-columns: repeat(4, 1fr);
     }
     .statGridItem {
-      background: var(--td-bg-color-container);
-      border: 1px solid var(--td-border-level-1-color);
-      border-radius: 16px;
+      background: var(--color-surface);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      border-radius: var(--radius-lg);
       padding: 24px;
-      box-shadow: var(--td-shadow-1);
+      box-shadow: var(--shadow-hard);
       .statGridTop {
         display: flex;
         align-items: center;
@@ -274,48 +286,52 @@ function updateProject() {
         .statIcon {
           width: 38px;
           height: 38px;
-          border-radius: 10px;
+          border-radius: var(--radius-md);
+          border: var(--border-width-strong) solid var(--color-border-strong);
           display: flex;
           align-items: center;
           justify-content: center;
           &.statPurple {
-            background: var(--td-brand-color-light);
-            color: var(--td-brand-color);
+            background: var(--color-accent);
+            color: var(--color-border-strong);
           }
           &.statBlue {
-            background: rgba(var(--color-primary-rgb), 0.1);
-            color: var(--color-primary);
+            background: var(--color-primary);
+            color: var(--color-surface);
           }
           &.statGreen {
-            background: var(--td-success-color-light);
-            color: var(--td-success-color);
+            background: var(--color-success);
+            color: var(--color-surface);
           }
           &.statOrange {
-            background: var(--td-warning-color-light);
-            color: var(--td-warning-color);
+            background: var(--color-warning);
+            color: var(--color-border-strong);
           }
         }
         .statValue {
-          font-size: 26px;
-          font-weight: bold;
-          color: var(--td-text-color-primary);
+          font-size: 28px;
+          font-weight: 800;
+          color: var(--color-text);
         }
       }
       .statLabel {
-        font-size: 13px;
-        color: var(--td-text-color-secondary);
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--color-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
       }
     }
   }
   .projectInfo {
-    background: var(--td-bg-color-container);
-    border-radius: 16px;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
     padding: 24px;
-    border: 1px solid var(--td-border-level-1-color);
-    box-shadow: var(--td-shadow-1);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    box-shadow: var(--shadow-hard);
     .infoTitle {
-      font-weight: 600;
-      color: var(--td-text-color-primary);
+      font-weight: 800;
+      color: var(--color-text);
       margin-bottom: 18px;
     }
     .infoGrid {
@@ -328,7 +344,10 @@ function updateProject() {
       .infoItem {
         .infoLabel {
           font-size: 12px;
-          color: var(--td-text-color-secondary);
+          color: var(--color-text-muted);
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
           margin-bottom: 3px;
           display: block;
         }
@@ -337,29 +356,29 @@ function updateProject() {
           align-items: center;
           gap: 7px;
           .infoValue {
-            color: var(--td-text-color-primary);
-            font-weight: 500;
+            color: var(--color-text);
+            font-weight: 700;
           }
           .iconGray {
-            color: var(--td-text-color-placeholder);
+            color: var(--color-text-weak);
           }
         }
       }
     }
   }
   .projectSummary {
-    background: var(--td-bg-color-container);
-    border-radius: 16px;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
     padding: 24px;
-    border: 1px solid var(--td-border-level-1-color);
-    box-shadow: var(--td-shadow-1);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    box-shadow: var(--shadow-hard);
     .summaryTitle {
-      font-weight: 600;
-      color: var(--td-text-color-primary);
+      font-weight: 800;
+      color: var(--color-text);
       margin-bottom: 14px;
     }
     .summaryText {
-      color: var(--td-text-color-secondary);
+      color: var(--color-text-muted);
       line-height: 1.7;
     }
   }

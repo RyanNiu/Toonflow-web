@@ -157,16 +157,23 @@ onMounted(getScriptData);
 <style lang="scss" scoped>
 .scriptManager {
   .smHead {
+    padding: 18px 22px;
+    background: var(--color-surface);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-hard);
+    margin-bottom: 20px;
     .smTitle {
-      font-size: 22px;
-      font-weight: 600;
+      font-size: 24px;
+      font-weight: 800;
       color: var(--color-text);
       margin-bottom: 8px;
     }
 
     .smSub {
       color: var(--color-text-muted);
-      font-size: 15px;
+      font-size: 13px;
+      font-weight: 600;
     }
   }
 
@@ -182,28 +189,30 @@ onMounted(getScriptData);
         text-align: center;
         padding: 4rem 0;
         background: var(--color-surface);
-        border-radius: 0.75rem;
-        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        box-shadow: var(--shadow-hard);
         margin: 0 auto 1rem;
 
         .smNoneIcon {
           width: 6rem;
           height: 6rem;
-          background: var(--color-surface-alt);
-          border-radius: 9999px;
+          background: var(--color-accent);
+          border-radius: var(--radius-md);
+          border: var(--border-width-strong) solid var(--color-border-strong);
           display: flex;
           align-items: center;
           justify-content: center;
           margin: 0 auto 1rem;
 
           .icon {
-            color: var(--color-text-weak);
+            color: var(--color-border-strong);
           }
         }
 
         .smNoneTitle {
           font-size: 17px;
-          font-weight: 500;
+          font-weight: 800;
           color: var(--color-text);
           margin-bottom: 8px;
         }

@@ -86,7 +86,15 @@
 .t-button:not(.t-button--text):not(.t-button--link),
 .vxe-button:not(.is--text) {
   border-width: var(--border-width-strong);
-  box-shadow: var(--shadow-inset-soft);
+  box-shadow: var(--shadow-hard);
+}
+
+.ant-btn:not(.ant-btn-link):not(.ant-btn-text):hover,
+.el-button:not(.is-text):not(.is-link):hover,
+.t-button:not(.t-button--text):not(.t-button--link):hover,
+.vxe-button:not(.is--text):hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard-hover);
 }
 
 .ant-btn-primary {
@@ -111,14 +119,14 @@
   border-radius: var(--radius-lg);
   border-width: var(--border-width-strong);
   border-color: var(--color-border);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-hard);
 }
 
 .ant-card-hoverable:hover,
 .t-card:hover,
 .el-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card-hover);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard-hover);
 }
 
 .ant-tag,
@@ -169,20 +177,20 @@
 .ant-input-focused,
 .ant-picker-focused,
 .ant-input-number-focused {
-  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.12);
+  box-shadow: 3px 3px 0 rgba(var(--color-primary-rgb), 0.6);
   border-color: var(--color-primary);
 }
 
 .el-input__wrapper.is-focus,
 .el-textarea__inner:focus {
-  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.12);
+  box-shadow: 3px 3px 0 rgba(var(--color-primary-rgb), 0.6);
   border-color: var(--color-primary) !important;
 }
 
 .t-input__inner:focus,
 .t-textarea__inner:focus,
 .t-select__wrap.t-is-focused {
-  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.12);
+  box-shadow: 3px 3px 0 rgba(var(--color-primary-rgb), 0.6);
   border-color: var(--color-primary);
 }
 
@@ -239,7 +247,7 @@
 .t-notification {
   border-radius: var(--radius-lg);
   border: var(--border-width-strong) solid var(--color-border);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-hard);
 }
 
 .ant-dropdown-menu,
@@ -247,7 +255,7 @@
 .t-dropdown__menu {
   border-radius: var(--radius-lg);
   border: var(--border-width-default) solid var(--color-border);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-hard);
 }
 
 .ant-popover-inner,
@@ -257,6 +265,7 @@
 .t-popup__content {
   border-radius: var(--radius-lg);
   border: var(--border-width-default) solid var(--color-border-soft);
+  box-shadow: var(--shadow-hard);
 }
 
 .ant-pagination-item,
@@ -283,7 +292,7 @@
 .t-dialog {
   border-radius: var(--radius-xl);
   border: var(--border-width-strong) solid var(--color-border);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-hard-hover);
 }
 
 .ant-modal-header,
@@ -338,6 +347,7 @@
 .t-drawer {
   border-radius: var(--radius-xl);
   border: var(--border-width-strong) solid var(--color-border);
+  box-shadow: var(--shadow-hard-hover);
 }
 
 .ant-empty,

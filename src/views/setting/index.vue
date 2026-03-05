@@ -1,36 +1,61 @@
 <template>
   <div class="setting">
-    <h1>设置</h1>
-    <skeleton title="主题" divider>
-      <themeConfig />
-    </skeleton>
-    <skeleton title="请求地址配置" divider>
-      <requestConfig />
-    </skeleton>
-    <skeleton title="登录配置" divider>
-      <loginConfig />
-    </skeleton>
-    <skeleton title="语言模型配置" divider>
-      <aiConfog />
-    </skeleton>
-    <skeleton title="视频模型配置" divider>
-      <videoModelConfig />
-    </skeleton>
-    <skeleton title="提示词配置" divider>
-      <promptsEdit />
-    </skeleton>
-    <skeleton title="其他配置" divider>
-      <otherConfig />
-    </skeleton>
-    <skeleton title="数据库操作" divider>
-      <dbConfig />
-    </skeleton>
-    <skeleton title="关于" divider>
-      <about />
-    </skeleton>
-    <skeleton title="退出登录" divider>
-      <logoutConfig />
-    </skeleton>
+    <div class="setting-header">
+      <h1>设置中心</h1>
+      <p>集中管理主题、模型与系统配置</p>
+    </div>
+    <t-tabs v-model="activeTab" theme="card" class="setting-tabs">
+      <t-tab-panel value="theme" label="主题">
+        <skeleton title="主题" divider>
+          <themeConfig />
+        </skeleton>
+      </t-tab-panel>
+      <t-tab-panel value="request" label="请求配置">
+        <skeleton title="请求地址配置" divider>
+          <requestConfig />
+        </skeleton>
+      </t-tab-panel>
+      <t-tab-panel value="login" label="登录">
+        <skeleton title="登录配置" divider>
+          <loginConfig />
+        </skeleton>
+      </t-tab-panel>
+      <t-tab-panel value="llm" label="语言模型">
+        <skeleton title="语言模型配置" divider>
+          <aiConfog />
+        </skeleton>
+      </t-tab-panel>
+      <t-tab-panel value="video" label="视频模型">
+        <skeleton title="视频模型配置" divider>
+          <videoModelConfig />
+        </skeleton>
+      </t-tab-panel>
+      <t-tab-panel value="prompt" label="提示词">
+        <skeleton title="提示词配置" divider>
+          <promptsEdit />
+        </skeleton>
+      </t-tab-panel>
+      <t-tab-panel value="other" label="其他">
+        <skeleton title="其他配置" divider>
+          <otherConfig />
+        </skeleton>
+      </t-tab-panel>
+      <t-tab-panel value="db" label="数据库">
+        <skeleton title="数据库操作" divider>
+          <dbConfig />
+        </skeleton>
+      </t-tab-panel>
+      <t-tab-panel value="about" label="关于">
+        <skeleton title="关于" divider>
+          <about />
+        </skeleton>
+      </t-tab-panel>
+      <t-tab-panel value="logout" label="退出登录">
+        <skeleton title="退出登录" divider>
+          <logoutConfig />
+        </skeleton>
+      </t-tab-panel>
+    </t-tabs>
   </div>
 </template>
 
@@ -46,17 +71,71 @@ import dbConfig from "./components/dbConfig.vue";
 import otherConfig from "./components/otherConfig.vue";
 import about from "./components/about.vue";
 import logoutConfig from "./components/logoutConfig.vue";
+
+const activeTab = ref("theme");
 </script>
 
 <style lang="scss" scoped>
 .setting {
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding: 32px 48px 48px;
   width: 100%;
   height: 100%;
 
-  h1 {
-    color: var(--color-text);
+  .setting-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-hard);
+    background: var(--color-surface);
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--color-text);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+  }
+
+  .setting-tabs {
+    background: var(--color-surface);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-hard);
+    padding: 12px;
+  }
+
+  :deep(.t-tabs__nav) {
+    background: var(--color-surface-alt);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    border-radius: var(--radius-lg);
+    padding: 6px;
+  }
+
+  :deep(.t-tabs__nav-item) {
+    border-radius: var(--radius-md);
+    font-weight: 700;
+  }
+
+  :deep(.t-tabs__nav-item.t-is-active) {
+    background: var(--color-accent);
+    color: var(--color-border-strong);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+  }
+
+  :deep(.t-tabs__content) {
+    padding: 16px 8px 8px;
   }
 }
 </style>

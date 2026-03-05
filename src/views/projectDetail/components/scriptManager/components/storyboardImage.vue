@@ -147,15 +147,16 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
     align-items: center;
     justify-content: space-between;
     padding: 16px 20px;
-    background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-surface-alt) 50%, var(--color-surface-soft) 100%);
-    border-radius: 16px;
-    border: 1px solid rgba(var(--color-primary-rgb), 0.1);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: var(--border-width-strong) solid var(--color-border-strong);
+    box-shadow: var(--shadow-hard);
 
     .title {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 600;
+      font-weight: 800;
       font-size: 16px;
       color: var(--color-text);
 
@@ -165,22 +166,24 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
         justify-content: center;
         width: 36px;
         height: 36px;
-        background: var(--gradient-primary);
-        border-radius: 10px;
-        box-shadow: var(--shadow-card);
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        box-shadow: var(--shadow-hard);
 
         .icon {
-          color: var(--color-surface);
+          color: var(--color-border-strong);
         }
       }
 
       .count {
         padding: 2px 10px;
-        background: rgba(var(--color-primary-rgb), 0.1);
-        color: var(--color-primary);
-        border-radius: 20px;
-        font-size: 13px;
-        font-weight: 500;
+        background: var(--color-accent);
+        color: var(--color-border-strong);
+        border-radius: var(--radius-pill);
+        font-size: 12px;
+        font-weight: 800;
+        border: var(--border-width-strong) solid var(--color-border-strong);
       }
     }
 
@@ -189,19 +192,19 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
       align-items: center;
       gap: 8px;
       padding: 10px 20px;
-      background: var(--gradient-primary);
+      background: var(--color-primary);
       color: var(--color-surface);
-      border: none;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 500;
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 800;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: var(--shadow-card-hover);
+      box-shadow: var(--shadow-hard);
 
       &:hover:not(:disabled) {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-card-hover);
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-hard-hover);
       }
 
       &:active:not(:disabled) {
@@ -228,17 +231,16 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
     .image-card {
       position: relative;
       background: var(--color-surface);
-      border-radius: 16px;
+      border-radius: var(--radius-lg);
       overflow: hidden;
       cursor: pointer;
       transition: all 0.3s ease;
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-card);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
 
       &:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-card-hover);
-        border-color: rgba(var(--color-primary-rgb), 0.2);
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-hard-hover);
 
         .delStoryboards {
           opacity: 1;
@@ -259,12 +261,13 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
         left: 12px;
         z-index: 10;
         padding: 4px 12px;
-        background: var(--gradient-primary);
-        color: var(--color-surface);
-        border-radius: 8px;
-        font-size: 13px;
-        font-weight: 600;
-        box-shadow: var(--shadow-card);
+        background: var(--color-accent);
+        color: var(--color-border-strong);
+        border-radius: var(--radius-md);
+        font-size: 12px;
+        font-weight: 800;
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        box-shadow: var(--shadow-hard);
       }
       .delStoryboards {
         position: absolute;
@@ -274,10 +277,11 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
         padding: 4px 12px;
         background: var(--color-error);
         color: var(--color-surface);
-        border-radius: 8px;
-        font-size: 13px;
-        font-weight: 600;
-        box-shadow: var(--shadow-card);
+        border-radius: var(--radius-md);
+        font-size: 12px;
+        font-weight: 800;
+        border: var(--border-width-strong) solid var(--color-border-strong);
+        box-shadow: var(--shadow-hard);
         opacity: 0;
         transition: opacity 0.3s ease;
       }
@@ -287,7 +291,7 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
         width: 100%;
         height: 180px;
         overflow: hidden;
-        background: linear-gradient(135deg, var(--color-surface-soft), var(--color-surface-alt));
+        background: var(--color-surface-alt);
 
         .cover-image {
           width: 100%;
@@ -307,7 +311,7 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
           justify-content: center;
           width: 100%;
           height: 100%;
-          background: linear-gradient(135deg, var(--color-surface-soft), var(--color-surface-alt));
+          background: var(--color-surface-alt);
 
           .loading-spinner {
             width: 32px;
@@ -345,22 +349,23 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
           justify-content: center;
           opacity: 0;
           transition: opacity 0.3s ease;
-          backdrop-filter: blur(2px);
+          backdrop-filter: blur(0px);
 
           .action-btn {
             display: flex;
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            background: rgba(var(--color-surface-rgb), 0.95);
-            color: var(--color-primary);
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 500;
+            background: var(--color-accent);
+            color: var(--color-border-strong);
+            border-radius: var(--radius-md);
+            font-size: 13px;
+            font-weight: 800;
+            border: var(--border-width-strong) solid var(--color-border-strong);
             transition: transform 0.2s ease;
 
             &:hover {
-              transform: scale(1.05);
+              transform: translate(-2px, -2px);
             }
           }
         }
@@ -372,7 +377,7 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
         .card-title {
           margin: 0 0 8px;
           font-size: 15px;
-          font-weight: 600;
+          font-weight: 800;
           color: var(--color-text);
           white-space: nowrap;
           overflow: hidden;
@@ -383,6 +388,7 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
           margin: 0;
           font-size: 14px;
           color: var(--color-text-muted);
+          font-weight: 600;
           line-height: 1.6;
           display: -webkit-box;
           -webkit-line-clamp: 2;
@@ -398,33 +404,36 @@ function delStoryboardsFn(id: number, index: number, event: MouseEvent) {
       align-items: center;
       justify-content: center;
       padding: 60px 20px;
-      background: linear-gradient(135deg, var(--color-surface-alt), var(--color-surface-soft));
-      border-radius: 16px;
-      border: 2px dashed var(--color-border);
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: var(--border-width-strong) dashed var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
 
       .empty-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, var(--color-primary-soft), var(--color-primary-soft-2));
-        border-radius: 50%;
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--color-primary);
+        color: var(--color-border-strong);
         margin-bottom: 20px;
       }
 
       .empty-title {
         margin: 0 0 8px;
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 800;
         color: var(--color-text);
       }
 
       .empty-desc {
         margin: 0;
         font-size: 14px;
-        color: var(--color-text-weak);
+        color: var(--color-text-muted);
+        font-weight: 600;
       }
     }
   }

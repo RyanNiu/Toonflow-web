@@ -490,10 +490,11 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-surface-alt) 100%);
+  background: var(--color-surface);
   height: 64px;
   width: 100%;
-  border-bottom: 1px solid var(--color-border-soft);
+  border-bottom: var(--border-width-strong) solid var(--color-border-strong);
+  box-shadow: var(--shadow-hard);
 
   .titleWrapper {
     display: flex;
@@ -504,15 +505,16 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     .titleIcon {
       width: 36px;
       height: 36px;
-      background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
-      border-radius: 10px;
+      background: var(--color-accent);
+      border-radius: var(--radius-md);
+      border: var(--border-width-strong) solid var(--color-border-strong);
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .title {
-      font-weight: 600;
+      font-weight: 800;
       font-size: 18px;
       color: var(--color-text);
     }
@@ -522,33 +524,36 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     cursor: pointer;
     margin-right: 24px;
     padding: 6px;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
+    background: var(--color-accent);
+    border: var(--border-width-strong) solid var(--color-border-strong);
     transition: all 0.2s;
 
     &:hover {
-      background: var(--color-surface-soft);
+      transform: translate(-2px, -2px);
     }
   }
 }
 
 .modelBody {
   padding: 20px 24px;
-  background: var(--color-surface-soft);
+  background: var(--color-surface);
 
   .modeSwitch {
     margin-bottom: 20px;
     display: flex;
 
     :deep(.ant-radio-group) {
-      background: var(--color-surface);
+      background: var(--color-surface-alt);
       padding: 4px;
-      border-radius: 10px;
-      box-shadow: var(--shadow-card);
+      border-radius: var(--radius-md);
+      border: var(--border-width-strong) solid var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
     }
 
     :deep(.ant-radio-button-wrapper) {
-      border: none;
-      border-radius: 8px !important;
+      border: var(--border-width-strong) solid transparent;
+      border-radius: var(--radius-md) !important;
       padding: 8px 24px;
       height: auto;
       line-height: 1.5;
@@ -562,12 +567,13 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
 
       &:not(.ant-radio-button-wrapper-checked) {
         background: transparent;
-        color: var(--color-text-muted);
+        color: var(--color-text);
       }
 
       &.ant-radio-button-wrapper-checked {
-        background: var(--gradient-primary);
-        color: var(--color-surface);
+        background: var(--color-accent);
+        color: var(--color-border-strong);
+        border-color: var(--color-border-strong);
       }
     }
   }
@@ -589,10 +595,10 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
 
   .sectionCard {
     background: var(--color-surface);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: 20px;
-    box-shadow: var(--shadow-card);
-    border: 1px solid var(--color-border-soft);
+    box-shadow: var(--shadow-hard);
+    border: var(--border-width-strong) solid var(--color-border-strong);
   }
 
   .resultCard {
@@ -626,16 +632,17 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
 
   .namePre {
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--color-text);
   }
 
   .optionalTag {
     font-size: 12px;
-    color: var(--color-text-weak);
-    background: var(--color-surface-alt);
+    color: var(--color-border-strong);
+    background: var(--color-accent);
     padding: 2px 8px;
-    border-radius: 4px;
+    border-radius: var(--radius-pill);
+    border: var(--border-width-strong) solid var(--color-border-strong);
   }
 
   .uploadSection {
@@ -646,10 +653,10 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     width: 100%;
     aspect-ratio: 1/1;
     max-width: 100px;
-    border: 2px dashed var(--color-border);
-    border-radius: 16px;
+    border: var(--border-width-strong) dashed var(--color-border-strong);
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    background: linear-gradient(135deg, var(--color-surface-alt) 0%, var(--color-surface-soft) 100%);
+    background: var(--color-surface-alt);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -657,9 +664,8 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: var(--color-primary);
-      background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
-      box-shadow: var(--shadow-card);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-hard);
     }
   }
 
@@ -673,8 +679,9 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     .uploadIconWrapper {
       width: 26px;
       height: 26px;
-      background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
-      border-radius: 14px;
+      background: var(--color-accent);
+      border-radius: var(--radius-md);
+      border: var(--border-width-strong) solid var(--color-border-strong);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -682,7 +689,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
 
     .uploadText {
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 800;
       color: var(--color-text);
     }
   }
@@ -752,19 +759,20 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
   }
 
   .generateBtn {
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     height: 48px;
-    font-size: 15px;
-    font-weight: 500;
-    background: var(--gradient-primary);
-    border: none;
+    font-size: 14px;
+    font-weight: 800;
+    background: var(--color-primary);
+    border: var(--border-width-strong) solid var(--color-border-strong);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    box-shadow: var(--shadow-hard);
 
     &:hover {
-      background: var(--gradient-primary-hover);
+      transform: translate(-2px, -2px);
     }
   }
 
@@ -776,16 +784,17 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
 
   .resultItem {
     aspect-ratio: 1/1;
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    border: 2px solid transparent;
+    border: var(--border-width-strong) solid var(--color-border-strong);
     transition: all 0.2s ease;
-    background: var(--color-surface-soft);
+    background: var(--color-surface);
 
     &:hover {
-      box-shadow: var(--shadow-card);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-hard);
 
       .resultOverlay {
         opacity: 1;
@@ -793,8 +802,8 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     }
 
     &.selected {
-      border-color: var(--color-primary);
-      box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2);
+      border-color: var(--color-border-strong);
+      box-shadow: var(--shadow-hard);
     }
 
     &.generating {
@@ -824,14 +833,14 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
 
       .previewBtn {
         padding: 8px;
-        background: rgba(var(--color-surface-rgb), 0.2);
-        border-radius: 8px;
-        backdrop-filter: blur(4px);
+        background: var(--color-accent);
+        border-radius: var(--radius-md);
+        border: var(--border-width-strong) solid var(--color-border-strong);
         cursor: pointer;
         transition: background 0.2s;
 
         &:hover {
-          background: rgba(var(--color-surface-rgb), 0.3);
+          transform: translate(-2px, -2px);
         }
       }
     }
@@ -848,12 +857,13 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
       right: 8px;
       width: 24px;
       height: 24px;
-      background: var(--gradient-primary);
-      border-radius: 50%;
+      background: var(--color-accent);
+      border-radius: var(--radius-md);
+      border: var(--border-width-strong) solid var(--color-border-strong);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: var(--shadow-card);
+      box-shadow: var(--shadow-hard);
     }
 
     .generatingPlaceholder {
@@ -864,13 +874,14 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
       align-items: center;
       justify-content: center;
       gap: 10px;
-      background: linear-gradient(135deg, var(--color-surface-soft) 0%, var(--color-surface-alt) 100%);
-      border: 1px dashed var(--color-border);
-      border-radius: 10px;
+      background: var(--color-surface-alt);
+      border: var(--border-width-strong) dashed var(--color-border-strong);
+      border-radius: var(--radius-md);
 
       span {
         font-size: 12px;
         color: var(--color-text-muted);
+        font-weight: 700;
       }
     }
 
@@ -880,32 +891,36 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--color-error-soft);
-      color: var(--color-error);
+      background: var(--color-error);
+      color: var(--color-surface);
       font-size: 12px;
+      font-weight: 800;
+      border: var(--border-width-strong) solid var(--color-border-strong);
     }
   }
 
   .footerBtns {
     margin-top: 24px;
     padding-top: 20px;
-    border-top: 1px solid var(--color-border-soft);
+    border-top: var(--border-width-strong) solid var(--color-border-strong);
     display: flex;
     justify-content: flex-end;
     gap: 12px;
 
     .ant-btn {
       min-width: 100px;
-      border-radius: 10px;
+      border-radius: var(--radius-md);
       height: 44px;
-      font-size: 15px;
+      font-size: 14px;
+      font-weight: 800;
+      border: var(--border-width-strong) solid var(--color-border-strong);
 
       &.ant-btn-primary {
-        background: var(--gradient-primary);
-        border: none;
+        background: var(--color-primary);
+        border: var(--border-width-strong) solid var(--color-border-strong);
 
         &:hover {
-          background: var(--gradient-primary-hover);
+          transform: translate(-2px, -2px);
         }
       }
     }
@@ -925,14 +940,16 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
   margin: 40px 0;
 
   .ant-empty-description {
-    color: var(--color-text-weak);
+    color: var(--color-text-muted);
+    font-weight: 700;
   }
 }
 
 :deep(.ant-tag) {
-  border-radius: 6px;
-  border: none;
+  border-radius: var(--radius-pill);
+  border: var(--border-width-strong) solid var(--color-border-strong);
   font-size: 12px;
+  font-weight: 800;
 }
 :deep(.ant-image-img) {
   height: 100%;
