@@ -1,7 +1,7 @@
 <template>
   <div class="logout-config">
     <t-space direction="vertical" size="medium">
-      <t-alert theme="warning" message="退出登录后，您需要重新登录才能继续使用系统。" />
+      <!-- <t-alert theme="warning" message="退出登录后，您需要重新登录才能继续使用系统。" /> -->
       <t-popconfirm content="确定要退出登录吗？" @confirm="handleLogout">
         <t-button theme="danger" :loading="loading">
           <template #icon>

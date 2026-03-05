@@ -550,8 +550,8 @@ async function deleteAllData() {
     message.error("操作失败，请重试");
   }
 }
-const GITHUB_URL = "https://github.com/HBAI-Ltd/Toonflow-app";
-const GITEE_URL = "https://gitee.com/HBAI-Ltd/Toonflow-app";
+const GITHUB_URL = "https://github.com/HBAI-Ltd/Robou-app";
+const GITEE_URL = "https://gitee.com/HBAI-Ltd/Robou-app";
 
 function openGitHub() {
   window.open(GITHUB_URL, "_blank");

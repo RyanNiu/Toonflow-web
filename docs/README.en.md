@@ -5,13 +5,13 @@
 
 <div align="center">
 
-<img src="./logo.png" alt="Toonflow Logo" height="120"/>
+<img src="./logo.png" alt="Robou Logo" height="120"/>
 
-# Toonflow Web
+# Robou Web
 
   <p align="center">
     <b>
-      Toonflow Frontend Application
+      Robou Frontend Application
       <br />
       Modern Web interface built with Vue 3 + TypeScript + Vite
       <br />
@@ -19,14 +19,14 @@
     </b>
   </p>
   <p align="center">
-    <a href="https://github.com/HBAI-Ltd/Toonflow-web/stargazers">
-      <img src="https://img.shields.io/github/stars/HBAI-Ltd/Toonflow-web?style=for-the-badge&logo=github" alt="Stars Badge" />
+    <a href="https://github.com/HBAI-Ltd/Robou-web/stargazers">
+      <img src="https://img.shields.io/github/stars/HBAI-Ltd/Robou-web?style=for-the-badge&logo=github" alt="Stars Badge" />
     </a>
     <a href="https://www.gnu.org/licenses/agpl-3.0" target="_blank">
       <img src="https://img.shields.io/badge/License-AGPL-blue.svg?style=for-the-badge" alt="AGPL License Badge" />
     </a>
-    <a href="https://github.com/HBAI-Ltd/Toonflow-web/releases">
-      <img alt="release" src="https://img.shields.io/github/v/release/HBAI-Ltd/Toonflow-web?style=for-the-badge" />
+    <a href="https://github.com/HBAI-Ltd/Robou-web/releases">
+      <img alt="release" src="https://img.shields.io/github/v/release/HBAI-Ltd/Robou-web?style=for-the-badge" />
     </a>
   </p>
   
@@ -39,12 +39,12 @@
 
 > **This repository only contains the frontend source code, suitable for developers for secondary development or customization.**
 >
-> 🎉 **If you are a regular user wishing to use Toonflow directly, please go to the main repository to download the full client:**
+> 🎉 **If you are a regular user wishing to use Robou directly, please go to the main repository to download the full client:**
 >
-> | Platform                                                                                                     | Link                                                                            |
-> | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
-> | <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub" /> | 👉 [github.com/HBAI-Ltd/Toonflow-app](https://github.com/HBAI-Ltd/Toonflow-app) |
-> | <img src="https://img.shields.io/badge/Gitee-C71D23?style=flat&logo=gitee&logoColor=white" alt="Gitee" />    | 👉 [gitee.com/HBAI-Ltd/Toonflow-app](https://gitee.com/HBAI-Ltd/Toonflow-app)   |
+> | Platform                                                                                                     | Link                                                                      |
+> | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+> | <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub" /> | 👉 [github.com/HBAI-Ltd/Robou-app](https://github.com/HBAI-Ltd/Robou-app) |
+> | <img src="https://img.shields.io/badge/Gitee-C71D23?style=flat&logo=gitee&logoColor=white" alt="Gitee" />    | 👉 [gitee.com/HBAI-Ltd/Robou-app](https://gitee.com/HBAI-Ltd/Robou-app)   |
 >
 > The main repository includes:
 >
@@ -76,7 +76,7 @@
 
 # 🎨 Main Feature Modules
 
-Toonflow Web provides a complete frontend for short drama creation, including these core modules:
+Robou Web provides a complete frontend for short drama creation, including these core modules:
 
 - ✅ **Project Management**  
    Create, edit, and manage drama projects with project status tracking and multi-project parallel development.
@@ -120,10 +120,10 @@ Toonflow Web provides a complete frontend for short drama creation, including th
 
 ## 💡 What kind of user are you?
 
-| User Type                                   | Recommended Solution | GitHub                                                   | Gitee                                                   |
-| ------------------------------------------- | -------------------- | -------------------------------------------------------- | ------------------------------------------------------- |
-| 🎬 **Regular User** - Want to use Toonflow  | Download full client | [Toonflow-app](https://github.com/HBAI-Ltd/Toonflow-app) | [Toonflow-app](https://gitee.com/HBAI-Ltd/Toonflow-app) |
-| 👨‍💻 **Developer** - Want to modify or extend | Continue reading     | This repository                                          | This repository                                         |
+| User Type                                   | Recommended Solution | GitHub                                             | Gitee                                             |
+| ------------------------------------------- | -------------------- | -------------------------------------------------- | ------------------------------------------------- |
+| 🎬 **Regular User** - Want to use Robou     | Download full client | [Robou-app](https://github.com/HBAI-Ltd/Robou-app) | [Robou-app](https://gitee.com/HBAI-Ltd/Robou-app) |
+| 👨‍💻 **Developer** - Want to modify or extend | Continue reading     | This repository                                    | This repository                                   |
 
 ---
 
@@ -133,7 +133,7 @@ Before developing and running this project, please ensure you have installed:
 
 - ✅ **Node.js**: version 23.11.1 or above
 - ✅ **Yarn**: version 1.22.0 or above (recommended package manager)
-- ✅ **Backend service**: Make sure the Toonflow backend service is running and accessible (available from [GitHub](https://github.com/HBAI-Ltd/Toonflow-app) or [Gitee](https://gitee.com/HBAI-Ltd/Toonflow-app))
+- ✅ **Backend service**: Make sure the Robou backend service is running and accessible (available from [GitHub](https://github.com/HBAI-Ltd/Robou-app) or [Gitee](https://gitee.com/HBAI-Ltd/Robou-app))
 
 ## Local Development
 
@@ -142,15 +142,15 @@ Before developing and running this project, please ensure you have installed:
 **GitHub:**
 
 ```bash
-git clone https://github.com/HBAI-Ltd/Toonflow-web.git
-cd Toonflow-web
+git clone https://github.com/HBAI-Ltd/Robou-web.git
+cd Robou-web
 ```
 
 **Gitee (recommended for China):**
 
 ```bash
-git clone https://gitee.com/HBAI-Ltd/Toonflow-web.git
-cd Toonflow-web
+git clone https://gitee.com/HBAI-Ltd/Robou-web.git
+cd Robou-web
 ```
 
 ### 2. Install Dependencies
@@ -207,7 +207,7 @@ Upload all files in the `dist` directory to the root directory of Nginx, Apache,
 server {
     listen 80;
     server_name your-domain.com;
-    root /var/www/toonflow-web/dist;
+    root /var/www/robou-web/dist;
     index index.html;
 
     location / {
@@ -227,7 +227,7 @@ server {
 
 Copy the contents of the built `dist` directory into the backend's static resources directory `scripts/web`.
 
-> 💡 **Note**: The backend service can be obtained from [GitHub](https://github.com/HBAI-Ltd/Toonflow-app) or [Gitee](https://gitee.com/HBAI-Ltd/Toonflow-app).
+> 💡 **Note**: The backend service can be obtained from [GitHub](https://github.com/HBAI-Ltd/Robou-app) or [Gitee](https://gitee.com/HBAI-Ltd/Robou-app).
 
 ---
 
@@ -272,7 +272,7 @@ yarn license
 ## Project Structure
 
 ```
-📂 Toonflow-web/
+📂 Robou-web/
 ├─ 📂 public/                # Static assets
 ├─ 📂 scripts/               # Build scripts
 │  └─ 📄 license.ts          # License generator script
@@ -384,21 +384,21 @@ VITE_BASE_URL=http://127.0.0.1:60000
 VITE_WS_URL=ws://127.0.0.1:60000
 ```
 
-### Q: I just want to use Toonflow, not develop, what should I do?
+### Q: I just want to use Robou, not develop, what should I do?
 
 **A:** Please go to the main repository to download the complete client:
 
-- **GitHub**: 👉 [Toonflow-app](https://github.com/HBAI-Ltd/Toonflow-app)
-- **Gitee**: 👉 [Toonflow-app](https://gitee.com/HBAI-Ltd/Toonflow-app)
+- **GitHub**: 👉 [Robou-app](https://github.com/HBAI-Ltd/Robou-app)
+- **Gitee**: 👉 [Robou-app](https://gitee.com/HBAI-Ltd/Robou-app)
 
 ---
 
 # 🔗 Related Repositories
 
-| Repository       | Description                        | GitHub                                             | Gitee                                            |
-| ---------------- | ---------------------------------- | -------------------------------------------------- | ------------------------------------------------ |
-| **Toonflow-app** | Complete client (recommended user) | [GitHub](https://github.com/HBAI-Ltd/Toonflow-app) | [Gitee](https://gitee.com/HBAI-Ltd/Toonflow-app) |
-| **Toonflow-web** | Frontend source code (this repo)   | [GitHub](https://github.com/HBAI-Ltd/Toonflow-web) | [Gitee](https://gitee.com/HBAI-Ltd/Toonflow-web) |
+| Repository    | Description                        | GitHub                                          | Gitee                                         |
+| ------------- | ---------------------------------- | ----------------------------------------------- | --------------------------------------------- |
+| **Robou-app** | Complete client (recommended user) | [GitHub](https://github.com/HBAI-Ltd/Robou-app) | [Gitee](https://gitee.com/HBAI-Ltd/Robou-app) |
+| **Robou-web** | Frontend source code (this repo)   | [GitHub](https://github.com/HBAI-Ltd/Robou-web) | [Gitee](https://gitee.com/HBAI-Ltd/Robou-web) |
 
 ---
 
@@ -416,22 +416,22 @@ VITE_WS_URL=ws://127.0.0.1:60000
 
 Group 6:
 
-<img src="./chat6QR.jpg" alt="Toonflow Logo" height="400"/>
+<img src="./chat6QR.jpg" alt="Robou Logo" height="400"/>
 <p>Scan with WeChat to add. If the QR code expires, submit an Issue for update.</p>
 
 ---
 
 # 💌 Contact Us
 
-📧 Email: [ltlctools@outlook.com](mailto:ltlctools@outlook.com?subject=Toonflow%20Frontend%20Consultation)
+📧 Email: [ltlctools@outlook.com](mailto:ltlctools@outlook.com?subject=Robou%20Frontend%20Consultation)
 
 ---
 
 # 📜 License
 
-Toonflow Web is open-sourced under the AGPL-3.0 license. See details: https://www.gnu.org/licenses/agpl-3.0.html
+Robou Web is open-sourced under the AGPL-3.0 license. See details: https://www.gnu.org/licenses/agpl-3.0.html
 
-You may use Toonflow Web for any purposes, including commercial, as long as you comply with the AGPL-3.0 terms and conditions.
+You may use Robou Web for any purposes, including commercial, as long as you comply with the AGPL-3.0 terms and conditions.
 
 If you wish to obtain a proprietary commercial license free from AGPL-3.0 restrictions, please contact us via email.
 
@@ -439,13 +439,13 @@ If you wish to obtain a proprietary commercial license free from AGPL-3.0 restri
 
 # ⭐️ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=HBAI-Ltd/Toonflow-web&type=date&legend=top-left)](https://www.star-history.com/#HBAI-Ltd/Toonflow-web&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=HBAI-Ltd/Robou-web&type=date&legend=top-left)](https://www.star-history.com/#HBAI-Ltd/Robou-web&type=date&legend=top-left)
 
 ---
 
 # 🙏 Acknowledgements
 
-Thanks to the following open source projects for their strong support for Toonflow Web:
+Thanks to the following open source projects for their strong support for Robou Web:
 
 - [Vue.js](https://vuejs.org/) - Progressive JavaScript framework
 - [Vite](https://vitejs.dev/) - Next generation frontend build tool
@@ -453,7 +453,7 @@ Thanks to the following open source projects for their strong support for Toonfl
 - [Element Plus](https://element-plus.org/) - Vue 3-based component library
 - [Pinia](https://pinia.vuejs.org/) - Intuitive state management library for Vue
 
-Thanks to the following organizations/units/individuals for supporting Toonflow:
+Thanks to the following organizations/units/individuals for supporting Robou:
 
 <table>
   <tr>

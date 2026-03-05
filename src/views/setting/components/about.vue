@@ -2,25 +2,11 @@
   <div class="aboutPage">
     <t-card class="logoCard">
       <div class="logoSection">
-        <img src="@/assets/logo.png" alt="ToonFlow Logo" class="logo" />
-        <h2 class="appName">ToonFlow</h2>
+        <img src="@/assets/logo.png" alt="Robou Logo" class="logo" />
+        <h2 class="appName">Robou 短剧</h2>
         <t-tag theme="primary" variant="light">{{ version }}</t-tag>
       </div>
-      <p class="desc">开源的 AI 驱动漫画/分镜创作工具</p>
-    </t-card>
-
-    <t-card class="linkCard">
-      <div class="linkItem" @click="openLink('https://github.com/HBAI-Ltd/Toonflow-app')">
-        <i-github theme="outline" size="20" />
-        <span>GitHub 仓库</span>
-        <i-right theme="outline" size="16" class="arrow" />
-      </div>
-      <t-divider />
-      <div class="linkItem" @click="openLink('https://gitee.com/HBAI-Ltd/Toonflow-app')">
-        <i-code theme="outline" size="20" />
-        <span>Gitee 仓库</span>
-        <i-right theme="outline" size="16" class="arrow" />
-      </div>
+      <p class="desc">AI 驱动漫剧/短剧创作工具</p>
     </t-card>
 
     <t-card class="linkCard">
@@ -30,18 +16,6 @@
         <i-right theme="outline" size="16" class="arrow" />
       </div>
       <t-divider />
-      <div class="linkItem" @click="openLink('https://gitee.com/HBAI-Ltd/Toonflow-app/releases')">
-        <i-refresh theme="outline" size="20" />
-        <span>检查更新 (Gitee)</span>
-        <i-right theme="outline" size="16" class="arrow" />
-      </div>
-    </t-card>
-
-    <t-card class="licenseCard">
-      <div class="licenseInfo">
-        <i-certificate theme="outline" size="18" />
-        <span>AGPL-3.0 License</span>
-      </div>
     </t-card>
   </div>
 </template>
