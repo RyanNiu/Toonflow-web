@@ -20,7 +20,9 @@ import "@devui-design/icons/icomoon/devui-icon.css";
 
 import "tdesign-vue-next/es/style/index.css";
 
+import "./assets/tokens.css";
 import "./assets/main.css";
+import "./assets/theme/overrides.css";
 
 import "@/utils/global";
 

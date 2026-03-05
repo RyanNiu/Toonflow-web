@@ -66,10 +66,9 @@ const btnStyle = computed(() => ({
   .sidebarTitle {
     font-size: 20px;
     font-weight: 1000;
-    color: #111827;
+    color: var(--color-text);
     display: flex;
     align-items: center;
-      color: var(--td-text-color-primary);
     .logo {
       width: 32px;
       height: 32px;

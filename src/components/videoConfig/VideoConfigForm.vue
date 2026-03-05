@@ -225,7 +225,7 @@ import {
   getDurationTip,
   getMaxImages,
   getAudioSupport,
-  getModelList
+  getModelList,
 } from "./manufacturerConfig";
 
 const props = withDefaults(
@@ -441,9 +441,9 @@ onMounted(async () => {
     }
   }
 });
-onMounted(() =>{
-  getModelList()
-})
+onMounted(() => {
+  getModelList();
+});
 </script>
 
 <style lang="scss" scoped>
@@ -461,12 +461,12 @@ onMounted(() =>{
       width: 70px;
       flex-shrink: 0;
       font-size: 13px;
-      color: #6b7280;
+      color: var(--color-text-muted);
       line-height: 24px;
     }
 
     .value {
-      color: #1f2937;
+      color: var(--color-text);
       font-size: 13px;
       font-weight: 500;
     }
@@ -474,13 +474,13 @@ onMounted(() =>{
     .unit {
       margin-left: 6px;
       font-size: 12px;
-      color: #6b7280;
+      color: var(--color-text-muted);
     }
 
     .tip {
       margin-left: 8px;
       font-size: 11px;
-      color: #9ca3af;
+      color: var(--color-text-weak);
     }
 
     &.frame-row {
@@ -511,10 +511,10 @@ onMounted(() =>{
         .magic-btn {
           padding: 0;
           height: auto;
-          color: #9333ea;
+          color: var(--color-primary);
 
           &:hover {
-            color: #7c3aed;
+            color: var(--color-primary-hover);
           }
         }
       }
@@ -530,7 +530,7 @@ onMounted(() =>{
     width: 150px;
     height: auto;
     min-height: 70px;
-    border: 1px dashed #d9d9d9;
+    border: 1px dashed var(--color-border);
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -540,9 +540,9 @@ onMounted(() =>{
     transition: all 0.2s;
     position: relative;
     overflow: hidden;
-    background: #fafafa;
+    background: var(--color-surface-alt);
     font-size: 11px;
-    color: #999;
+    color: var(--color-text-weak);
 
     &.single-frame {
       width: 100px;
@@ -550,13 +550,13 @@ onMounted(() =>{
     }
 
     &:hover {
-      border-color: #1890ff;
-      background: #e6f7ff;
+      border-color: var(--color-primary);
+      background: var(--color-primary-soft);
     }
 
     &.has-image {
       border-style: solid;
-      border-color: #52c41a;
+      border-color: var(--color-success);
 
       img {
         width: 100%;
@@ -569,8 +569,8 @@ onMounted(() =>{
         bottom: 0;
         left: 0;
         right: 0;
-        background: rgba(0, 0, 0, 0.5);
-        color: #fff;
+        background: rgba(var(--color-ink-rgb), 0.55);
+        color: var(--color-surface);
         font-size: 10px;
         text-align: center;
         padding: 2px 0;
@@ -580,7 +580,7 @@ onMounted(() =>{
         position: absolute;
         top: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(var(--color-surface-rgb), 0.9);
         border-radius: 0 0 0 4px;
         width: 18px;
         height: 18px;
@@ -621,7 +621,7 @@ onMounted(() =>{
       height: auto;
       border-radius: 6px;
       overflow: hidden;
-      border: 1px solid #52c41a;
+      border: 1px solid var(--color-success);
 
       .drag-handle {
         width: 100%;
@@ -642,8 +642,8 @@ onMounted(() =>{
         position: absolute;
         top: 2px;
         left: 2px;
-        background: rgba(0, 0, 0, 0.6);
-        color: #fff;
+        background: rgba(var(--color-ink-rgb), 0.6);
+        color: var(--color-surface);
         font-size: 10px;
         padding: 1px 4px;
         border-radius: 3px;
@@ -654,7 +654,7 @@ onMounted(() =>{
         position: absolute;
         top: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(var(--color-surface-rgb), 0.9);
         border-radius: 0 0 0 4px;
         width: 18px;
         height: 18px;
@@ -674,26 +674,26 @@ onMounted(() =>{
 
     .ghost {
       opacity: 0.5;
-      background: #c8ebfb;
+      background: var(--color-primary-soft-2);
     }
 
     .add-image-box {
       width: 150px;
       height: 70px;
-      border: 1px dashed #d9d9d9;
+      border: 1px dashed var(--color-border);
       border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: all 0.2s;
-      background: #fafafa;
+      background: var(--color-surface-alt);
       font-size: 14px;
-      color: #999;
+      color: var(--color-text-weak);
 
       &:hover {
-        border-color: #1890ff;
-        background: #e6f7ff;
+        border-color: var(--color-primary);
+        background: var(--color-primary-soft);
       }
     }
   }

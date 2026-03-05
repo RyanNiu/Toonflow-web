@@ -23,13 +23,13 @@ function goHome() {
   justify-content: center;
   .notFoundIcon {
     margin-bottom: 32px;
-    color: #d0d0d0;
+    color: var(--color-text-weak);
   }
   .notFoundText {
     font-size: 24px;
     margin-bottom: 24px;
     font-weight: 500;
-    color: #333;
+    color: var(--color-text);
   }
   .notFoundBtn {
     min-width: 120px;

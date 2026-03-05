@@ -11,7 +11,7 @@
               <t-tag theme="primary">{{ item.model }}</t-tag>
             </div>
             <div class="ac" v-else>
-              <i-attention theme="outline" size="14" fill="#faad14" />
+              <i-attention theme="outline" size="14" fill="var(--color-warning)" />
               <span>未配置</span>
             </div>
           </template>

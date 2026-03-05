@@ -160,9 +160,9 @@ const resSvg = async () => {
   .formBox {
     width: 380px;
     padding: 40px 40px 30px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(var(--color-surface-rgb), 0.95);
     border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 60px rgba(var(--color-ink-rgb), 0.15);
     backdrop-filter: blur(10px);
 
     .logoBox {
@@ -180,14 +180,14 @@ const resSvg = async () => {
       .logo-text {
         font-size: 28px;
         font-weight: 600;
-        color: #333;
+        color: var(--color-text);
         letter-spacing: 1px;
       }
     }
 
     .login-form {
       .input-icon {
-        color: #999;
+        color: var(--color-text-weak);
         font-size: 18px;
       }
 
@@ -197,7 +197,7 @@ const resSvg = async () => {
 
         &:hover,
         &:focus-within {
-          border-color: var(--mainColor);
+          border-color: var(--color-primary);
         }
       }
 
@@ -212,11 +212,11 @@ const resSvg = async () => {
       font-size: 16px;
       font-weight: 500;
       margin-top: 8px;
-      background: var(--mainGradient);
+      background: var(--gradient-primary);
       border: none;
 
       &:hover {
-        background: var(--mainGradientHover);
+        background: var(--gradient-primary-hover);
       }
     }
   }
@@ -235,7 +235,7 @@ const resSvg = async () => {
     flex-direction: column;
     gap: 4px;
     font-size: 13px;
-    color: #666;
+    color: var(--color-text-muted);
 
     p {
       margin: 0;
@@ -246,14 +246,14 @@ const resSvg = async () => {
   }
 
   code {
-    background: #fff;
+    background: var(--color-surface);
     padding: 2px 10px;
     border-radius: 4px;
     font-family: "Monaco", "Menlo", monospace;
-    color: var(--mainColor);
+    color: var(--color-primary);
     font-weight: 500;
     font-size: 13px;
-    border: 1px solid #e8d5ff;
+    border: 1px solid var(--color-primary-soft-2);
   }
 }
 

@@ -12,11 +12,11 @@
       <div class="titHeader">
         <div class="titleWrapper">
           <div class="titleIcon">
-            <i-pic class="icon" theme="outline" size="20" fill="#9913FA" />
+            <i-pic class="icon" theme="outline" size="20" fill="var(--color-primary)" />
           </div>
           <span class="title">图片生成</span>
         </div>
-        <i-close class="closeBtn" theme="outline" size="20" fill="#666" @click="close" />
+        <i-close class="closeBtn" theme="outline" size="20" fill="var(--color-text-muted)" @click="close" />
       </div>
     </template>
     <a-spin :spinning="fakeLoading" tip="发送数据中...">
@@ -50,13 +50,13 @@
                     <div class="imageDiv pr">
                       <a-image :src="currentImage" alt="元素图片" class="elementImg" :fallback="errorPictrue" />
                       <div class="imageOverlay">
-                        <i-delete class="deleteBtn" theme="outline" size="18" fill="#fff" @click.stop="deleteImage" />
+                        <i-delete class="deleteBtn" theme="outline" size="18" fill="var(--color-surface)" @click.stop="deleteImage" />
                       </div>
                     </div>
                   </template>
                   <div v-else class="uploadPlaceholder">
                     <div class="uploadIconWrapper">
-                      <i-upload-picture theme="outline" size="32" fill="#9913FA" />
+                      <i-upload-picture theme="outline" size="32" fill="var(--color-primary)" />
                     </div>
                     <span class="uploadText">点击上传</span>
                   </div>
@@ -111,13 +111,24 @@
                     <template v-if="(item.state === '生成成功' || !item.state) && item.filePath">
                       <a-image :preview="false" :src="item.filePath" :fallback="errorPictrue" class="resultImg" />
                       <div class="resultOverlay">
-                        <i-preview-open class="previewBtn" theme="outline" size="20" fill="#fff" @click.stop="previewImage(item.filePath)" />
+                        <i-preview-open
+                          class="previewBtn"
+                          theme="outline"
+                          size="20"
+                          fill="var(--color-surface)"
+                          @click.stop="previewImage(item.filePath)" />
                       </div>
                       <div class="del">
-                        <i-delete class="delImage" style="margin-left: 5px" theme="outline" size="20" fill="#d0021b" @click.stop="delImage(item)" />
+                        <i-delete
+                          class="delImage"
+                          style="margin-left: 5px"
+                          theme="outline"
+                          size="20"
+                          fill="var(--color-error)"
+                          @click.stop="delImage(item)" />
                       </div>
                       <div v-if="selectedIndex === index" class="selectedBadge">
-                        <i-check theme="outline" size="14" fill="#fff" />
+                        <i-check theme="outline" size="14" fill="var(--color-surface)" />
                       </div>
                     </template>
                     <template v-else-if="item.state === '生成中'">
@@ -126,19 +137,37 @@
                         <span>生成中...</span>
                       </div>
                       <div class="del">
-                        <i-delete class="delImage" style="margin-left: 5px" theme="outline" size="20" fill="#d0021b" @click.stop="delImage(item)" />
+                        <i-delete
+                          class="delImage"
+                          style="margin-left: 5px"
+                          theme="outline"
+                          size="20"
+                          fill="var(--color-error)"
+                          @click.stop="delImage(item)" />
                       </div>
                     </template>
                     <template v-else-if="item.state === '生成失败'">
                       <div class="errorPlaceholder">生成失败</div>
                       <div class="del">
-                        <i-delete class="delImage" style="margin-left: 5px" theme="outline" size="20" fill="#d0021b" @click.stop="delImage(item)" />
+                        <i-delete
+                          class="delImage"
+                          style="margin-left: 5px"
+                          theme="outline"
+                          size="20"
+                          fill="var(--color-error)"
+                          @click.stop="delImage(item)" />
                       </div>
                     </template>
                     <template v-else>
                       <div class="errorPlaceholder">未知状态</div>
                       <div class="del">
-                        <i-delete class="delImage" style="margin-left: 5px" theme="outline" size="20" fill="#d0021b" @click.stop="delImage(item)" />
+                        <i-delete
+                          class="delImage"
+                          style="margin-left: 5px"
+                          theme="outline"
+                          size="20"
+                          fill="var(--color-error)"
+                          @click.stop="delImage(item)" />
                       </div>
                     </template>
                   </div>
@@ -461,10 +490,10 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+  background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-surface-alt) 100%);
   height: 64px;
   width: 100%;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-border-soft);
 
   .titleWrapper {
     display: flex;
@@ -475,7 +504,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     .titleIcon {
       width: 36px;
       height: 36px;
-      background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+      background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -485,7 +514,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     .title {
       font-weight: 600;
       font-size: 18px;
-      color: #1f2937;
+      color: var(--color-text);
     }
   }
 
@@ -497,24 +526,24 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     transition: all 0.2s;
 
     &:hover {
-      background: rgba(0, 0, 0, 0.05);
+      background: var(--color-surface-soft);
     }
   }
 }
 
 .modelBody {
   padding: 20px 24px;
-  background: #fafbfc;
+  background: var(--color-surface-soft);
 
   .modeSwitch {
     margin-bottom: 20px;
     display: flex;
 
     :deep(.ant-radio-group) {
-      background: #fff;
+      background: var(--color-surface);
       padding: 4px;
       border-radius: 10px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      box-shadow: var(--shadow-card);
     }
 
     :deep(.ant-radio-button-wrapper) {
@@ -533,12 +562,12 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
 
       &:not(.ant-radio-button-wrapper-checked) {
         background: transparent;
-        color: #666;
+        color: var(--color-text-muted);
       }
 
       &.ant-radio-button-wrapper-checked {
-        background: linear-gradient(135deg, #9913fa 0%, #7c3aed 100%);
-        color: #fff;
+        background: var(--gradient-primary);
+        color: var(--color-surface);
       }
     }
   }
@@ -559,11 +588,11 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
   }
 
   .sectionCard {
-    background: #fff;
+    background: var(--color-surface);
     border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    border: 1px solid #f0f0f0;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border-soft);
   }
 
   .resultCard {
@@ -582,7 +611,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
       }
 
       &::-webkit-scrollbar-thumb {
-        background: #ddd;
+        background: var(--color-border);
         border-radius: 3px;
       }
     }
@@ -598,13 +627,13 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
   .namePre {
     font-size: 15px;
     font-weight: 600;
-    color: #374151;
+    color: var(--color-text);
   }
 
   .optionalTag {
     font-size: 12px;
-    color: #9ca3af;
-    background: #f3f4f6;
+    color: var(--color-text-weak);
+    background: var(--color-surface-alt);
     padding: 2px 8px;
     border-radius: 4px;
   }
@@ -617,10 +646,10 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     width: 100%;
     aspect-ratio: 1/1;
     max-width: 100px;
-    border: 2px dashed #e5e7eb;
+    border: 2px dashed var(--color-border);
     border-radius: 16px;
     overflow: hidden;
-    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+    background: linear-gradient(135deg, var(--color-surface-alt) 0%, var(--color-surface-soft) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -628,9 +657,9 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: #9913fa;
-      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-      box-shadow: 0 4px 12px rgba(153, 19, 250, 0.15);
+      border-color: var(--color-primary);
+      background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
+      box-shadow: var(--shadow-card);
     }
   }
 
@@ -644,7 +673,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     .uploadIconWrapper {
       width: 26px;
       height: 26px;
-      background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+      background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
       border-radius: 14px;
       display: flex;
       align-items: center;
@@ -654,7 +683,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     .uploadText {
       font-size: 14px;
       font-weight: 500;
-      color: #374151;
+      color: var(--color-text);
     }
   }
 
@@ -665,7 +694,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     .imageOverlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(var(--color-ink-rgb), 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -679,7 +708,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
 
     .deleteBtn {
       padding: 8px;
-      background: rgba(239, 68, 68, 0.9);
+      background: rgba(var(--color-error-rgb), 0.9);
       border-radius: 8px;
       cursor: pointer;
       transition: transform 0.2s;
@@ -696,28 +725,28 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     .magicBtn {
       padding: 0;
       height: auto;
-      color: #9913fa;
+      color: var(--color-primary);
       font-size: 13px;
 
       &:hover {
-        color: #7c3aed;
+        color: var(--color-primary-hover);
       }
     }
 
     .promptTextarea {
       border-radius: 12px;
-      border-color: #e5e7eb;
+      border-color: var(--color-border);
       padding: 12px 14px;
       font-size: 14px;
       resize: none;
 
       &:focus {
-        border-color: #9913fa;
-        box-shadow: 0 0 0 3px rgba(153, 19, 250, 0.1);
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
       }
 
       &::placeholder {
-        color: #9ca3af;
+        color: var(--color-text-weak);
       }
     }
   }
@@ -727,7 +756,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     height: 48px;
     font-size: 15px;
     font-weight: 500;
-    background: linear-gradient(135deg, #9913fa 0%, #7c3aed 100%);
+    background: var(--gradient-primary);
     border: none;
     display: flex;
     align-items: center;
@@ -735,7 +764,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     gap: 8px;
 
     &:hover {
-      background: linear-gradient(135deg, #8b11e0 0%, #6d28d9 100%);
+      background: var(--gradient-primary-hover);
     }
   }
 
@@ -753,10 +782,10 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     position: relative;
     border: 2px solid transparent;
     transition: all 0.2s ease;
-    background: #f9fafb;
+    background: var(--color-surface-soft);
 
     &:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-card);
 
       .resultOverlay {
         opacity: 1;
@@ -764,8 +793,8 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     }
 
     &.selected {
-      border-color: #9913fa;
-      box-shadow: 0 0 0 3px rgba(153, 19, 250, 0.2);
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2);
     }
 
     &.generating {
@@ -786,7 +815,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
     .resultOverlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(var(--color-ink-rgb), 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -795,14 +824,14 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
 
       .previewBtn {
         padding: 8px;
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(var(--color-surface-rgb), 0.2);
         border-radius: 8px;
         backdrop-filter: blur(4px);
         cursor: pointer;
         transition: background 0.2s;
 
         &:hover {
-          background: rgba(255, 255, 255, 0.3);
+          background: rgba(var(--color-surface-rgb), 0.3);
         }
       }
     }
@@ -819,12 +848,12 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
       right: 8px;
       width: 24px;
       height: 24px;
-      background: linear-gradient(135deg, #9913fa 0%, #7c3aed 100%);
+      background: var(--gradient-primary);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 6px rgba(153, 19, 250, 0.4);
+      box-shadow: var(--shadow-card);
     }
 
     .generatingPlaceholder {
@@ -835,13 +864,13 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
       align-items: center;
       justify-content: center;
       gap: 10px;
-      background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
-      border: 1px dashed #d1d5db;
+      background: linear-gradient(135deg, var(--color-surface-soft) 0%, var(--color-surface-alt) 100%);
+      border: 1px dashed var(--color-border);
       border-radius: 10px;
 
       span {
         font-size: 12px;
-        color: #6b7280;
+        color: var(--color-text-muted);
       }
     }
 
@@ -851,8 +880,8 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #fef2f2;
-      color: #ef4444;
+      background: var(--color-error-soft);
+      color: var(--color-error);
       font-size: 12px;
     }
   }
@@ -860,7 +889,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
   .footerBtns {
     margin-top: 24px;
     padding-top: 20px;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid var(--color-border-soft);
     display: flex;
     justify-content: flex-end;
     gap: 12px;
@@ -872,11 +901,11 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
       font-size: 15px;
 
       &.ant-btn-primary {
-        background: linear-gradient(135deg, #9913fa 0%, #7c3aed 100%);
+        background: var(--gradient-primary);
         border: none;
 
         &:hover {
-          background: linear-gradient(135deg, #8b11e0 0%, #6d28d9 100%);
+          background: var(--gradient-primary-hover);
         }
       }
     }
@@ -896,7 +925,7 @@ async function blobUrlToBase64(blobUrl: string): Promise<string> {
   margin: 40px 0;
 
   .ant-empty-description {
-    color: #9ca3af;
+    color: var(--color-text-weak);
   }
 }
 

@@ -23,7 +23,7 @@
           <div class="toolbar-center">
             <a-input v-model:value="searchKeyword" placeholder="搜索模型名称..." size="large" allow-clear class="search-input">
               <template #prefix>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="#8c8c8c">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--color-text-muted)">
                   <path
                     d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
                 </svg>
@@ -31,7 +31,7 @@
             </a-input>
           </div>
           <div class="toolbar-right">
-            <a-badge :count="filteredTableData.length" :number-style="{ backgroundColor: '#52c41a' }">
+            <a-badge :count="filteredTableData.length" :number-style="{ backgroundColor: 'var(--color-success)' }">
               <div class="model-count">共 {{ filteredTableData.length }} 个模型</div>
             </a-badge>
           </div>
@@ -90,8 +90,8 @@
                     {{ visibleMap[row.id] ? row.apiKey : "••••••••" }}
                   </div>
                   <a-button type="text" size="small" class="toggle-btn" @click="setVisible(row.id, !visibleMap[row.id])">
-                    <i-preview-open v-if="!visibleMap[row.id]" theme="outline" size="18" fill="#8c8c8c" />
-                    <i-preview-close v-else theme="outline" size="18" fill="#1890ff" />
+                    <i-preview-open v-if="!visibleMap[row.id]" theme="outline" size="18" fill="var(--color-text-muted)" />
+                    <i-preview-close v-else theme="outline" size="18" fill="var(--color-primary)" />
                   </a-button>
                 </div>
               </template>
@@ -191,10 +191,10 @@
     <el-dialog v-model="testImageModalVisible" top="1vh" :footer="null" centered width="80%" class="test-result-modal">
       <template #header>
         <div class="result-modal-header">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="#52c41a" style="margin-right: 8px">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="var(--color-success)" style="margin-right: 8px">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
           </svg>
-          <span style="color: #000">图像生成测试成功</span>
+          <span style="color: var(--color-text)">图像生成测试成功</span>
         </div>
       </template>
       <div class="test-result-content">
@@ -211,7 +211,7 @@
     <el-dialog v-model="testVideoVisible" top="1vh" :footer="null" centered width="80%" class="test-result-modal">
       <template #header>
         <div class="result-modal-header">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="#52c41a" style="margin-right: 8px">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="var(--color-success)" style="margin-right: 8px">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
           </svg>
           <span>视频生成测试成功</span>
@@ -555,20 +555,20 @@ async function confirmConfig() {
     .ant-modal-header {
       padding: 0;
       border-bottom: none;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--gradient-primary);
     }
 
     .ant-modal-body {
       padding: 24px;
-      background: #f5f7fa;
+      background: var(--color-surface-alt);
     }
   }
 }
 
 .modal-header {
   padding: 24px 24px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--color-surface);
 
   .header-content {
     display: flex;
@@ -579,7 +579,7 @@ async function confirmConfig() {
   .header-icon {
     width: 48px;
     height: 48px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(var(--color-surface-rgb), 0.2);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -587,7 +587,7 @@ async function confirmConfig() {
     backdrop-filter: blur(10px);
 
     svg {
-      color: white;
+      color: var(--color-surface);
     }
   }
 
@@ -599,21 +599,21 @@ async function confirmConfig() {
     margin: 0;
     font-size: 20px;
     font-weight: 600;
-    color: white;
+    color: var(--color-surface);
   }
 
   .header-subtitle {
     margin: 4px 0 0;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(var(--color-surface-rgb), 0.85);
   }
 }
 
 .data-container {
-  background: white;
+  background: var(--color-surface);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-card);
 }
 
 .toolbar {
@@ -622,7 +622,7 @@ async function confirmConfig() {
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 16px;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 2px solid var(--color-border-soft);
 
   .toolbar-left {
     .add-btn {
@@ -631,12 +631,12 @@ async function confirmConfig() {
       font-size: 14px;
       font-weight: 500;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+      box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.2);
       transition: all 0.3s ease;
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+        box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
       }
 
       svg {
@@ -663,17 +663,17 @@ async function confirmConfig() {
 
       :deep(.ant-input-affix-wrapper) {
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+        box-shadow: var(--shadow-card);
         transition: all 0.3s ease;
 
         &:hover {
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: var(--shadow-card-hover);
         }
 
         &:focus,
         &.ant-input-affix-wrapper-focused {
-          box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
-          border-color: #40a9ff;
+          box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.2);
+          border-color: var(--color-primary-hover);
         }
       }
     }
@@ -682,10 +682,10 @@ async function confirmConfig() {
   .toolbar-right {
     .model-count {
       padding: 8px 16px;
-      background: #f0f5ff;
+      background: var(--color-primary-soft);
       border-radius: 20px;
       font-size: 14px;
-      color: #1890ff;
+      color: var(--color-primary);
       font-weight: 500;
     }
   }
@@ -700,16 +700,16 @@ async function confirmConfig() {
     font-size: 14px;
 
     .vxe-header--row {
-      background: linear-gradient(to bottom, #fafafa, #f5f5f5);
+      background: linear-gradient(to bottom, var(--color-surface-alt), var(--color-surface-soft));
       font-weight: 600;
-      color: #262626;
+      color: var(--color-text);
     }
 
     .vxe-body--row {
       transition: all 0.2s ease;
 
       &:hover {
-        background: #f0f7ff !important;
+        background: var(--color-primary-soft) !important;
       }
     }
 
@@ -738,14 +738,14 @@ async function confirmConfig() {
   .model-name {
     .model-text {
       font-weight: 500;
-      color: #262626;
+      color: var(--color-text);
       font-family: "Consolas", "Monaco", monospace;
     }
   }
 
   .base-url {
     .url-text {
-      color: #595959;
+      color: var(--color-text-muted);
       font-size: 13px;
       font-family: "Consolas", "Monaco", monospace;
     }
@@ -759,7 +759,7 @@ async function confirmConfig() {
     .api-key-text {
       flex: 1;
       font-family: "Consolas", "Monaco", monospace;
-      color: #595959;
+      color: var(--color-text-muted);
       font-size: 13px;
     }
 
@@ -769,7 +769,7 @@ async function confirmConfig() {
       transition: all 0.2s ease;
 
       &:hover {
-        background: #f0f0f0;
+        background: var(--color-surface-alt);
         border-radius: 4px;
       }
     }
@@ -779,7 +779,7 @@ async function confirmConfig() {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #8c8c8c;
+    color: var(--color-text-weak);
     font-size: 13px;
   }
 
@@ -802,26 +802,26 @@ async function confirmConfig() {
       }
 
       &.test-btn {
-        box-shadow: 0 2px 4px rgba(24, 144, 255, 0.2);
+        box-shadow: 0 2px 4px rgba(var(--color-primary-rgb), 0.2);
 
         &:hover {
-          box-shadow: 0 4px 8px rgba(24, 144, 255, 0.3);
+          box-shadow: 0 4px 8px rgba(var(--color-primary-rgb), 0.3);
         }
       }
 
       &.edit-btn {
-        color: #1890ff;
-        border-color: #1890ff;
+        color: var(--color-primary);
+        border-color: var(--color-primary);
 
         &:hover {
-          background: #e6f7ff;
+          background: var(--color-primary-soft);
         }
       }
 
       &.delete-btn {
         &:hover {
           transform: translateY(-1px);
-          box-shadow: 0 2px 6px rgba(255, 77, 79, 0.3);
+          box-shadow: 0 2px 6px rgba(var(--color-error-rgb), 0.3);
         }
       }
     }
@@ -839,12 +839,12 @@ async function confirmConfig() {
     font-size: 14px;
     font-weight: 500;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+    box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.2);
     transition: all 0.3s ease;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
     }
 
     svg {
@@ -861,7 +861,7 @@ async function confirmConfig() {
   }
 
   .ant-modal-header {
-    background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+    background: var(--color-success);
     border-bottom: none;
     padding: 20px 24px;
   }
@@ -883,11 +883,11 @@ async function confirmConfig() {
   .test-result-tip {
     margin-bottom: 20px;
     padding: 12px 16px;
-    background: #f6ffed;
-    border-left: 4px solid #52c41a;
+    background: var(--color-success-soft);
+    border-left: 4px solid var(--color-success);
     border-radius: 4px;
     font-size: 14px;
-    color: #262626;
+    color: var(--color-text);
     line-height: 1.6;
   }
 
@@ -896,21 +896,21 @@ async function confirmConfig() {
     display: flex;
     justify-content: center;
     padding: 16px;
-    background: #fafafa;
+    background: var(--color-surface-alt);
     border-radius: 8px;
-    border: 2px dashed #d9d9d9;
+    border: 2px dashed var(--color-border);
   }
 
   .test-image-preview {
     max-width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(var(--color-ink-rgb), 0.1);
   }
 
   .test-video-preview {
     max-width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(var(--color-ink-rgb), 0.1);
   }
 }
 

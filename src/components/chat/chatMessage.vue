@@ -122,10 +122,10 @@ function handleClick(
 
   .notice-text {
     padding: 6px 16px;
-    background: rgba(0, 0, 0, 0.04);
+    background: var(--color-surface-alt);
     border-radius: 16px;
     font-size: 12px;
-    color: #888;
+    color: var(--color-text-muted);
   }
 }
 
@@ -149,7 +149,7 @@ function handleClick(
   flex-shrink: 0;
 
   .ai-avatar {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--gradient-primary);
 
     .avatar-text {
       font-size: 14px;
@@ -158,7 +158,7 @@ function handleClick(
   }
 
   .user-avatar {
-    background: var(--mainGradient);
+    background: var(--gradient-primary);
   }
 }
 
@@ -178,18 +178,18 @@ function handleClick(
   font-size: 14px;
 
   &.assistant-bubble {
-    background: #fff;
-    color: #1a1a1a;
-    border: 1px solid #eee;
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border-soft);
     border-bottom-left-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 3px rgba(var(--color-ink-rgb), 0.04);
   }
 
   &.user-bubble {
-    background: var(--mainGradient);
-    color: #fff;
+    background: var(--gradient-primary);
+    color: var(--color-surface);
     border-bottom-right-radius: 6px;
-    box-shadow: 0 2px 8px rgba(152, 16, 250, 0.25);
+    box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.25);
   }
 }
 
@@ -234,19 +234,19 @@ function handleClick(
       border-radius: 50%;
 
       &.success {
-        background: rgba(82, 196, 26, 0.1);
-        color: #52c41a;
+        background: var(--color-success-soft);
+        color: var(--color-success);
       }
 
       &.error {
-        background: rgba(255, 77, 79, 0.1);
-        color: #ff4d4f;
+        background: var(--color-error-soft);
+        color: var(--color-error);
       }
     }
 
     .result-text {
       font-size: 12px;
-      color: #888;
+      color: var(--color-text-muted);
     }
   }
 }
@@ -260,7 +260,7 @@ function handleClick(
   .thinking-dot {
     width: 8px;
     height: 8px;
-    background: #bbb;
+    background: var(--color-text-weak);
     border-radius: 50%;
     animation: bounce 1.4s infinite ease-in-out both;
 
@@ -308,8 +308,8 @@ function handleClick(
 
 // 思考过程折叠块样式
 .thinking-block {
-  background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
-  border: 1px solid #e8ecf4;
+  background: linear-gradient(135deg, var(--color-surface-soft) 0%, var(--color-primary-soft) 100%);
+  border: 1px solid var(--color-border-soft);
   border-radius: 12px;
   overflow: hidden;
 
@@ -322,7 +322,7 @@ function handleClick(
     transition: background 0.2s;
 
     &:hover {
-      background: rgba(102, 126, 234, 0.06);
+      background: rgba(var(--color-primary-rgb), 0.06);
     }
 
     .thinking-icon {
@@ -333,7 +333,7 @@ function handleClick(
       flex: 1;
       font-size: 13px;
       font-weight: 500;
-      color: #667eea;
+      color: var(--color-primary);
     }
 
     .thinking-toggle {
@@ -342,7 +342,7 @@ function handleClick(
       justify-content: center;
       width: 20px;
       height: 20px;
-      color: #667eea;
+      color: var(--color-primary);
       transition: transform 0.3s ease;
 
       &.collapsed {
@@ -352,14 +352,14 @@ function handleClick(
   }
 
   .thinking-block-content {
-    border-top: 1px solid #e8ecf4;
-    background: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid var(--color-border-soft);
+    background: rgba(var(--color-surface-rgb), 0.6);
 
     .thinking-text {
       padding: 12px 14px;
       font-size: 13px;
       line-height: 1.8;
-      color: #5a6078;
+      color: var(--color-text-muted);
       white-space: pre-wrap;
       max-height: 300px;
       overflow-y: auto;
@@ -374,7 +374,7 @@ function handleClick(
       }
 
       &::-webkit-scrollbar-thumb {
-        background: #d0d5e0;
+        background: var(--color-border);
         border-radius: 2px;
       }
     }

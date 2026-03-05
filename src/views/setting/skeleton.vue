@@ -32,6 +32,7 @@ const props = defineProps({
     .title {
       font-weight: 600;
       font-size: 1rem;
+      color: var(--color-text);
     }
   }
   .box {

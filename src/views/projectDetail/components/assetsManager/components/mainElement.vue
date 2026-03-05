@@ -404,7 +404,7 @@ onMounted(() => {
   .noImage {
     width: 100px;
     height: 100px;
-    background-color: #f6f7f9;
+    background-color: var(--color-surface-alt);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -423,35 +423,35 @@ onMounted(() => {
 
     &:hover {
       border-radius: 999px;
-      background-color: #f0edf5;
+      background-color: var(--color-primary-soft-2);
     }
 
     &.edit,
     &.magic {
-      color: #1b61fc;
+      color: var(--color-primary);
     }
 
     &.delete {
-      color: #e7010c;
+      color: var(--color-error);
     }
   }
 
   .empty {
     text-align: center;
     padding: 56px 0;
-    background: #fff;
+    background: var(--color-surface);
     border-radius: 16px;
-    border: 1px solid #eee;
+    border: 1px solid var(--color-border-soft);
 
     .emptyIcon {
       width: 96px;
       height: 96px;
-      background: #f3f4f6;
+      background: var(--color-surface-alt);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #aaa;
+      color: var(--color-text-weak);
       font-size: 45px;
       margin: 0 auto 18px;
     }
@@ -459,12 +459,12 @@ onMounted(() => {
     .emptyTitle {
       font-size: 17px;
       font-weight: 500;
-      color: #18181b;
+      color: var(--color-text);
       margin-bottom: 7px;
     }
 
     .emptyDesc {
-      color: #888;
+      color: var(--color-text-muted);
       margin-bottom: 17px;
       font-size: 14px;
     }

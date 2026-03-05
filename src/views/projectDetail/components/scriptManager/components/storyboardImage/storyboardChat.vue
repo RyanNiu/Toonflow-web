@@ -10,12 +10,12 @@
     :closable="false"
     width="90%">
     <template #title>
-      <div class="ac jb titHeader" style="background: #f9faff; height: 60px; display: flex; width: 100%">
+      <div class="ac jb titHeader" style="background: var(--color-surface-soft); height: 60px; display: flex; width: 100%">
         <div>
           <span style="font-weight: bold; font-size: 18px; margin-left: 24px">分镜图生成</span>
         </div>
         <div class="closePoint" @click="cancelModal">
-          <i-close theme="outline" size="18" fill="#9913FA" />
+          <i-close theme="outline" size="18" fill="var(--color-primary)" />
         </div>
       </div>
     </template>
@@ -693,13 +693,13 @@ function updateGridDataFromShots(shots: GridItem[]) {
   });
 
   gridData.value = newGridData;
-  console.log("%c Line:543 🥥 newGridData", "background:#6ec1c2", newGridData);
+  console.log("Line:543 🥥 newGridData", newGridData);
   console.log("GridData 已更新:", gridData.value);
 }
 
 function handleGenerateImage(grid: GridItem) {
   axios.post("/storyboard/generateShotImage", { ...grid, scriptId: props.scriptId, projectId: props.projectId }).then(() => {
-    console.log("%c Line:516 🍑 修改成功", "background:#b03734");
+    console.log("Line:516 🍑 修改成功");
   });
 }
 

@@ -386,13 +386,13 @@ const setVisible = (value) => {
 </script>
 
 <style lang="scss" scoped>
-$primaryColor: #1890ff;
-$bgColor: #e8e8e8;
-$gridLineColor: #d0d0d0;
-$shadowMedium: rgba(0, 0, 0, 0.15);
-$shadowDark: rgba(0, 0, 0, 0.3);
-$promptBg: rgba(0, 0, 0, 0.6);
-$hoverBg: #e8f4ff;
+$primaryColor: var(--color-primary);
+$bgColor: var(--color-surface-alt);
+$gridLineColor: var(--color-border);
+$shadowMedium: rgba(var(--color-ink-rgb), 0.15);
+$shadowDark: rgba(var(--color-ink-rgb), 0.3);
+$promptBg: rgba(var(--color-ink-rgb), 0.6);
+$hoverBg: rgba(var(--color-primary-rgb), 0.08);
 
 .viewport {
   width: 100%;
@@ -418,10 +418,10 @@ $hoverBg: #e8f4ff;
 .gridContainer {
   position: absolute;
   padding: 10px;
-  background: #fff;
-  border: 1px solid #ccc;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(var(--color-surface-rgb), 0.1);
   user-select: none;
   transition: box-shadow 0.3s;
 
@@ -478,14 +478,14 @@ $hoverBg: #e8f4ff;
 .grid {
   display: grid;
   gap: 2px;
-  border: 2px solid #ccc;
-  background: #ccc;
+  border: 2px solid var(--color-border);
+  background: var(--color-border);
   border-radius: 4px;
   overflow: hidden;
 }
 
 .gridItem {
-  background: #fff;
+  background: var(--color-surface);
   overflow: hidden;
   position: relative;
   cursor: pointer;
@@ -528,8 +528,8 @@ $hoverBg: #e8f4ff;
     position: absolute;
     top: 4px;
     left: 4px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
+    background: rgba(var(--color-ink-rgb), 0.6);
+    color: var(--color-surface);
     backdrop-filter: blur(4px);
     font-size: 12px;
     padding: 2px;
@@ -558,7 +558,7 @@ $hoverBg: #e8f4ff;
   left: 0;
   right: 0;
   background: $promptBg;
-  color: #fff;
+  color: var(--color-surface);
   font-size: 10px;
   padding: 2px 4px;
   white-space: nowrap;
@@ -573,14 +573,14 @@ $hoverBg: #e8f4ff;
   top: 5px;
   right: 5px;
   display: none;
-  color: #fff;
+  color: var(--color-surface);
 }
 </style>
 
 <style lang="scss">
 .viewer-prompt {
-  color: #ffffff !important;
-  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-surface) !important;
+  background: rgba(var(--color-ink-rgb), 0.3);
   padding: 5px;
   border-radius: 5px;
 }

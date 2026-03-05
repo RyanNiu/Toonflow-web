@@ -496,29 +496,29 @@ defineExpose({ getData });
   align-items: center;
   margin-bottom: 20px;
   padding: 24px;
-  background: var(--mainGradient);
+  background: var(--gradient-primary);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(152, 16, 250, 0.25);
+  box-shadow: 0 4px 20px rgba(var(--color-primary-rgb), 0.25);
 
   .header-content {
     .page-title {
       font-size: 22px;
       font-weight: 700;
       margin: 0 0 6px;
-      color: #fff;
+      color: var(--color-surface);
     }
     .page-desc {
       margin: 0;
       opacity: 0.9;
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(var(--color-surface-rgb), 0.9);
     }
   }
 
   .add-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #fff;
+    background: rgba(var(--color-surface-rgb), 0.2);
+    border: 1px solid rgba(var(--color-surface-rgb), 0.5);
+    color: var(--color-surface);
     height: 40px;
     padding: 0 20px;
     display: flex;
@@ -528,8 +528,8 @@ defineExpose({ getData });
     transition: all 0.3s;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.35);
-      border-color: #fff;
+      background: rgba(var(--color-surface-rgb), 0.35);
+      border-color: var(--color-surface);
       transform: translateY(-1px);
     }
   }
@@ -564,14 +564,14 @@ defineExpose({ getData });
     border-bottom: 1px solid var(--td-brand-color-light-hover);
 
     .episode-badge {
-      background: var(--mainGradient);
-      color: #fff;
+      background: var(--gradient-primary);
+      color: var(--color-surface);
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 13px;
       font-weight: 600;
       margin-right: 14px;
-      box-shadow: 0 2px 8px rgba(152, 16, 250, 0.3);
+      box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.3);
     }
 
     .card-title {
@@ -751,14 +751,14 @@ defineExpose({ getData });
   }
 
   .empty-btn {
-    background: var(--mainGradient);
+    background: var(--gradient-primary);
     border: none;
     height: 40px;
     padding: 0 24px;
     font-weight: 500;
 
     &:hover {
-      background: var(--mainGradientHover);
+      background: var(--gradient-primary-hover);
     }
   }
 }

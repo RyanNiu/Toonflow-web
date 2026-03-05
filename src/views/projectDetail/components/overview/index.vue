@@ -283,8 +283,8 @@ function updateProject() {
             color: var(--td-brand-color);
           }
           &.statBlue {
-            background: rgba(33, 119, 227, 0.1);
-            color: #2177e3;
+            background: rgba(var(--color-primary-rgb), 0.1);
+            color: var(--color-primary);
           }
           &.statGreen {
             background: var(--td-success-color-light);

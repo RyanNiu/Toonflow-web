@@ -54,7 +54,7 @@
                   <span>视频</span>
                 </div>
                 <div class="play-overlay">
-                  <i-play-one theme="filled" :size="24" fill="#fff" />
+                  <i-play-one theme="filled" :size="24" fill="var(--color-surface)" />
                 </div>
                 <div class="duration-badge" v-if="result.duration">
                   {{ formatDuration(result.duration) }}
@@ -83,7 +83,7 @@
             <template v-else>
               <a-tooltip :title="result.errorReason || '生成失败'">
                 <div class="status-cover failed">
-                  <i-close-one theme="filled" :size="24" fill="#ef4444" />
+                  <i-close-one theme="filled" :size="24" fill="var(--color-error)" />
                   <span>生成失败</span>
                 </div>
               </a-tooltip>
@@ -289,7 +289,7 @@ onMounted(() => {
     gap: 20px;
 
     .config-section {
-      background: #f9fafb;
+      background: var(--color-surface-soft);
       border-radius: 12px;
       padding: 20px;
 
@@ -297,7 +297,7 @@ onMounted(() => {
         margin: 0 0 16px;
         font-size: 16px;
         font-weight: 600;
-        color: #1f2937;
+        color: var(--color-text);
       }
     }
 
@@ -305,7 +305,7 @@ onMounted(() => {
       .action-hint {
         margin: 10px 0 0;
         font-size: 12px;
-        color: #9ca3af;
+        color: var(--color-text-weak);
         text-align: center;
       }
     }
@@ -322,12 +322,12 @@ onMounted(() => {
       margin: 0 0 16px;
       font-size: 16px;
       font-weight: 600;
-      color: #1f2937;
+      color: var(--color-text);
 
       .result-count {
         padding: 2px 10px;
-        background: rgba(147, 51, 234, 0.1);
-        color: #9333ea;
+        background: rgba(var(--color-primary-rgb), 0.1);
+        color: var(--color-primary);
         border-radius: 20px;
         font-size: 12px;
         font-weight: 500;
@@ -340,7 +340,7 @@ onMounted(() => {
       gap: 16px;
 
       .result-card {
-        background: #fff;
+        background: var(--color-surface);
         border-radius: 12px;
         overflow: hidden;
         border: 2px solid transparent;
@@ -348,8 +348,8 @@ onMounted(() => {
         cursor: pointer;
 
         &:hover {
-          border-color: rgba(147, 51, 234, 0.3);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border-color: rgba(var(--color-primary-rgb), 0.3);
+          box-shadow: var(--shadow-card);
         }
 
         .video-cover {
@@ -368,13 +368,13 @@ onMounted(() => {
           .video-placeholder {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+            background: linear-gradient(135deg, var(--color-primary-soft), var(--color-primary-soft-2));
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            color: #9333ea;
+            color: var(--color-primary);
 
             span {
               font-size: 13px;
@@ -385,7 +385,7 @@ onMounted(() => {
           .play-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(var(--color-ink-rgb), 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -402,8 +402,8 @@ onMounted(() => {
             bottom: 8px;
             right: 8px;
             padding: 2px 8px;
-            background: rgba(0, 0, 0, 0.75);
-            color: #fff;
+            background: rgba(var(--color-ink-rgb), 0.75);
+            color: var(--color-surface);
             border-radius: 4px;
             font-size: 11px;
           }
@@ -418,7 +418,7 @@ onMounted(() => {
             display: flex;
             align-items: center;
             gap: 4px;
-            color: #9333ea;
+            color: var(--color-primary);
             font-size: 13px;
             font-weight: 500;
           }
@@ -433,28 +433,28 @@ onMounted(() => {
           gap: 10px;
 
           &.generating {
-            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+            background: linear-gradient(135deg, var(--color-primary-soft), var(--color-primary-soft-2));
 
             .loading-spinner {
               width: 32px;
               height: 32px;
-              border: 3px solid #e5e7eb;
-              border-top-color: #9333ea;
+              border: 3px solid var(--color-border);
+              border-top-color: var(--color-primary);
               border-radius: 50%;
               animation: spin 1s linear infinite;
             }
 
             span {
-              color: #7c3aed;
+              color: var(--color-primary-hover);
               font-size: 13px;
             }
           }
 
           &.failed {
-            background: #fef2f2;
+            background: var(--color-error-soft);
 
             span {
-              color: #ef4444;
+              color: var(--color-error);
               font-size: 13px;
             }
           }
@@ -468,19 +468,19 @@ onMounted(() => {
       align-items: center;
       justify-content: center;
       padding: 60px 20px;
-      background: #f9fafb;
+      background: var(--color-surface-soft);
       border-radius: 12px;
-      border: 2px dashed #e5e7eb;
+      border: 2px dashed var(--color-border);
 
       .empty-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+        background: linear-gradient(135deg, var(--color-primary-soft), var(--color-primary-soft-2));
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #9333ea;
+        color: var(--color-primary);
         margin-bottom: 16px;
       }
 
@@ -488,13 +488,13 @@ onMounted(() => {
         margin: 0 0 8px;
         font-size: 16px;
         font-weight: 600;
-        color: #374151;
+        color: var(--color-text);
       }
 
       .empty-desc {
         margin: 0;
         font-size: 13px;
-        color: #9ca3af;
+        color: var(--color-text-weak);
       }
     }
   }
@@ -505,7 +505,7 @@ onMounted(() => {
     width: 100%;
     max-height: 70vh;
     display: block;
-    background: #000;
+    background: var(--color-text);
     border-radius: 8px;
   }
 }

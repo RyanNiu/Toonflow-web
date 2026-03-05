@@ -13,7 +13,7 @@
         <a-typography-title :level="4" style="margin: 0">镜头编辑器</a-typography-title>
         <a-button type="text" @click="closeModal">
           <template #icon>
-            <i-close theme="outline" size="18" fill="#9913FA" />
+            <i-close theme="outline" size="18" fill="var(--color-primary)" />
           </template>
         </a-button>
       </a-flex>
@@ -33,7 +33,7 @@
             </a-col>
             <a-col :span="6">
               <div class="upload-card" @click="lensImage">
-                <i-upload-picture theme="outline" size="36" fill="#9810fa" />
+                <i-upload-picture theme="outline" size="36" fill="var(--color-primary)" />
               </div>
             </a-col>
           </a-row>
@@ -48,12 +48,12 @@
                 <div class="image-actions">
                   <a-button type="text" size="small" danger @click.stop="delOtherImgs(index)">
                     <template #icon>
-                      <i-close-one theme="outline" size="16" fill="red" />
+                      <i-close-one theme="outline" size="16" fill="var(--color-error)" />
                     </template>
                   </a-button>
                   <a-button v-if="item.filePath" type="text" size="small" @click.stop="startPreview(item.filePath)">
                     <template #icon>
-                      <i-preview-open theme="outline" size="16" fill="#9913FA" />
+                      <i-preview-open theme="outline" size="16" fill="var(--color-primary)" />
                     </template>
                   </a-button>
                 </div>
@@ -62,7 +62,7 @@
             </a-col>
             <a-col :span="6">
               <div class="upload-card" @click="handleSelectOtherImgs">
-                <i-upload-picture theme="outline" size="36" fill="#9810fa" />
+                <i-upload-picture theme="outline" size="36" fill="var(--color-primary)" />
               </div>
             </a-col>
           </a-row>
@@ -96,18 +96,18 @@
                     <a-popconfirm title="确定要删除这张图片吗？" ok-text="确定" cancel-text="取消" @confirm="delResult(index)">
                       <a-button type="text" size="small" danger @click.stop>
                         <template #icon>
-                          <i-close-one theme="outline" size="16" fill="#E60076" />
+                          <i-close-one theme="outline" size="16" fill="var(--color-error)" />
                         </template>
                       </a-button>
                     </a-popconfirm>
                     <a-button v-if="item.filePath" type="text" size="small" @click.stop="startPreview(item.filePath)">
                       <template #icon>
-                        <i-preview-open theme="outline" size="16" fill="#9913FA" />
+                        <i-preview-open theme="outline" size="16" fill="var(--color-primary)" />
                       </template>
                     </a-button>
                   </div>
                   <div v-if="resultSelectedIndex === index" class="selected-overlay">
-                    <i-check theme="outline" size="70" fill="#4deb23" strokeLinejoin="bevel" />
+                    <i-check theme="outline" size="70" fill="var(--color-success)" strokeLinejoin="bevel" />
                   </div>
                 </div>
               </a-col>
@@ -379,14 +379,14 @@ defineExpose({
 
 <style lang="scss" scoped>
 .modal-header {
-  background: #f9faff;
+  background: var(--color-surface-paper);
   height: 60px;
   padding: 0 24px;
 }
 
 .modal-content {
   height: 70vh;
-  background: #f3f4f6;
+  background: var(--color-surface-soft);
   min-width: 800px;
 }
 
@@ -403,12 +403,12 @@ defineExpose({
   aspect-ratio: 1 / 1;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid #d9d9d9;
+  border: 1px solid var(--color-border);
   cursor: pointer;
-  background: #fafafa;
+  background: var(--color-surface-alt);
   text-align: center;
   &:hover {
-    border-color: #9913fa;
+    border-color: var(--color-primary);
 
     .image-actions {
       opacity: 1;
@@ -443,12 +443,12 @@ defineExpose({
   padding: 2px;
 
   .ant-btn {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(var(--color-surface-rgb), 0.9);
     border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(var(--color-ink-rgb), 0.12);
 
     &:hover {
-      background: rgba(255, 255, 255, 1);
+      background: rgba(var(--color-surface-rgb), 1);
     }
   }
 }
@@ -458,21 +458,21 @@ defineExpose({
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px dashed #d9d9d9;
+  border: 1px dashed var(--color-border);
   border-radius: 8px;
   cursor: pointer;
-  background: #fafafa;
+  background: var(--color-surface-alt);
   transition: all 0.2s;
 
   &:hover {
-    border-color: #9810fa;
-    background: #f5f0ff;
+    border-color: var(--color-primary);
+    background: var(--color-primary-soft);
   }
 }
 
 .image-selected {
-  border: 2px solid #9913fa;
-  box-shadow: 0 0 8px rgba(153, 19, 250, 0.3);
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 8px rgba(var(--color-primary-rgb), 0.3);
 }
 
 .selected-overlay {
@@ -481,7 +481,7 @@ defineExpose({
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(var(--color-ink-rgb), 0.4);
   display: flex;
   align-items: center;
   justify-content: center;

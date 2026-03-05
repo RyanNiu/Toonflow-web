@@ -469,13 +469,6 @@ watch(batchShow, (val) => {
 </script>
 
 <style lang="scss" scoped>
-:root {
-  --mainColor: #9810fa;
-  --mainColorLight: #faf5ff;
-  --mainColorHover: #7c0dd4;
-  --mainGradient: linear-gradient(135deg, #9810fa 0%, #7c3aed 100%);
-}
-
 .element-manager {
   margin-top: 20px;
   // 头部
@@ -484,9 +477,9 @@ watch(batchShow, (val) => {
     align-items: center;
     justify-content: space-between;
     padding: 20px 24px;
-    background: linear-gradient(135deg, var(--mainColorLight) 0%, #f0f9ff 50%, #eff6ff 100%);
+    background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-surface-alt) 50%, var(--color-surface-soft) 100%);
     border-radius: 16px;
-    border: 1px solid rgba(152, 16, 250, 0.1);
+    border: 1px solid rgba(var(--color-primary-rgb), 0.1);
     margin-bottom: 20px;
 
     .header-content {
@@ -500,10 +493,10 @@ watch(batchShow, (val) => {
         justify-content: center;
         width: 48px;
         height: 48px;
-        background: linear-gradient(135deg, var(--mainColor), #7c3aed);
+        background: var(--gradient-primary);
         border-radius: 14px;
-        color: #fff;
-        box-shadow: 0 6px 20px rgba(152, 16, 250, 0.35);
+        color: var(--color-surface);
+        box-shadow: var(--shadow-card-hover);
       }
 
       .header-text {
@@ -511,13 +504,13 @@ watch(batchShow, (val) => {
           margin: 0 0 4px;
           font-size: 20px;
           font-weight: 700;
-          color: #1f2937;
+          color: var(--color-text);
         }
 
         .subtitle {
           margin: 0;
           font-size: 14px;
-          color: #6b7280;
+          color: var(--color-text-muted);
         }
       }
     }
@@ -528,19 +521,19 @@ watch(batchShow, (val) => {
         flex-direction: column;
         align-items: center;
         padding: 12px 24px;
-        background: #fff;
+        background: var(--color-surface);
         border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        box-shadow: var(--shadow-card);
 
         .stat-value {
           font-size: 24px;
           font-weight: 700;
-          color: var(--mainColor);
+          color: var(--color-primary);
         }
 
         .stat-label {
           font-size: 12px;
-          color: #9ca3af;
+          color: var(--color-text-weak);
           margin-top: 2px;
         }
       }
@@ -553,17 +546,17 @@ watch(batchShow, (val) => {
     align-items: center;
     justify-content: space-between;
     padding: 16px 20px;
-    background: #fff;
+    background: var(--color-surface);
     border-radius: 14px;
-    border: 1px solid #f3f4f6;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
     margin-bottom: 20px;
 
     .tab-group {
       display: flex;
       gap: 8px;
       padding: 4px;
-      background: #f9fafb;
+      background: var(--color-surface-soft);
       border-radius: 12px;
 
       .tab-btn {
@@ -576,19 +569,19 @@ watch(batchShow, (val) => {
         border-radius: 10px;
         font-size: 14px;
         font-weight: 500;
-        color: #6b7280;
+        color: var(--color-text-muted);
         cursor: pointer;
         transition: all 0.25s ease;
 
         &:hover {
-          color: var(--mainColor);
-          background: rgba(152, 16, 250, 0.08);
+          color: var(--color-primary);
+          background: rgba(var(--color-primary-rgb), 0.08);
         }
 
         &.active {
-          background: linear-gradient(135deg, var(--mainColor), #7c3aed);
-          color: #fff;
-          box-shadow: 0 4px 12px rgba(152, 16, 250, 0.35);
+          background: var(--gradient-primary);
+          color: var(--color-surface);
+          box-shadow: var(--shadow-card-hover);
         }
       }
     }
@@ -610,24 +603,24 @@ watch(batchShow, (val) => {
         transition: all 0.25s ease;
 
         &.primary {
-          background: linear-gradient(135deg, var(--mainColor), #7c3aed);
-          color: #fff;
-          box-shadow: 0 4px 14px rgba(152, 16, 250, 0.35);
+          background: var(--gradient-primary);
+          color: var(--color-surface);
+          box-shadow: var(--shadow-card-hover);
 
           &:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(152, 16, 250, 0.45);
+            box-shadow: var(--shadow-card-hover);
           }
         }
 
         &.secondary {
-          background: var(--mainColorLight);
-          color: var(--mainColor);
-          border: 1px solid rgba(152, 16, 250, 0.2);
+          background: var(--color-primary-soft);
+          color: var(--color-primary);
+          border: 1px solid rgba(var(--color-primary-rgb), 0.2);
 
           &:hover:not(:disabled) {
-            background: rgba(152, 16, 250, 0.15);
-            border-color: rgba(152, 16, 250, 0.3);
+            background: rgba(var(--color-primary-rgb), 0.15);
+            border-color: rgba(var(--color-primary-rgb), 0.3);
           }
         }
 
@@ -645,9 +638,9 @@ watch(batchShow, (val) => {
     // 剧本选择器
     .script-selector {
       padding: 16px 20px;
-      background: #fff;
+      background: var(--color-surface);
       border-radius: 14px;
-      border: 1px solid #f3f4f6;
+      border: 1px solid var(--color-border);
       margin-bottom: 20px;
 
       .script-label {
@@ -657,7 +650,7 @@ watch(batchShow, (val) => {
         margin-bottom: 14px;
         font-size: 14px;
         font-weight: 600;
-        color: #374151;
+        color: var(--color-text);
       }
 
       .script-list {
@@ -667,25 +660,25 @@ watch(batchShow, (val) => {
 
         .script-btn {
           padding: 8px 18px;
-          background: #f9fafb;
-          border: 1px solid #e5e7eb;
+          background: var(--color-surface-soft);
+          border: 1px solid var(--color-border);
           border-radius: 8px;
           font-size: 13px;
-          color: #4b5563;
+          color: var(--color-text-muted);
           cursor: pointer;
           transition: all 0.2s ease;
 
           &:hover {
-            border-color: var(--mainColor);
-            color: var(--mainColor);
-            background: var(--mainColorLight);
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background: var(--color-primary-soft);
           }
 
           &.active {
-            background: linear-gradient(135deg, var(--mainColor), #7c3aed);
-            color: #fff;
+            background: var(--gradient-primary);
+            color: var(--color-surface);
             border-color: transparent;
-            box-shadow: 0 3px 10px rgba(152, 16, 250, 0.3);
+            box-shadow: var(--shadow-card);
           }
         }
       }
@@ -698,9 +691,9 @@ watch(batchShow, (val) => {
       align-items: center;
       justify-content: center;
       padding: 80px 40px;
-      background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+      background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
       border-radius: 20px;
-      border: 2px dashed #e5e7eb;
+      border: 2px dashed var(--color-border);
 
       .empty-icon {
         width: 100px;
@@ -708,9 +701,9 @@ watch(batchShow, (val) => {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, var(--mainColorLight), #f3e8ff);
+        background: linear-gradient(135deg, var(--color-primary-soft), var(--color-primary-soft-2));
         border-radius: 50%;
-        color: var(--mainColor);
+        color: var(--color-primary);
         margin-bottom: 24px;
       }
 
@@ -718,13 +711,13 @@ watch(batchShow, (val) => {
         margin: 0 0 8px;
         font-size: 18px;
         font-weight: 600;
-        color: #1f2937;
+        color: var(--color-text);
       }
 
       .empty-desc {
         margin: 0 0 24px;
         font-size: 14px;
-        color: #9ca3af;
+        color: var(--color-text-weak);
         text-align: center;
         max-width: 300px;
       }
@@ -734,35 +727,35 @@ watch(batchShow, (val) => {
         align-items: center;
         gap: 8px;
         padding: 12px 28px;
-        background: linear-gradient(135deg, var(--mainColor), #7c3aed);
-        color: #fff;
+        background: var(--gradient-primary);
+        color: var(--color-surface);
         border: none;
         border-radius: 12px;
         font-size: 15px;
         font-weight: 500;
         cursor: pointer;
         transition: all 0.25s ease;
-        box-shadow: 0 4px 14px rgba(152, 16, 250, 0.35);
+        box-shadow: var(--shadow-card-hover);
 
         &:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 24px rgba(152, 16, 250, 0.45);
+          box-shadow: var(--shadow-card-hover);
         }
       }
     }
 
     // 表格
     .table-wrapper {
-      background: #fff;
+      background: var(--color-surface);
       border-radius: 16px;
-      border: 1px solid #f3f4f6;
+      border: 1px solid var(--color-border);
       overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      box-shadow: var(--shadow-card);
 
       .name-cell {
         .name-text {
           font-weight: 600;
-          color: #1f2937;
+          color: var(--color-text);
         }
       }
 
@@ -775,7 +768,7 @@ watch(batchShow, (val) => {
           height: 100px;
           object-fit: cover;
           border-radius: 10px;
-          border: 1px solid #f3f4f6;
+          border: 1px solid var(--color-border);
         }
 
         .no-image {
@@ -786,9 +779,9 @@ watch(batchShow, (val) => {
           align-items: center;
           justify-content: center;
           gap: 6px;
-          background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+          background: linear-gradient(135deg, var(--color-surface-soft), var(--color-surface-alt));
           border-radius: 10px;
-          color: #9ca3af;
+          color: var(--color-text-weak);
           font-size: 12px;
         }
       }
@@ -798,7 +791,7 @@ watch(batchShow, (val) => {
       .remark-text {
         margin: 0;
         font-size: 13px;
-        color: #4b5563;
+        color: var(--color-text-muted);
         line-height: 1.6;
         display: -webkit-box;
         -webkit-line-clamp: 3;
@@ -808,20 +801,20 @@ watch(batchShow, (val) => {
 
       .prompt-textarea {
         border-radius: 8px;
-        border-color: #e5e7eb;
+        border-color: var(--color-border);
         font-size: 13px;
 
         &:focus {
-          border-color: var(--mainColor);
-          box-shadow: 0 0 0 3px rgba(152, 16, 250, 0.1);
+          border-color: var(--color-primary);
+          box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
         }
       }
 
       .duration-badge {
         display: inline-block;
         padding: 4px 12px;
-        background: linear-gradient(135deg, var(--mainColorLight), #f3e8ff);
-        color: var(--mainColor);
+        background: linear-gradient(135deg, var(--color-primary-soft), var(--color-primary-soft-2));
+        color: var(--color-primary);
         border-radius: 20px;
         font-size: 13px;
         font-weight: 600;
@@ -846,26 +839,26 @@ watch(batchShow, (val) => {
           transition: all 0.2s ease;
 
           &.edit {
-            color: var(--mainColor);
+            color: var(--color-primary);
 
             &:hover {
-              background: var(--mainColorLight);
+              background: var(--color-primary-soft);
             }
           }
 
           &.magic {
-            color: #f59e0b;
+            color: var(--color-warning);
 
             &:hover {
-              background: #fffbeb;
+              background: var(--color-warning-soft);
             }
           }
 
           &.delete {
-            color: #ef4444;
+            color: var(--color-error);
 
             &:hover {
-              background: #fef2f2;
+              background: var(--color-error-soft);
             }
           }
         }
@@ -877,31 +870,31 @@ watch(batchShow, (val) => {
 // vxe-table 自定义样式
 :deep(.vxe-table) {
   .vxe-header--column {
-    background: #f9fafb !important;
+    background: var(--color-surface-soft) !important;
     font-weight: 600;
-    color: #374151;
+    color: var(--color-text);
   }
 
   .vxe-body--row {
     &:hover {
-      background: var(--mainColorLight) !important;
+      background: var(--color-primary-soft) !important;
     }
 
     &.row--stripe {
-      background: #fafafa;
+      background: var(--color-surface-alt);
     }
   }
 
   .vxe-checkbox--icon,
   .vxe-radio--icon {
-    color: var(--mainColor);
+    color: var(--color-primary);
   }
 
   .vxe-cell--checkbox,
   .vxe-cell--radio {
     .vxe-checkbox--checked-icon,
     .vxe-radio--checked-icon {
-      color: var(--mainColor);
+      color: var(--color-primary);
     }
   }
 }

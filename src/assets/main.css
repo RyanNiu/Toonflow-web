@@ -3,8 +3,98 @@ body,
 #app {
   margin: 0;
 }
+
+#app {
+  min-height: 100vh;
+  animation: appFadeIn var(--motion-medium) ease;
+}
+
+@keyframes appFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(900px 520px at 0% -12%, rgba(var(--color-primary-rgb), 0.14), transparent 58%),
+    radial-gradient(700px 460px at 100% 0%, rgba(var(--color-info-rgb, 6, 182, 212), 0.1), transparent 55%),
+    linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface-paper) 52%, var(--color-bg) 100%);
+  background-attachment: fixed;
+}
+
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+small {
+  color: var(--color-text-weak);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--motion-fast) ease;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: rgba(var(--color-primary-rgb), 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
 }
 
 .pr {

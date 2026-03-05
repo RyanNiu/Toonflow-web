@@ -70,9 +70,7 @@ const editForm = ref<VideoModelType | undefined>(undefined);
 const videoModelDialogShow = ref(false);
 
 // 获取厂商标签主题
-function getManufacturerTheme(
-  manufacturer: string
-): "primary" | "warning" | "success" | "danger" | "default" | undefined {
+function getManufacturerTheme(manufacturer: string): "primary" | "warning" | "success" | "danger" | "default" | undefined {
   const themes: Record<string, "primary" | "warning" | "success" | "danger" | "default"> = {
     deepSeek: "primary",
     volcengine: "warning",
@@ -177,7 +175,7 @@ onMounted(() => {
     background: var(--td-bg-color-container);
 
     &:hover {
-      box-shadow: 0 8px 24px rgba(var(--td-brand-color), 0.12);
+      box-shadow: var(--shadow-card-hover);
       border-color: var(--td-brand-color);
     }
   }

@@ -25,7 +25,7 @@
                   <a-tag color="blue">{{ item.model }}</a-tag>
                 </div>
                 <div class="model-value unconfigured" v-else>
-                  <i-attention theme="outline" size="14" fill="#faad14" />
+                  <i-attention theme="outline" size="14" fill="var(--color-warning)" />
                   <span>未配置</span>
                 </div>
               </div>
@@ -54,7 +54,7 @@
             <template #title>
               <div class="video-card-title">
                 <div class="video-icon">
-                  <i-video theme="filled" size="18" fill="#9913FA" />
+                  <i-video theme="filled" size="18" fill="var(--color-primary)" />
                 </div>
                 <div class="video-info">
                   <span class="video-model-name">{{ video.model }}</span>
@@ -84,7 +84,7 @@
       </div>
       <a-empty v-else description="暂无视频模型，点击上方按钮添加" class="empty-state">
         <template #image>
-          <i-video theme="outline" size="64" fill="#d9d9d9" />
+          <i-video theme="outline" size="64" fill="var(--color-text-weak)" />
         </template>
       </a-empty>
     </div>
@@ -173,7 +173,7 @@
                     <span class="linkTitle">GitHub 仓库</span>
                     <span class="linkDesc">查看源代码、提交 Issue 或贡献代码</span>
                   </div>
-                  <i-right theme="outline" size="16" fill="#9ca3af" />
+                  <i-right theme="outline" size="16" fill="var(--color-text-weak)" />
                 </div>
 
                 <div class="linkItem">
@@ -184,7 +184,7 @@
                     <span class="linkTitle">Gitee 仓库</span>
                     <span class="linkDesc">国内镜像，查看源代码或贡献代码</span>
                   </div>
-                  <i-right theme="outline" size="16" fill="#9ca3af" />
+                  <i-right theme="outline" size="16" fill="var(--color-text-weak)" />
                 </div>
 
                 <div class="linkItem" @click="checkUpdate">
@@ -195,7 +195,7 @@
                     <span class="linkTitle">检查更新 (GitHub)</span>
                     <span class="linkDesc">前往 GitHub Releases 查看最新版本</span>
                   </div>
-                  <i-right theme="outline" size="16" fill="#9ca3af" />
+                  <i-right theme="outline" size="16" fill="var(--color-text-weak)" />
                 </div>
 
                 <div class="linkItem" @click="checkUpdateGitee">
@@ -206,7 +206,7 @@
                     <span class="linkTitle">检查更新 (Gitee)</span>
                     <span class="linkDesc">前往 Gitee Releases 查看最新版本</span>
                   </div>
-                  <i-right theme="outline" size="16" fill="#9ca3af" />
+                  <i-right theme="outline" size="16" fill="var(--color-text-weak)" />
                 </div>
 
                 <div class="linkItem" @click="openLicense">
@@ -217,12 +217,12 @@
                     <span class="linkTitle">开源协议</span>
                     <span class="linkDesc">本项目基于 AGPL-3.0 协议开源</span>
                   </div>
-                  <i-right theme="outline" size="16" fill="#9ca3af" />
+                  <i-right theme="outline" size="16" fill="var(--color-text-weak)" />
                 </div>
               </div>
 
               <div class="licenseBadge">
-                <i-certificate theme="outline" size="16" fill="#9913FA" />
+                <i-certificate theme="outline" size="16" fill="var(--color-primary)" />
                 <span>AGPL-3.0 License</span>
               </div>
             </div>
@@ -606,16 +606,16 @@ function openLicense() {
           height: 100%;
           border-radius: 12px;
           transition: all 0.3s ease;
-          border: 1px solid #f0f0f0;
+          border: 1px solid var(--color-border-soft);
 
           &:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(153, 19, 250, 0.15);
-            border-color: var(--mainColor);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--color-primary);
           }
 
           :deep(.ant-card-head) {
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid var(--color-border-soft);
             padding: 16px 20px;
           }
 
@@ -624,8 +624,8 @@ function openLicense() {
           }
 
           :deep(.ant-card-actions) {
-            border-top: 1px solid #f0f0f0;
-            background: #fafafa;
+            border-top: 1px solid var(--color-border-soft);
+            background: var(--color-surface-alt);
 
             > li {
               margin: 8px 0;
@@ -643,15 +643,15 @@ function openLicense() {
               display: flex;
               align-items: center;
               justify-content: center;
-              background: linear-gradient(135deg, var(--mainColorLight) 0%, #ede9fe 100%);
+              background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
               border-radius: 8px;
-              color: var(--mainColor);
+              color: var(--color-primary);
             }
 
             .card-title-text {
               font-size: 16px;
               font-weight: 600;
-              color: #1f2937;
+              color: var(--color-text);
             }
           }
 
@@ -662,19 +662,19 @@ function openLicense() {
 
               .model-label {
                 font-size: 13px;
-                color: #6b7280;
+                color: var(--color-text-muted);
                 font-weight: 500;
               }
 
               .model-value {
                 font-size: 14px;
-                color: #1f2937;
+                color: var(--color-text);
 
                 &.unconfigured {
                   display: flex;
                   align-items: center;
                   gap: 6px;
-                  color: #faad14;
+                  color: var(--color-warning);
                 }
               }
             }
@@ -695,7 +695,7 @@ function openLicense() {
   .video-model-section {
     margin-top: 40px;
     padding: 24px;
-    background: #fafafa;
+    background: var(--color-surface-alt);
     border-radius: 12px;
 
     .section-header {
@@ -707,14 +707,14 @@ function openLicense() {
       .section-title {
         font-size: 20px;
         font-weight: 600;
-        color: #1f2937;
+        color: var(--color-text);
         display: flex;
         align-items: center;
         gap: 12px;
         margin: 0;
 
         i {
-          color: var(--mainColor);
+          color: var(--color-primary);
         }
       }
 
@@ -741,17 +741,17 @@ function openLicense() {
         :deep(.ant-card) {
           border-radius: 12px;
           transition: all 0.3s ease;
-          border: 1px solid #e5e7eb;
-          background: white;
+          border: 1px solid var(--color-border);
+          background: var(--color-surface);
 
           &:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(153, 19, 250, 0.12);
-            border-color: var(--mainColor);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--color-primary);
           }
 
           .ant-card-head {
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid var(--color-border-soft);
             padding: 16px 20px;
           }
 
@@ -772,7 +772,7 @@ function openLicense() {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f5f0ff 0%, #ede9fe 100%);
+            background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
             border-radius: 8px;
           }
 
@@ -785,7 +785,7 @@ function openLicense() {
             .video-model-name {
               font-size: 15px;
               font-weight: 600;
-              color: #1f2937;
+              color: var(--color-text);
             }
 
             .manufacturer-tag {
@@ -816,13 +816,13 @@ function openLicense() {
             font-size: 13px;
 
             .detail-label {
-              color: #6b7280;
+              color: var(--color-text-muted);
               font-weight: 500;
               min-width: 80px;
             }
 
             .detail-value {
-              color: #1f2937;
+              color: var(--color-text);
               flex: 1;
               overflow: hidden;
               text-overflow: ellipsis;
@@ -835,9 +835,9 @@ function openLicense() {
 
     .empty-state {
       padding: 60px 20px;
-      background: white;
+      background: var(--color-surface);
       border-radius: 12px;
-      border: 2px dashed #e5e7eb;
+      border: 2px dashed var(--color-border);
     }
   }
 
@@ -866,8 +866,8 @@ function openLicense() {
       }
       .dangerBadge {
         font-size: 12px;
-        color: #ef4444;
-        background: #fee2e2;
+        color: var(--color-error);
+        background: var(--color-error-soft);
         padding: 4px 10px;
         border-radius: 20px;
         margin-left: auto;
@@ -894,7 +894,7 @@ function openLicense() {
               height: 64px;
               border-radius: 16px;
               object-fit: contain;
-              background: linear-gradient(135deg, #f5f0ff 0%, #ede9fe 100%);
+              background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
               padding: 8px;
             }
 
@@ -905,9 +905,9 @@ function openLicense() {
               .appName {
                 font-size: 24px;
                 font-weight: 700;
-                color: #1f2937;
+                color: var(--color-text);
                 margin: 0;
-                background: var(--mainGradient);
+                background: var(--gradient-primary);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
@@ -915,8 +915,8 @@ function openLicense() {
 
               .appVersion {
                 font-size: 14px;
-                color: #6b7280;
-                background: #f3f4f6;
+                color: var(--color-text-muted);
+                background: var(--color-surface-alt);
                 padding: 2px 10px;
                 border-radius: 20px;
                 width: fit-content;
@@ -924,7 +924,7 @@ function openLicense() {
             }
           }
           .aboutDesc {
-            color: #6b7280;
+            color: var(--color-text-muted);
             font-size: 14px;
             line-height: 1.6;
             margin: 0;
@@ -939,7 +939,7 @@ function openLicense() {
               align-items: center;
               gap: 16px;
               padding: 16px;
-              background: #f9fafb;
+              background: var(--color-surface-soft);
               border-radius: 12px;
               cursor: pointer;
               transition: all 0.2s;
@@ -950,16 +950,16 @@ function openLicense() {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background: linear-gradient(135deg, var(--mainColorLight) 0%, #ede9fe 100%);
+                background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
                 border-radius: 10px;
-                color: var(--mainColor);
+                color: var(--color-primary);
                 flex-shrink: 0;
               }
             }
 
             .linkItem:hover {
-              background: #f3f4f6;
-              border-color: var(--mainColor);
+              background: var(--color-surface-alt);
+              border-color: var(--color-primary);
               transform: translateX(4px);
             }
             .linkContent {
@@ -970,11 +970,11 @@ function openLicense() {
               .linkTitle {
                 font-size: 14px;
                 font-weight: 600;
-                color: #1f2937;
+                color: var(--color-text);
               }
               .linkDesc {
                 font-size: 12px;
-                color: #9ca3af;
+                color: var(--color-text-weak);
               }
             }
           }
@@ -983,13 +983,13 @@ function openLicense() {
             align-items: center;
             gap: 8px;
             padding: 10px 16px;
-            background: linear-gradient(135deg, var(--mainColorLight) 0%, #ede9fe 100%);
+            background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
             border-radius: 8px;
             font-size: 13px;
             font-weight: 500;
-            color: var(--mainColor);
+            color: var(--color-primary);
             width: fit-content;
-            border: 1px solid rgba(153, 19, 250, 0.2);
+            border: 1px solid rgba(var(--color-primary-rgb), 0.2);
           }
         }
       }
@@ -998,9 +998,9 @@ function openLicense() {
 }
 /* 卡片通用样式 */
 .settingCard {
-  background: #fff;
+  background: var(--color-surface);
   border-radius: 16px;
-  border: 1px solid #f3e8ff;
+  border: 1px solid var(--color-primary-soft-2);
   margin-bottom: 20px;
   transition: all 0.2s;
   margin-top: 40px;
@@ -1008,22 +1008,22 @@ function openLicense() {
 }
 
 .settingCard:hover {
-  box-shadow: 0 4px 16px rgba(152, 16, 250, 0.08);
+  box-shadow: var(--shadow-card);
 }
 
 .settingCard.danger {
-  border-color: #fee2e2;
+  border-color: var(--color-error-soft);
 }
 
 .settingCard.danger:hover {
-  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.08);
+  box-shadow: var(--shadow-card);
 }
 .cardHeader {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 20px 24px;
-  border-bottom: 1px solid #f9fafb;
+  border-bottom: 1px solid var(--color-surface-soft);
 }
 .cardIcon {
   width: 40px;
@@ -1036,33 +1036,33 @@ function openLicense() {
 }
 
 .cardIcon.purple {
-  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
-  color: var(--mainColor);
+  background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
+  color: var(--color-primary);
 }
 
 .cardIcon.blue {
-  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-  color: #3b82f6;
+  background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
+  color: var(--color-primary);
 }
 
 .cardIcon.green {
-  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-  color: #22c55e;
+  background: linear-gradient(135deg, var(--color-success-soft) 0%, var(--color-success-soft-2) 100%);
+  color: var(--color-success);
 }
 
 .cardIcon.orange {
-  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
-  color: #f97316;
+  background: linear-gradient(135deg, var(--color-warning-soft) 0%, var(--color-warning-soft-2) 100%);
+  color: var(--color-warning);
 }
 
 .cardIcon.red {
-  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-  color: #ef4444;
+  background: linear-gradient(135deg, var(--color-error-soft) 0%, var(--color-error-soft-2) 100%);
+  color: var(--color-error);
 }
 
 .cardIcon.cyan {
-  background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
-  color: #06b6d4;
+  background: linear-gradient(135deg, var(--color-info-soft) 0%, var(--color-info-soft-2) 100%);
+  color: var(--color-info);
 }
 
 .cardContent {
@@ -1093,36 +1093,36 @@ function openLicense() {
 .formLabel {
   font-size: 13px;
   font-weight: 500;
-  color: #4b5563;
+  color: var(--color-text-muted);
 }
 
 .formHint {
   font-size: 12px;
-  color: #9ca3af;
+  color: var(--color-text-weak);
   margin-top: 4px;
 }
 
 .formError {
   font-size: 12px;
-  color: #ef4444;
+  color: var(--color-error);
   margin-top: 4px;
 }
 .formInput {
   height: 44px;
   border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  background: #f9fafb;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
   transition: all 0.2s;
 }
 
 .formInput:hover {
-  border-color: #d1d5db;
+  border-color: var(--color-border-soft);
 }
 
 .formInput:focus,
 .formInput:focus-within {
-  border-color: var(--mainColor);
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(152, 16, 250, 0.1);
+  border-color: var(--color-primary);
+  background: var(--color-surface);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
 }
 </style>

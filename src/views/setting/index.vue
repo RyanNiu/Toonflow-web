@@ -54,5 +54,9 @@ import logoutConfig from "./components/logoutConfig.vue";
   padding-right: 5rem;
   width: 100%;
   height: 100%;
+
+  h1 {
+    color: var(--color-text);
+  }
 }
 </style>

@@ -347,8 +347,8 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-  border-bottom: 1px solid #e9d5ff;
+  background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
+  border-bottom: 1px solid var(--color-border);
   margin: -20px -24px 0;
   border-radius: 8px 8px 0 0;
 
@@ -364,15 +364,15 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: var(--mainGradient);
+    background: var(--gradient-primary);
     border-radius: 10px;
-    color: #fff;
+    color: var(--color-surface);
   }
 
   .header-title {
     font-size: 18px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: var(--color-text);
   }
 
   .close-btn {
@@ -384,12 +384,12 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
     border: none;
     border-radius: 8px;
     background: transparent;
-    color: #666;
+    color: var(--color-text-muted);
     cursor: pointer;
 
     &:hover {
-      background: #fff;
-      color: var(--mainColor);
+      background: var(--color-surface);
+      color: var(--color-primary);
     }
   }
 }
@@ -408,7 +408,7 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   align-items: center;
   justify-content: space-between;
   padding: 16px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--color-border-soft);
   flex-shrink: 0;
 
   .toolbar-left {
@@ -418,10 +418,10 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
 
     .select-info {
       font-size: 13px;
-      color: #888;
+      color: var(--color-text-muted);
 
       strong {
-        color: var(--mainColor);
+        color: var(--color-primary);
         font-weight: 600;
       }
     }
@@ -439,7 +439,7 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border);
   margin-top: 16px;
 }
 
@@ -447,11 +447,11 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   display: flex;
   align-items: center;
   padding: 12px 16px;
-  background: #fafafa;
-  border-bottom: 1px solid #eee;
+  background: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
   font-weight: 600;
   font-size: 13px;
-  color: #666;
+  color: var(--color-text-muted);
   flex-shrink: 0;
 }
 
@@ -464,7 +464,7 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #ddd;
+    background: var(--color-border);
     border-radius: 3px;
   }
 }
@@ -473,18 +473,18 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   display: flex;
   align-items: stretch;
   padding: 16px;
-  border-bottom: 1px solid #f5f5f5;
-  background: #fff;
+  border-bottom: 1px solid var(--color-border-soft);
+  background: var(--color-surface);
   box-sizing: border-box;
   border-left: 3px solid transparent;
 
   &:hover {
-    background: #fafafa;
+    background: var(--color-surface-alt);
   }
 
   &.selected {
-    background: #faf5ff;
-    border-left-color: var(--mainColor);
+    background: var(--color-primary-soft);
+    border-left-color: var(--color-primary);
   }
 
   &:last-child {
@@ -562,15 +562,15 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   height: 80px;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px dashed #d9d9d9;
-  background: #fafafa;
+  border: 1px dashed var(--color-border);
+  background: var(--color-surface-alt);
   display: flex;
   align-items: center;
   justify-content: center;
 
   &.has-image {
     border-style: solid;
-    border-color: #e9d5ff;
+    border-color: var(--color-primary-soft-2);
   }
 
   :deep(.ant-image) {
@@ -590,7 +590,7 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
     align-items: center;
     justify-content: center;
     gap: 4px;
-    color: #bbb;
+    color: var(--color-text-weak);
     font-size: 12px;
   }
 }
@@ -600,8 +600,8 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   border-radius: 6px !important;
 
   &:focus {
-    border-color: var(--mainColor) !important;
-    box-shadow: 0 0 0 2px rgba(152, 16, 250, 0.1) !important;
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.1) !important;
   }
 }
 
@@ -619,7 +619,7 @@ async function startGenerate(data: { id: number; prompt: string; name: string; t
   align-items: center;
   justify-content: center;
   padding: 60px 0;
-  color: #bbb;
+  color: var(--color-text-weak);
 
   p {
     margin-top: 12px;

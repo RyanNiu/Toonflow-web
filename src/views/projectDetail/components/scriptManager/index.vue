@@ -160,12 +160,12 @@ onMounted(getScriptData);
     .smTitle {
       font-size: 22px;
       font-weight: 600;
-      color: #222;
+      color: var(--color-text);
       margin-bottom: 8px;
     }
 
     .smSub {
-      color: #888;
+      color: var(--color-text-muted);
       font-size: 15px;
     }
   }
@@ -181,15 +181,15 @@ onMounted(getScriptData);
         height: 400px;
         text-align: center;
         padding: 4rem 0;
-        background: #fff;
+        background: var(--color-surface);
         border-radius: 0.75rem;
-        border: 1px solid #e5e7eb;
+        border: 1px solid var(--color-border);
         margin: 0 auto 1rem;
 
         .smNoneIcon {
           width: 6rem;
           height: 6rem;
-          background: #f3f4f6;
+          background: var(--color-surface-alt);
           border-radius: 9999px;
           display: flex;
           align-items: center;
@@ -197,14 +197,14 @@ onMounted(getScriptData);
           margin: 0 auto 1rem;
 
           .icon {
-            color: #d1d5db;
+            color: var(--color-text-weak);
           }
         }
 
         .smNoneTitle {
           font-size: 17px;
           font-weight: 500;
-          color: #18181b;
+          color: var(--color-text);
           margin-bottom: 8px;
         }
       }

@@ -34,7 +34,7 @@
       @confirm="handleFirstConfirm"
       @cancel="handleCancel">
       <div class="confirmContent">
-        <i-attention theme="filled" size="48" fill="#e34d59" />
+        <i-attention theme="filled" size="48" fill="var(--color-error)" />
         <p>{{ confirmConfig.firstMessage }}</p>
       </div>
     </t-dialog>
@@ -47,7 +47,7 @@
       @confirm="handleSecondConfirm"
       @cancel="handleCancel">
       <div class="confirmContent">
-        <i-attention theme="filled" size="48" fill="#e34d59" />
+        <i-attention theme="filled" size="48" fill="var(--color-error)" />
         <p>{{ confirmConfig.secondMessage }}</p>
         <t-input v-model="confirmInput" :placeholder="`请输入 ${confirmConfig.keyword} 确认操作`" class="confirmInput" />
       </div>
@@ -158,11 +158,13 @@ function handleCancel() {
       margin: 0 0 4px;
       font-size: 14px;
       font-weight: 500;
+      color: var(--color-text);
     }
 
     p {
       margin: 0;
       font-size: 12px;
+      color: var(--color-text-muted);
     }
   }
 }
@@ -178,6 +180,7 @@ function handleCancel() {
   p {
     margin: 0;
     font-size: 14px;
+    color: var(--color-text);
   }
 
   .confirmInput {

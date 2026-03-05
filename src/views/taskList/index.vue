@@ -141,7 +141,7 @@ const showModal = (row: taskData) => {
     .title {
       font-size: 2rem;
       font-weight: 600;
-      color: #1a202c;
+      color: var(--color-text);
       margin-bottom: 0.5rem;
     }
   }

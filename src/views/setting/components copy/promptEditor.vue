@@ -19,7 +19,7 @@
           </div>
         </div>
         <div v-if="promptList.length === 0" class="emptyList">
-          <i-inbox theme="outline" size="32" fill="#d1d5db" />
+          <i-inbox theme="outline" size="32" fill="var(--color-text-weak)" />
           <span>暂无提示词</span>
         </div>
       </div>
@@ -72,7 +72,7 @@
         </template>
 
         <div v-else class="emptyEditor">
-          <i-edit theme="outline" size="48" fill="#d1d5db" />
+          <i-edit theme="outline" size="48" fill="var(--color-text-weak)" />
           <p>请从左侧选择一个提示词进行编辑</p>
         </div>
       </div>
@@ -242,22 +242,22 @@ watch(open, (val) => {
 /* 左侧边栏 */
 .promptSidebar {
   width: 240px;
-  border-right: 1px solid #f0f0f0;
+  border-right: 1px solid var(--color-border-soft);
   display: flex;
   flex-direction: column;
-  background: #fafafa;
+  background: var(--color-surface-alt);
   height: 100%;
   overflow: auto;
 }
 
 .sidebarHeader {
   padding: 16px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--color-border-soft);
 }
 
 .sidebarTitle {
   font-weight: 600;
-  color: #1f2937;
+  color: var(--color-text);
 }
 
 .promptTypeGroup {
@@ -271,7 +271,7 @@ watch(open, (val) => {
   padding: 8px 16px;
   font-size: 12px;
   font-weight: 500;
-  color: #6b7280;
+  color: var(--color-text-muted);
   text-transform: uppercase;
 }
 
@@ -285,23 +285,23 @@ watch(open, (val) => {
 }
 
 .promptItem:hover {
-  background: #f3e8ff;
+  background: var(--color-primary-soft-2);
 }
 
 .promptItem.active {
-  background: #f3e8ff;
-  border-left-color: var(--mainColor);
+  background: var(--color-primary-soft-2);
+  border-left-color: var(--color-primary);
 }
 
 .promptName {
   font-size: 13px;
-  color: #1f2937;
+  color: var(--color-text);
   font-weight: 500;
 }
 
 .promptCode {
   font-size: 11px;
-  color: #9ca3af;
+  color: var(--color-text-weak);
   font-family: monospace;
 }
 
@@ -311,7 +311,7 @@ watch(open, (val) => {
   align-items: center;
   justify-content: center;
   flex: 1;
-  color: #9ca3af;
+  color: var(--color-text-weak);
   gap: 8px;
 }
 
@@ -328,7 +328,7 @@ watch(open, (val) => {
   align-items: flex-start;
   justify-content: space-between;
   padding: 16px 20px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--color-border-soft);
   gap: 16px;
 }
 
@@ -340,7 +340,7 @@ watch(open, (val) => {
 .editorTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--color-text);
   margin: 0 0 8px 0;
 }
 
@@ -353,8 +353,8 @@ watch(open, (val) => {
 
 .promptCodeBadge {
   font-size: 12px;
-  color: #6b7280;
-  background: #f3f4f6;
+  color: var(--color-text-muted);
+  background: var(--color-surface-alt);
   padding: 2px 8px;
   border-radius: 4px;
   font-family: monospace;
@@ -362,7 +362,7 @@ watch(open, (val) => {
 
 .parentInfo {
   font-size: 12px;
-  color: #9ca3af;
+  color: var(--color-text-weak);
 }
 
 .editorActions {
@@ -386,8 +386,8 @@ watch(open, (val) => {
 
 .customBadge {
   font-size: 11px;
-  color: #f97316;
-  background: #fff7ed;
+  color: var(--color-warning);
+  background: var(--color-warning-soft);
   padding: 3px 10px;
   border-radius: 12px;
   font-weight: 500;
@@ -395,8 +395,8 @@ watch(open, (val) => {
 
 .defaultBadge {
   font-size: 11px;
-  color: #10b981;
-  background: #ecfdf5;
+  color: var(--color-success);
+  background: var(--color-success-soft);
   padding: 3px 10px;
   border-radius: 12px;
   font-weight: 500;
@@ -422,8 +422,8 @@ watch(open, (val) => {
 }
 
 .promptTextarea:focus {
-  border-color: var(--mainColor);
-  box-shadow: 0 0 0 3px rgba(152, 16, 250, 0.1);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
 }
 
 :deep(.promptTextarea .ant-input) {
@@ -439,7 +439,7 @@ watch(open, (val) => {
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  color: #9ca3af;
+  color: var(--color-text-weak);
 }
 
 .emptyEditor {
@@ -448,7 +448,7 @@ watch(open, (val) => {
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: #9ca3af;
+  color: var(--color-text-weak);
 }
 
 .emptyEditor p {
@@ -458,11 +458,11 @@ watch(open, (val) => {
 
 /* 主题色按钮 */
 :deep(.ant-btn-primary) {
-  background: var(--mainGradient);
+  background: var(--gradient-primary);
   border: none;
 }
 
 :deep(.ant-btn-primary:hover) {
-  background: var(--mainGradientHover);
+  background: var(--gradient-primary-hover);
 }
 </style>

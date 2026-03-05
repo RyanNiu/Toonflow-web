@@ -57,7 +57,7 @@
           </template>
           <div class="editorBody">
             <t-textarea v-model="editingValue" placeholder="请输入提示词内容" class="promptTextarea" />
-     <span>*{{ hasCustomValue ? '当前使用自定义提示词，点击"一键重置"可恢复默认值' : "当前使用默认提示词，编辑后将保存为自定义值" }}</span>
+            <span>*{{ hasCustomValue ? '当前使用自定义提示词，点击"一键重置"可恢复默认值' : "当前使用默认提示词，编辑后将保存为自定义值" }}</span>
           </div>
         </t-card>
       </template>
@@ -193,6 +193,7 @@ onMounted(fetchPrompts);
     font-weight: 600;
     text-transform: uppercase;
     padding: 12px 16px 8px;
+    color: var(--color-text-muted);
   }
 
   :deep(.t-menu__item) {
@@ -210,12 +211,14 @@ onMounted(fetchPrompts);
     .promptName {
       font-size: 13px;
       font-weight: 500;
+      color: var(--color-text);
     }
 
     .promptCode {
       font-size: 11px;
       opacity: 0.6;
       font-family: monospace;
+      color: var(--color-text-weak);
     }
   }
 
@@ -225,6 +228,7 @@ onMounted(fetchPrompts);
     align-items: center;
     gap: 8px;
     padding: 24px;
+    color: var(--color-text-muted);
   }
 }
 
@@ -274,6 +278,7 @@ onMounted(fetchPrompts);
   font-size: 16px;
   font-weight: 600;
   margin: 0;
+  color: var(--color-text);
 }
 
 .editorMeta {

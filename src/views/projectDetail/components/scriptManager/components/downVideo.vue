@@ -304,9 +304,9 @@ function handleImageError(e: Event) {
     justify-content: space-between;
     padding: 16px 20px;
     margin-top: 20px;
-    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 50%, #f0fdfa 100%);
+    background: linear-gradient(135deg, var(--color-success-soft) 0%, var(--color-surface-alt) 50%, var(--color-surface-soft) 100%);
     border-radius: 16px;
-    border: 1px solid rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(var(--color-success-rgb), 0.15);
 
     .title {
       display: flex;
@@ -314,7 +314,7 @@ function handleImageError(e: Event) {
       gap: 12px;
       font-weight: 600;
       font-size: 16px;
-      color: #1f2937;
+      color: var(--color-text);
 
       .icon-wrapper {
         display: flex;
@@ -322,19 +322,19 @@ function handleImageError(e: Event) {
         justify-content: center;
         width: 36px;
         height: 36px;
-        background: linear-gradient(135deg, #10b981, #059669);
+        background: var(--color-success);
         border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        box-shadow: var(--shadow-card);
 
         .icon {
-          color: #fff;
+          color: var(--color-surface);
         }
       }
 
       .count-badge {
         padding: 2px 10px;
-        background: rgba(16, 185, 129, 0.1);
-        color: #059669;
+        background: rgba(var(--color-success-rgb), 0.1);
+        color: var(--color-success);
         border-radius: 20px;
         font-size: 13px;
         font-weight: 500;
@@ -346,23 +346,23 @@ function handleImageError(e: Event) {
       align-items: center;
       gap: 8px;
       padding: 10px 20px;
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: #fff;
+      background: var(--color-success);
+      color: var(--color-surface);
       border: none;
       border-radius: 12px;
       font-size: 14px;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+      box-shadow: var(--shadow-card-hover);
 
       &:hover:not(:disabled) {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+        box-shadow: var(--shadow-card-hover);
       }
 
       &:disabled {
-        background: #d1d5db;
+        background: var(--color-border);
         box-shadow: none;
         cursor: not-allowed;
       }
@@ -376,7 +376,7 @@ function handleImageError(e: Event) {
     align-items: center;
     justify-content: space-between;
     padding: 20px 24px;
-    border-bottom: 1px solid #f3f4f6;
+    border-bottom: 1px solid var(--color-border-soft);
 
     .modal-title {
       display: flex;
@@ -384,7 +384,7 @@ function handleImageError(e: Event) {
       gap: 12px;
       font-size: 18px;
       font-weight: 600;
-      color: #1f2937;
+      color: var(--color-text);
     }
 
     .close-btn {
@@ -393,24 +393,24 @@ function handleImageError(e: Event) {
       justify-content: center;
       width: 36px;
       height: 36px;
-      background: #f3f4f6;
+      background: var(--color-surface-alt);
       border: none;
       border-radius: 10px;
-      color: #6b7280;
+      color: var(--color-text-muted);
       cursor: pointer;
       transition: all 0.2s ease;
 
       &:hover {
-        background: #e5e7eb;
-        color: #1f2937;
+        background: var(--color-border);
+        color: var(--color-text);
       }
     }
   }
 
   .action-bar {
     padding: 16px 24px;
-    background: #f9fafb;
-    border-bottom: 1px solid #f3f4f6;
+    background: var(--color-surface-soft);
+    border-bottom: 1px solid var(--color-border-soft);
 
     .select-info {
       display: flex;
@@ -424,17 +424,17 @@ function handleImageError(e: Event) {
 
         .select-count {
           font-size: 14px;
-          color: #6b7280;
+          color: var(--color-text-muted);
 
           strong {
-            color: #10b981;
+            color: var(--color-success);
             font-size: 16px;
           }
         }
 
         .selected-hint {
           font-size: 13px;
-          color: #9ca3af;
+          color: var(--color-text-weak);
         }
       }
 
@@ -443,18 +443,18 @@ function handleImageError(e: Event) {
         align-items: center;
         gap: 6px;
         padding: 8px 16px;
-        background: #fff;
-        border: 1px solid #e5e7eb;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
         border-radius: 8px;
         font-size: 14px;
         font-weight: 500;
-        color: #374151;
+        color: var(--color-text);
         cursor: pointer;
         transition: all 0.2s ease;
 
         &:hover {
-          border-color: #10b981;
-          color: #10b981;
+          border-color: var(--color-success);
+          color: var(--color-success);
         }
       }
     }
@@ -470,16 +470,16 @@ function handleImageError(e: Event) {
     }
 
     &::-webkit-scrollbar-track {
-      background: #f3f4f6;
+      background: var(--color-surface-alt);
       border-radius: 3px;
     }
 
     &::-webkit-scrollbar-thumb {
-      background: #d1d5db;
+      background: var(--color-border);
       border-radius: 3px;
 
       &:hover {
-        background: #9ca3af;
+        background: var(--color-text-weak);
       }
     }
 
@@ -491,17 +491,17 @@ function handleImageError(e: Event) {
 
     .video-card {
       position: relative;
-      background: #fff;
+      background: var(--color-surface);
       border-radius: 14px;
       overflow: hidden;
       cursor: pointer;
       transition: all 0.3s ease;
-      border: 2px solid #f3f4f6;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 2px solid var(--color-border-soft);
+      box-shadow: var(--shadow-card);
 
       &:hover:not(.disabled) {
         transform: translateY(-4px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow-card-hover);
 
         .thumb-overlay {
           opacity: 1;
@@ -509,8 +509,8 @@ function handleImageError(e: Event) {
       }
 
       &.selected {
-        border-color: #10b981;
-        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+        border-color: var(--color-success);
+        box-shadow: 0 0 0 3px rgba(var(--color-success-rgb), 0.15);
 
         .select-indicator {
           opacity: 1;
@@ -526,7 +526,7 @@ function handleImageError(e: Event) {
           content: "";
           position: absolute;
           inset: 0;
-          background: rgba(0, 0, 0, 0.3);
+          background: rgba(var(--color-ink-rgb), 0.3);
         }
       }
 
@@ -537,16 +537,16 @@ function handleImageError(e: Event) {
         z-index: 10;
         width: 28px;
         height: 28px;
-        background: #10b981;
+        background: var(--color-success);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #fff;
+        color: var(--color-surface);
         opacity: 0;
         transform: scale(0.5);
         transition: all 0.2s ease;
-        box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+        box-shadow: 0 2px 8px rgba(var(--color-success-rgb), 0.4);
       }
 
       .unavailable-badge {
@@ -555,8 +555,8 @@ function handleImageError(e: Event) {
         right: 12px;
         z-index: 10;
         padding: 4px 10px;
-        background: rgba(239, 68, 68, 0.9);
-        color: #fff;
+        background: rgba(var(--color-error-rgb), 0.9);
+        color: var(--color-surface);
         border-radius: 6px;
         font-size: 12px;
         font-weight: 500;
@@ -567,7 +567,7 @@ function handleImageError(e: Event) {
         width: 100%;
         height: 140px;
         overflow: hidden;
-        background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+        background: linear-gradient(135deg, var(--color-surface-alt), var(--color-surface-soft));
 
         .video-thumb {
           width: 100%;
@@ -579,7 +579,7 @@ function handleImageError(e: Event) {
         .thumb-overlay {
           position: absolute;
           inset: 0;
-          background: rgba(0, 0, 0, 0.3);
+          background: rgba(var(--color-ink-rgb), 0.3);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -589,12 +589,12 @@ function handleImageError(e: Event) {
           .play-icon {
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(var(--color-surface-rgb), 0.95);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #10b981;
+            color: var(--color-success);
           }
         }
       }
@@ -606,7 +606,7 @@ function handleImageError(e: Event) {
           margin: 0 0 10px;
           font-size: 14px;
           font-weight: 600;
-          color: #1f2937;
+          color: var(--color-text);
         }
 
         .video-meta {
@@ -624,13 +624,13 @@ function handleImageError(e: Event) {
             font-weight: 500;
 
             &.resolution {
-              background: #ecfdf5;
-              color: #059669;
+              background: var(--color-success-soft);
+              color: var(--color-success);
             }
 
             &.model {
-              background: #eff6ff;
-              color: #2563eb;
+              background: var(--color-primary-soft);
+              color: var(--color-primary);
             }
           }
         }
@@ -647,12 +647,12 @@ function handleImageError(e: Event) {
       .empty-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        background: var(--color-success-soft);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #10b981;
+        color: var(--color-success);
         margin-bottom: 20px;
       }
 
@@ -660,13 +660,13 @@ function handleImageError(e: Event) {
         margin: 0 0 8px;
         font-size: 18px;
         font-weight: 600;
-        color: #374151;
+        color: var(--color-text);
       }
 
       .empty-desc {
         margin: 0;
         font-size: 14px;
-        color: #9ca3af;
+        color: var(--color-text-weak);
       }
     }
   }
@@ -677,23 +677,23 @@ function handleImageError(e: Event) {
     justify-content: flex-end;
     gap: 12px;
     padding: 20px 24px;
-    border-top: 1px solid #f3f4f6;
-    background: #f9fafb;
+    border-top: 1px solid var(--color-border-soft);
+    background: var(--color-surface-soft);
 
     .cancel-btn {
       padding: 10px 24px;
-      background: #fff;
-      border: 1px solid #e5e7eb;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
       border-radius: 10px;
       font-size: 14px;
       font-weight: 500;
-      color: #6b7280;
+      color: var(--color-text-muted);
       cursor: pointer;
       transition: all 0.2s ease;
 
       &:hover {
-        background: #f3f4f6;
-        color: #374151;
+        background: var(--color-surface-alt);
+        color: var(--color-text);
       }
     }
 
@@ -702,23 +702,23 @@ function handleImageError(e: Event) {
       align-items: center;
       gap: 8px;
       padding: 10px 24px;
-      background: linear-gradient(135deg, #10b981, #059669);
+      background: var(--color-success);
       border: none;
       border-radius: 10px;
       font-size: 14px;
       font-weight: 500;
-      color: #fff;
+      color: var(--color-surface);
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+      box-shadow: var(--shadow-card-hover);
 
       &:hover:not(:disabled) {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+        box-shadow: var(--shadow-card-hover);
       }
 
       &:disabled {
-        background: #d1d5db;
+        background: var(--color-border);
         box-shadow: none;
         cursor: not-allowed;
       }

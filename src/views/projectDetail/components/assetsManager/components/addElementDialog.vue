@@ -8,7 +8,7 @@
     :closable="false"
     :maskClosable="false">
     <template #title>
-      <div class="ac jb titHeader" style="background: #f9faff; height: 60px; display: flex; width: 100%" v-if="formData">
+      <div class="ac jb titHeader" style="background: var(--color-surface-soft); height: 60px; display: flex; width: 100%" v-if="formData">
         <div>
           <span style="font-weight: bold; font-size: 18px; margin-left: 24px">{{ formData.id ? "编辑" : "新建" }}{{ typeRecord[props.type] }}</span>
           <div style="margin-left: 24px">
@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="closePoint" @click="editElementClose">
-          <i-close theme="outline" size="18" fill="#9913FA" />
+          <i-close theme="outline" size="18" fill="var(--color-primary)" />
         </div>
       </div>
     </template>
@@ -144,32 +144,32 @@ function handleSave() {
     .typeCard {
       flex: 1;
       text-align: center;
-      background: #fff;
-      border: 2px solid #dfdfee;
+      background: var(--color-surface);
+      border: 2px solid var(--color-border);
       border-radius: 14px;
       cursor: pointer;
       padding: 14px 0 10px 0;
       transition: all 0.18s;
       user-select: none;
       .active {
-        border-color: #a874e8;
-        background: #f7f1fe;
+        border-color: var(--color-primary);
+        background: var(--color-primary-soft);
       }
       .tabSub {
-        color: #795eb3;
+        color: var(--color-text-muted);
         font-size: 13px;
         margin-top: 4px;
       }
       .tabMain {
         font-weight: 600;
         font-size: 17px;
-        color: #8d37c9;
+        color: var(--color-primary);
       }
       &:not(.active) .tabMain {
-        color: #222;
+        color: var(--color-text);
       }
       &:not(.active) .tabSub {
-        color: #444;
+        color: var(--color-text-muted);
       }
     }
   }
@@ -180,9 +180,9 @@ function handleSave() {
     .picturePreview {
       width: 132px;
       height: 132px;
-      border: 1.5px dashed #dbdde7;
+      border: 1.5px dashed var(--color-border);
       border-radius: 14px;
-      background: #f6f7fa;
+      background: var(--color-surface-alt);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -200,13 +200,13 @@ function handleSave() {
       align-items: flex-start;
       margin-left: 12px;
       .ant-btn {
-        background: #f7f8fa;
-        border: 1px solid #dbdde7;
+        background: var(--color-surface-soft);
+        border: 1px solid var(--color-border);
         border-radius: 8px;
-        color: #333;
+        color: var(--color-text);
       }
       .tipTxt {
-        color: #669;
+        color: var(--color-text-muted);
         font-size: 13px;
         margin-top: 6px;
       }

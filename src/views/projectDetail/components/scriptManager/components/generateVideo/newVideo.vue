@@ -298,7 +298,11 @@ const manufacturerAllRecord: Record<string, string> = Object.values(manufacturer
 }, {});
 const availableManufacturers = computed(() => {
   if (manufacturerList.value.length === 0) return [];
-  return manufacturerList.value.map((i) => ({ label: i.model + " " +manufacturerAllRecord[i.manufacturer], value: i.id, manufacturer: i.manufacturer }));
+  return manufacturerList.value.map((i) => ({
+    label: i.model + " " + manufacturerAllRecord[i.manufacturer],
+    value: i.id,
+    manufacturer: i.manufacturer,
+  }));
 });
 onMounted(async () => {
   getModelList();
@@ -553,7 +557,7 @@ function handleCancel() {
 <style lang="scss" scoped>
 .configPanel {
   padding: 16px;
-  background: #fafafa;
+  background: var(--color-surface-alt);
   border-radius: 8px;
   max-height: 70vh;
   overflow-y: auto;
@@ -575,21 +579,21 @@ function handleCancel() {
   gap: 16px;
 }
 .configCard {
-  background: #fff;
-  border: 1px solid #e8e8e8;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.2s;
   &:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-card);
   }
   .cardHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px 12px;
-    background: #f5f5f5;
-    border-bottom: 1px solid #e8e8e8;
+    background: var(--color-surface-alt);
+    border-bottom: 1px solid var(--color-border);
     .cardTitle {
       font-weight: 500;
       font-size: 14px;
@@ -610,7 +614,7 @@ function handleCancel() {
     width: 60px;
     flex-shrink: 0;
     font-size: 12px;
-    color: #666;
+    color: var(--color-text-muted);
     line-height: 24px;
   }
   > :deep(.ant-select),
@@ -620,12 +624,12 @@ function handleCancel() {
   .unit {
     margin-left: 4px;
     font-size: 12px;
-    color: #666;
+    color: var(--color-text-muted);
   }
   .tip {
     margin-left: 8px;
     font-size: 11px;
-    color: #999;
+    color: var(--color-text-weak);
   }
   &.frameRow {
     align-items: flex-start;
@@ -647,7 +651,7 @@ function handleCancel() {
   width: 150px;
   height: auto;
   min-height: 70px;
-  border: 1px dashed #d9d9d9;
+  border: 1px dashed var(--color-border);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -657,20 +661,20 @@ function handleCancel() {
   transition: all 0.2s;
   position: relative;
   overflow: hidden;
-  background: #fafafa;
+  background: var(--color-surface-alt);
   font-size: 10px;
-  color: #999;
+  color: var(--color-text-weak);
   &.singleFrame {
     width: 90px;
     height: 68px;
   }
   &:hover {
-    border-color: #1890ff;
-    background: #e6f7ff;
+    border-color: var(--color-primary);
+    background: var(--color-primary-soft);
   }
   &.hasImage {
     border-style: solid;
-    border-color: #52c41a;
+    border-color: var(--color-success);
     img {
       width: 100%;
       height: 100%;
@@ -681,8 +685,8 @@ function handleCancel() {
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
+      background: rgba(var(--color-ink-rgb), 0.5);
+      color: var(--color-surface);
       font-size: 10px;
       text-align: center;
       padding: 1px 0;
@@ -691,7 +695,7 @@ function handleCancel() {
       position: absolute;
       top: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(var(--color-surface-rgb), 0.9);
       border-radius: 0 0 0 4px;
       width: 16px;
       height: 16px;
@@ -730,7 +734,7 @@ function handleCancel() {
     height: auto;
     border-radius: 4px;
     overflow: hidden;
-    border: 1px solid #52c41a;
+    border: 1px solid var(--color-success);
 
     .dragHandle {
       width: 100%;
@@ -751,8 +755,8 @@ function handleCancel() {
       position: absolute;
       top: 1px;
       left: 1px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
+      background: rgba(var(--color-ink-rgb), 0.6);
+      color: var(--color-surface);
       font-size: 9px;
       padding: 0 3px;
       border-radius: 2px;
@@ -763,7 +767,7 @@ function handleCancel() {
       position: absolute;
       top: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(var(--color-surface-rgb), 0.9);
       border-radius: 0 0 0 4px;
       width: 14px;
       height: 14px;
@@ -783,26 +787,26 @@ function handleCancel() {
 
   .ghost {
     opacity: 0.5;
-    background: #c8ebfb;
+    background: var(--color-primary-soft);
   }
 
   .addImageBox {
     width: 150px;
     height: 70px;
-    border: 1px dashed #d9d9d9;
+    border: 1px dashed var(--color-border);
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s;
-    background: #fafafa;
+    background: var(--color-surface-alt);
     font-size: 12px;
-    color: #999;
+    color: var(--color-text-weak);
 
     &:hover {
-      border-color: #1890ff;
-      background: #e6f7ff;
+      border-color: var(--color-primary);
+      background: var(--color-primary-soft);
     }
   }
 }
@@ -817,7 +821,7 @@ function handleCancel() {
     top: 2px;
     font-size: 12px;
     padding: 0 4px;
-    color: var(--mainColor);
+    color: var(--color-primary);
   }
 
   :deep(.ant-input) {
@@ -831,7 +835,7 @@ function handleCancel() {
   align-items: center;
 
   .selectedCount {
-    color: #1890ff;
+    color: var(--color-primary);
     font-weight: 500;
   }
 }

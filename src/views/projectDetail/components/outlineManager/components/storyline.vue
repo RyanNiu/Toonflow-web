@@ -118,29 +118,29 @@ function save() {
   align-items: center;
   margin-bottom: 20px;
   padding: 24px;
-  background: var(--mainGradient);
+  background: var(--gradient-primary);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(152, 16, 250, 0.25);
+  box-shadow: 0 4px 20px rgba(var(--color-primary-rgb), 0.25);
 
   .header-content {
     .page-title {
       font-size: 22px;
       font-weight: 700;
       margin: 0 0 6px;
-      color: #fff;
+      color: var(--color-surface);
     }
     .page-desc {
       margin: 0;
       opacity: 0.9;
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(var(--color-surface-rgb), 0.9);
     }
   }
 
   .edit-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #fff;
+    background: rgba(var(--color-surface-rgb), 0.2);
+    border: 1px solid rgba(var(--color-surface-rgb), 0.5);
+    color: var(--color-surface);
     height: 40px;
     padding: 0 20px;
     display: flex;
@@ -150,8 +150,8 @@ function save() {
     transition: all 0.3s;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.35);
-      border-color: #fff;
+      background: rgba(var(--color-surface-rgb), 0.35);
+      border-color: var(--color-surface);
       transform: translateY(-1px);
     }
   }
@@ -286,7 +286,7 @@ function save() {
   }
 
   .empty-btn {
-    background: var(--mainGradient);
+    background: var(--gradient-primary);
     border: none;
     height: 42px;
     padding: 0 28px;
@@ -294,7 +294,7 @@ function save() {
     font-size: 14px;
 
     &:hover {
-      background: var(--mainGradientHover);
+      background: var(--gradient-primary-hover);
     }
   }
 }
@@ -338,7 +338,7 @@ function save() {
       height: 38px;
       padding: 0 24px;
       border-radius: 8px;
-      background: var(--mainGradient);
+      background: var(--gradient-primary);
       border: none;
       display: flex;
       align-items: center;
@@ -346,7 +346,7 @@ function save() {
       font-weight: 500;
 
       &:hover {
-        background: var(--mainGradientHover);
+        background: var(--gradient-primary-hover);
       }
     }
   }

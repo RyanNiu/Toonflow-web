@@ -44,7 +44,7 @@
             :show-primary-color-preview="false"
             @change="(val: string) => handleColorChange(val)">
             <template #trigger>
-              <div class="colorItem customColor" :style="{ backgroundColor: isCustomColor ? themeSetting.primaryColor : '#fff' }">
+              <div class="colorItem customColor" :style="{ backgroundColor: isCustomColor ? themeSetting.primaryColor : 'var(--color-surface)' }">
                 <t-icon :name="isCustomColor ? 'check' : 'edit'" :class="['customIcon', { checkIcon: isCustomColor }]" />
               </div>
             </template>
@@ -123,11 +123,11 @@ watch(
 
       &.active {
         border-color: var(--td-brand-color);
-        box-shadow: 0 0 0 2px rgba(0, 82, 217, 0.2);
+        box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.2);
       }
 
       .checkIcon {
-        color: #fff;
+        color: var(--color-surface);
         font-size: 16px;
       }
 

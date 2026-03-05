@@ -175,7 +175,7 @@ onMounted(() => {
   align-items: center;
 
   .selected-count {
-    color: #1890ff;
+    color: var(--color-primary);
     font-weight: 500;
   }
 }

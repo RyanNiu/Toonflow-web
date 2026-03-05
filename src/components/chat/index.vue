@@ -49,7 +49,7 @@
         </div>
         <a-tooltip :title="props.canSend ? '发送消息' : '请等待响应完成'">
           <button class="send-btn" :class="{ disabled: !props.canSend }" :disabled="!props.canSend" @click="throttleSendMsg">
-            <i-arrow-circle-up theme="outline" size="24" fill="#fff" />
+            <i-arrow-circle-up theme="outline" size="24" fill="var(--color-surface)" />
           </button>
         </a-tooltip>
       </div>
@@ -185,8 +185,8 @@ defineExpose({ scrollBottom, smartScrollBottom });
 .message-area {
   flex: 1;
   border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  background: var(--color-surface);
+  box-shadow: 0 2px 12px rgba(var(--color-ink-rgb), 0.06);
 
   :deep(.el-scrollbar__wrap) {
     padding: 20px;
@@ -226,16 +226,16 @@ defineExpose({ scrollBottom, smartScrollBottom });
 }
 
 .input-container {
-  background: #fff;
+  background: var(--color-surface);
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(var(--color-ink-rgb), 0.08);
   border: 2px solid transparent;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 
   &:focus-within {
-    border-color: var(--mainColor);
-    box-shadow: 0 4px 24px rgba(152, 16, 250, 0.15);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 24px rgba(var(--color-primary-rgb), 0.15);
   }
 }
 
@@ -251,12 +251,12 @@ defineExpose({ scrollBottom, smartScrollBottom });
     resize: none;
     font-size: 15px;
     line-height: 1.6;
-    color: #1a1a1a;
+    color: var(--color-text);
     background: transparent;
     font-family: inherit;
 
     &::placeholder {
-      color: #bbb;
+      color: var(--color-text-weak);
     }
 
     // 覆盖 ant-design mentions 样式
@@ -293,19 +293,19 @@ defineExpose({ scrollBottom, smartScrollBottom });
   height: 36px;
   border: none;
   border-radius: 10px;
-  background: #f5f5f5;
-  color: #666;
+  background: var(--color-surface-soft);
+  color: var(--color-text-muted);
   cursor: pointer;
   transition: all 0.2s ease;
 
   &:hover {
-    background: #eee;
-    color: #333;
+    background: var(--color-surface-alt);
+    color: var(--color-text);
   }
 
   &.danger:hover {
-    background: #fff1f0;
-    color: #ff4d4f;
+    background: var(--color-error-soft);
+    color: var(--color-error);
   }
 }
 
@@ -317,15 +317,15 @@ defineExpose({ scrollBottom, smartScrollBottom });
   height: 44px;
   border: none;
   border-radius: 14px;
-  background: var(--mainGradient);
-  color: #fff;
+  background: var(--gradient-primary);
+  color: var(--color-surface);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(152, 16, 250, 0.3);
+  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
 
   &:hover:not(.disabled) {
     transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(152, 16, 250, 0.4);
+    box-shadow: 0 6px 16px rgba(var(--color-primary-rgb), 0.4);
   }
 
   &:active:not(.disabled) {
@@ -333,8 +333,8 @@ defineExpose({ scrollBottom, smartScrollBottom });
   }
 
   &.disabled {
-    background: #e0e0e0;
-    color: #999;
+    background: var(--color-border-soft);
+    color: var(--color-text-weak);
     cursor: not-allowed;
     box-shadow: none;
   }

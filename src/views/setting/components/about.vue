@@ -56,12 +56,15 @@ function openLink(url: string) {
     width: 72px;
     height: 72px;
     border-radius: 16px;
+    background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
+    padding: 6px;
   }
 
   .appName {
     margin: 0;
     font-size: 24px;
     font-weight: 600;
+    color: var(--color-text);
   }
 
   .desc {

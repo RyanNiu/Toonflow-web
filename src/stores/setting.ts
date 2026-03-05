@@ -3,7 +3,7 @@ export default defineStore(
   () => {
     // 自动检测当前浏览器访问的 hostname
     const hostname = typeof window !== "undefined" ? window.location.hostname : "localhost";
-    
+
     // 无论是本地还是线上，后端始终保持在 60000 端口
     const defaultApiUrl = `http://${hostname}:60000`;
 
@@ -17,7 +17,7 @@ export default defineStore(
 
     const themeSetting = ref({
       mode: "light" as "light" | "dark" | "auto",
-      primaryColor: "#9810fa",
+      primaryColor: "#2b6fdc",
     });
 
     return { baseUrl, wsBaseUrl, otherSetting, themeSetting };

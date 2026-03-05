@@ -1,0 +1,80 @@
+:root {
+  --color-primary-100: #e7f0ff;
+  --color-primary-200: #cfe1ff;
+  --color-primary-300: #a9c6ff;
+  --color-primary-400: #7fa8ff;
+  --color-primary-500: #4f87f4;
+  --color-primary-600: #2b6fdc;
+  --color-primary-700: #235bb5;
+  --color-primary-800: #1e4a8f;
+  --color-primary-900: #173665;
+  --color-primary-950: #102243;
+  --color-primary-rgb: 43, 111, 220;
+
+  --color-primary: var(--color-primary-600);
+  --color-primary-hover: var(--color-primary-500);
+  --color-primary-active: var(--color-primary-700);
+  --color-primary-soft: var(--color-primary-100);
+  --color-primary-soft-2: var(--color-primary-200);
+
+  --color-warning: #be5a00;
+  --color-warning-soft: #fff1e9;
+  --color-warning-soft-2: #fed7aa;
+  --color-error: #d54941;
+  --color-error-rgb: 213, 73, 65;
+  --color-error-soft: #fff0ed;
+  --color-error-soft-2: #fecaca;
+  --color-success: #2ba471;
+  --color-success-rgb: 43, 164, 113;
+  --color-success-soft: #e3f9e9;
+  --color-success-soft-2: #bbf7d0;
+  --color-info: #06b6d4;
+  --color-info-rgb: 6, 182, 212;
+  --color-info-soft: #cffafe;
+  --color-info-soft-2: #a5f3fc;
+
+  --color-bg: #eef2f7;
+  --color-surface: #ffffff;
+  --color-surface-rgb: 255, 255, 255;
+  --color-surface-alt: #f3f6fb;
+  --color-surface-soft: #f6f8fb;
+  --color-surface-paper: #f9fbff;
+
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-text-weak: #9ca3af;
+  --color-ink-rgb: 17, 24, 39;
+
+  --color-border: #e5e7eb;
+  --color-border-strong: #111827;
+  --color-border-soft: #f0f0f0;
+  --border-width-strong: 2px;
+  --border-width-default: 1px;
+
+  --gradient-primary: linear-gradient(135deg, #2b6fdc 0%, #1e4a8f 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #3a7eea 0%, #2758a6 100%);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+
+  --shadow-card: 0 6px 16px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 10px 22px rgba(0, 0, 0, 0.12);
+  --shadow-inset-soft: inset 0 1px 0 rgba(var(--color-surface-rgb), 0.6);
+
+  --motion-fast: 120ms;
+  --motion-medium: 180ms;
+  --motion-slow: 260ms;
+
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  --font-display: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --font-body: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+}

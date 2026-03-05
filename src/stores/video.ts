@@ -335,10 +335,10 @@ export default defineStore(
       configId: number,
       updates: Partial<Pick<VideoConfig, "prompt" | "resolution" | "duration" | "startFrame" | "endFrame" | "images" | "mode" | "audioEnabled">>,
     ) {
-      console.log("%c Line:338 🍐 updates", "background:#465975", updates);
+      console.log("Line:338 🍐 updates", updates);
 
       const config = videoConfigs.value.find((c) => c.id === configId);
-      console.log("%c Line:342 🌰 config", "background:#fca650", config);
+      console.log("Line:342 🌰 config", config);
       if (config) {
         if (updates.prompt !== undefined) config.prompt = updates.prompt;
         if (updates.resolution !== undefined) config.resolution = updates.resolution;

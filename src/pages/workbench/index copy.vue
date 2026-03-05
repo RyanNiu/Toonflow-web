@@ -15,12 +15,12 @@ import sider from "@/components/sider.vue";
 import type { CSSProperties } from "vue";
 const siderStyle: CSSProperties = {
   width: "255px",
-  backgroundColor: "#ffffff",
-  borderRight: "1px solid #e5e7eb",
+  backgroundColor: "var(--color-surface)",
+  borderRight: "1px solid var(--color-border)",
 };
 
 const contentStyle: CSSProperties = {
-  background: "linear-gradient(180deg, #faf5ff 0%, #f8fafc 100%)",
+  background: "linear-gradient(180deg, var(--color-primary-soft) 0%, var(--color-surface-soft) 100%)",
   height: "100vh",
   overflow: "auto",
 };

@@ -54,7 +54,7 @@
                   class="model-card"
                   @click="selectModel(model)">
                   <div class="card-icon">
-                    <component :is="tab.icon" fill="#9810fa" />
+                    <component :is="tab.icon" fill="var(--color-primary)" />
                   </div>
                   <div class="card-header">
                     <h3 :title="model.modelName">{{ model.modelName }}</h3>
@@ -652,25 +652,25 @@ function sure() {
 }
 
 .model-card {
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--color-border-soft);
   border-radius: 10px;
   padding: 20px;
   cursor: pointer;
   transition: all 0.25s ease;
-  background: #fff;
+  background: var(--color-surface);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-card);
 
   &:hover {
-    border-color: #d9d9d9;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-card-hover);
     transform: translateY(-4px);
   }
 
   .card-icon {
     font-size: 24px;
-    color: #1890ff;
+    color: var(--color-primary);
     transition: all 0.25s ease;
     &:deep(.anticon) {
       display: block;
@@ -678,7 +678,7 @@ function sure() {
   }
 
   &:hover .card-icon {
-    color: #40a9ff;
+    color: var(--color-primary-hover);
   }
 
   .card-header {
@@ -692,7 +692,7 @@ function sure() {
       margin: 0;
       font-size: 15px;
       font-weight: 600;
-      color: #262626;
+      color: var(--color-text);
       overflow: hidden;
       flex: 1;
     }
@@ -714,14 +714,14 @@ function sure() {
     justify-content: space-between;
 
     .model-description {
-      color: #8c8c8c;
+      color: var(--color-text-muted);
       font-size: 13px;
       line-height: 1.5;
     }
 
     .model-type {
       font-size: 12px;
-      color: #8c8c8c;
+      color: var(--color-text-muted);
 
       .type-label {
         font-weight: 500;
@@ -732,8 +732,8 @@ function sure() {
 }
 
 .custom-card {
-  border: 1px dashed #d9d9d9;
-  background: #fafafa;
+  border: 1px dashed var(--color-border);
+  background: var(--color-surface-alt);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -741,34 +741,34 @@ function sure() {
   transition: all 0.25s ease;
 
   &:hover {
-    border-color: #1890ff;
-    background: #f5f9ff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-primary);
+    background: var(--color-primary-soft);
+    box-shadow: var(--shadow-card-hover);
 
     .card-icon {
-      color: #40a9ff;
+      color: var(--color-primary-hover);
     }
 
     .card-header h3 {
-      color: #1890ff;
+      color: var(--color-primary);
     }
   }
 
   .card-icon {
-    color: #1890ff;
+    color: var(--color-primary);
     font-size: 36px;
     margin-bottom: 8px;
     transition: all 0.25s ease;
   }
 
   .card-header h3 {
-    color: #1890ff;
+    color: var(--color-primary);
     font-weight: 600;
     transition: color 0.25s ease;
   }
 
   .card-body .model-description {
-    color: #8c8c8c;
+    color: var(--color-text-muted);
     text-align: center;
     font-size: 13px;
   }
@@ -787,17 +787,17 @@ function sure() {
 
     :deep(.ant-input-affix-wrapper) {
       border-radius: 6px;
-      border: 1px solid #f0f0f0;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--color-border-soft);
+      box-shadow: var(--shadow-card);
       transition: all 0.25s ease;
 
       &:hover {
-        border-color: #d9d9d9;
+        border-color: var(--color-border);
       }
 
       &:focus-within {
-        border-color: #1890ff;
-        box-shadow: 0 2px 8px rgba(24, 144, 255, 0.12);
+        border-color: var(--color-primary);
+        box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.12);
       }
     }
 
@@ -808,10 +808,10 @@ function sure() {
 }
 
 .manufacturer-filter {
-  background: #fafafa;
+  background: var(--color-surface-alt);
   border-radius: 6px;
   padding: 16px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--color-border-soft);
 
   .filter-header {
     display: flex;
@@ -822,13 +822,13 @@ function sure() {
     .filter-label {
       font-size: 14px;
       font-weight: 500;
-      color: #262626;
+      color: var(--color-text);
       display: flex;
       align-items: center;
       gap: 6px;
 
       :deep(.anticon) {
-        color: #1890ff;
+        color: var(--color-primary);
       }
     }
   }
@@ -847,29 +847,29 @@ function sure() {
       font-size: 13px;
       cursor: pointer;
       transition: all 0.25s ease;
-      border: 1px solid #d9d9d9;
-      background: #fff;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
       user-select: none;
 
       &:hover {
-        border-color: #1890ff;
-        color: #1890ff;
+        border-color: var(--color-primary);
+        color: var(--color-primary);
         transform: translateY(-1px);
-        box-shadow: 0 2px 6px rgba(24, 144, 255, 0.12);
+        box-shadow: 0 2px 6px rgba(var(--color-primary-rgb), 0.12);
       }
 
       &.ant-tag-checkable-checked {
-        background: #1890ff;
-        border-color: #1890ff;
-        color: #fff;
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        color: var(--color-surface);
         font-weight: 500;
-        box-shadow: 0 2px 8px rgba(24, 144, 255, 0.25);
+        box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.25);
 
         &:hover {
-          background: #40a9ff;
-          border-color: #40a9ff;
+          background: var(--color-primary-hover);
+          border-color: var(--color-primary-hover);
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+          box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
         }
       }
 
@@ -884,17 +884,17 @@ function sure() {
 .filter-result {
   margin-top: 12px;
   padding: 8px 12px;
-  background: #e6f7ff;
-  border-left: 3px solid #1890ff;
+  background: var(--color-primary-soft);
+  border-left: 3px solid var(--color-primary);
   border-radius: 4px;
 
   .result-text {
     font-size: 13px;
-    color: #0050b3;
+    color: var(--color-primary-800);
 
     strong {
       font-weight: 600;
-      color: #1890ff;
+      color: var(--color-primary);
       font-size: 14px;
     }
   }
@@ -905,7 +905,7 @@ function sure() {
   margin: 60px 0;
 
   .ant-empty-description {
-    color: #8c8c8c;
+    color: var(--color-text-muted);
     font-size: 14px;
   }
 }

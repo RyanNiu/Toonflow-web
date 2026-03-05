@@ -416,8 +416,8 @@ function handleOk() {
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-  border-bottom: 1px solid #e9d5ff;
+  background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary-soft-2) 100%);
+  border-bottom: 1px solid var(--color-border);
   margin: -20px -24px 0;
 
   .header-left {
@@ -432,15 +432,15 @@ function handleOk() {
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: var(--mainGradient);
+    background: var(--gradient-primary);
     border-radius: 10px;
-    color: #fff;
+    color: var(--color-surface);
   }
 
   .header-title {
     font-size: 18px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: var(--color-text);
   }
 
   .close-btn {
@@ -452,12 +452,12 @@ function handleOk() {
     border: none;
     border-radius: 8px;
     background: transparent;
-    color: #666;
+    color: var(--color-text-muted);
     cursor: pointer;
 
     &:hover {
-      background: #fff;
-      color: var(--mainColor);
+      background: var(--color-surface);
+      color: var(--color-primary);
     }
   }
 }
@@ -471,17 +471,17 @@ function handleOk() {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  background: #fafafa;
+  background: var(--color-surface-alt);
   border-radius: 8px;
   margin-bottom: 16px;
 
   .toolbar-left {
     .select-info {
       font-size: 13px;
-      color: #666;
+      color: var(--color-text-muted);
 
       strong {
-        color: var(--mainColor);
+        color: var(--color-primary);
         font-weight: 600;
         margin: 0 2px;
       }
@@ -495,33 +495,33 @@ function handleOk() {
 }
 
 .table-wrapper {
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border-soft);
   border-radius: 8px;
   overflow: hidden;
 
   :deep(.vxe-table) {
     .vxe-header--column {
-      background: #fafafa;
+      background: var(--color-surface-alt);
       font-weight: 600;
-      color: #333;
+      color: var(--color-text);
     }
 
     .vxe-body--row {
       &.row--hover {
-        background: #faf5ff;
+        background: var(--color-primary-soft);
       }
 
       &.row--current {
-        background: #f3e8ff;
+        background: var(--color-primary-soft-2);
       }
     }
 
     .vxe-checkbox--icon {
-      color: var(--mainColor);
+      color: var(--color-primary);
     }
 
     .vxe-cell--edit-icon {
-      color: #999;
+      color: var(--color-text-weak);
     }
   }
 }
@@ -537,7 +537,7 @@ function handleOk() {
     position: relative;
     border-radius: 6px;
     overflow: hidden;
-    border: 1px solid #eee;
+    border: 1px solid var(--color-border-soft);
 
     &.loading {
       opacity: 0.7;
@@ -562,13 +562,13 @@ function handleOk() {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: #333;
+    color: var(--color-text);
     font-size: 13px;
   }
 
   &.video {
     .prompt-text {
-      color: #666;
+      color: var(--color-text-muted);
     }
   }
 
@@ -580,7 +580,7 @@ function handleOk() {
 
 .duration-text {
   font-weight: 500;
-  color: #333;
+  color: var(--color-text);
 }
 
 .modal-footer {
@@ -588,14 +588,14 @@ function handleOk() {
   align-items: center;
   justify-content: space-between;
   padding-top: 16px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--color-border-soft);
 
   .footer-info {
     display: flex;
     align-items: center;
     gap: 6px;
     font-size: 13px;
-    color: #999;
+    color: var(--color-text-weak);
   }
 
   .footer-actions {

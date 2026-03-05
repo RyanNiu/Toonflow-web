@@ -80,12 +80,10 @@ function handleOk() {
   .imageDiv {
     width: 220px;
     height: 150px;
-    // background: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    // box-shadow: 0 1px 4px rgba(150, 150, 150, 0.08);
     ::v-deep .ant-image-img {
       width: 220px !important;
       height: 150px !important;
@@ -102,23 +100,23 @@ function handleOk() {
   flex-direction: column;
   justify-content: flex-start;
   min-width: 180px;
-  background: #fafafa;
+  background: var(--color-surface-alt);
   border-radius: 8px;
   padding: 20px 16px;
   box-sizing: border-box;
-  box-shadow: 0 1px 4px rgba(200, 200, 200, 0.05);
+  box-shadow: 0 1px 4px rgba(var(--color-ink-rgb), 0.05);
 
   .title {
     font-weight: 600;
     font-size: 16px;
     margin-bottom: 12px;
-    color: #333;
+    color: var(--color-text);
   }
 
   .reasonList {
     padding-left: 18px;
     margin: 0;
-    color: #da3535;
+    color: var(--color-error);
     font-size: 15px;
 
     li {

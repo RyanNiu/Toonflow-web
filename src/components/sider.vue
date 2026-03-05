@@ -43,8 +43,8 @@ function handleClick(path: string) {
 <style lang="scss" scoped>
 .sidebarContainer {
   width: 16rem;
-  background: #fff;
-  border-right: 1px solid #e5e7eb;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -52,12 +52,12 @@ function handleClick(path: string) {
 
 .sidebarHeader {
   padding: 1.5rem 1rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--color-border);
 
   .sidebarTitle {
     font-size: 1.25rem;
     font-weight: 1000;
-    color: #111827;
+    color: var(--color-text);
     display: flex;
     align-items: center;
     .logo {
@@ -69,7 +69,7 @@ function handleClick(path: string) {
 
   .sidebarSubtitle {
     font-size: 0.875rem;
-    color: #6b7280;
+    color: var(--color-text-muted);
     margin-top: 0.25rem;
   }
 }
@@ -84,7 +84,7 @@ function handleClick(path: string) {
 
 .sidebarFooter {
   padding: 1rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--color-border);
 }
 
 .sidebarBtn {
@@ -95,7 +95,7 @@ function handleClick(path: string) {
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   background: none;
-  color: #4b5563;
+  color: var(--color-text-muted);
   border: none;
   font: inherit;
   cursor: pointer;
@@ -107,7 +107,7 @@ function handleClick(path: string) {
 }
 
 .sidebarBtnActive {
-  background: var(--hoverMainColor);
-  color: var(--mainColor);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
 }
 </style>
