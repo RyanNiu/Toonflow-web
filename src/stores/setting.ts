@@ -1,11 +1,11 @@
 export default defineStore(
   "setting",
   () => {
-    const currentURL = typeof window !== "undefined" ? window.location.origin : "http://localhost:60000";
-    const defaultApiUrl =
-      typeof window !== "undefined" && !window.location.host.includes("localhost")
-        ? `${currentURL}/api` // 生产环境使用相对 Nginx 代理路径
-        : "http://localhost:60000"; // 本地开发继续直连
+    // 自动检测当前浏览器访问的 hostname
+    const hostname = typeof window !== "undefined" ? window.location.hostname : "localhost";
+    
+    // 无论是本地还是线上，后端始终保持在 60000 端口
+    const defaultApiUrl = `http://${hostname}:60000`;
 
     const baseUrl = ref<string>(defaultApiUrl);
     const wsBaseUrl = ref<string>(defaultApiUrl.replace("http", "ws"));
