@@ -18,17 +18,26 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { MessagePlugin } from "tdesign-vue-next";
+import userStore from "@/stores/user";
+import { storeToRefs } from "pinia";
 
 const router = useRouter();
 const loading = ref(false);
+const user = userStore();
+const { token, accountId, isAdmin } = storeToRefs(user);
 
 async function handleLogout() {
   loading.value = true;
   try {
     // 清除本地存储的token
     localStorage.removeItem("token");
+    localStorage.removeItem("accountId");
+    localStorage.removeItem("is_admin");
     // 清除其他可能的用户数据
     localStorage.removeItem("user");
+    token.value = null;
+    accountId.value = null;
+    isAdmin.value = false;
     
     MessagePlugin.success("退出登录成功");
     

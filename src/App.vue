@@ -17,10 +17,13 @@ import UpdateDialog from "@/components/update.vue";
 import { initTheme } from "@/utils/theme";
 import settingStore from "@/stores/setting";
 import { storeToRefs } from "pinia";
+import userStore from "@/stores/user";
+import axios from "@/utils/axios";
 
 const route = useRoute();
 const store = settingStore();
 const { baseUrl, wsBaseUrl } = storeToRefs(store);
+const user = userStore();
 
 // 从 URL query 参数设置请求地址
 const initFromQuery = () => {
@@ -48,6 +51,19 @@ watch(
 // 初始化主题
 onMounted(() => {
   initTheme();
+  user.syncFromStorage();
+  const token = localStorage.getItem("token");
+  if (token) {
+    axios
+      .get("/user/getUser")
+      .then((res: any) => {
+        if (res?.data?.is_admin !== undefined) {
+          localStorage.setItem("is_admin", res.data.is_admin ? "1" : "0");
+          user.isAdmin = !!res.data.is_admin;
+        }
+      })
+      .catch(() => {});
+  }
 });
 
 const theme = {

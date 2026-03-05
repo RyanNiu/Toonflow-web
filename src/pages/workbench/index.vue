@@ -35,10 +35,19 @@
 </template>
 
 <script setup lang="ts">
-const menuList = [
+import { computed, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { storeToRefs } from "pinia";
+import userStore from "@/stores/user";
+
+const user = userStore();
+const { isAdmin } = storeToRefs(user);
+
+const menuList = computed(() => [
   { path: "/project", label: "我的项目", icon: "folder-open" },
+  ...(isAdmin.value ? [{ path: "/accountManage", label: "账号管理", icon: "user" }] : []),
   // { path: "/taskList", label: "任务列表", icon: "task" },
-];
+]);
 
 const collapsIcon = computed(() => (collapsed.value ? "chevron-right" : "chevron-left"));
 

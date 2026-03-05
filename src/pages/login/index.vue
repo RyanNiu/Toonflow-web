@@ -71,9 +71,12 @@ import logo from "@/assets/logo.png";
 import axios from "@/utils/axios";
 import settingStore from "@/stores/setting";
 import { storeToRefs } from "pinia";
+import userStore from "@/stores/user";
 
 const store = settingStore();
 const { baseUrl, wsBaseUrl } = storeToRefs(store);
+const user = userStore();
+const { token, accountId, isAdmin } = storeToRefs(user);
 
 const svgRef = ref(null);
 const showHint = ref(true);
@@ -118,6 +121,17 @@ const handleFinish = (values) => {
     .then(({ data }) => {
       localStorage.setItem("token", data.token);
       localStorage.setItem("userId", data.id);
+      if (data.account_id) {
+        localStorage.setItem("accountId", data.account_id);
+      } else {
+        localStorage.setItem("accountId", data.id);
+      }
+      if (data.is_admin !== undefined) {
+        localStorage.setItem("is_admin", data.is_admin ? "1" : "0");
+      }
+      token.value = data.token;
+      accountId.value = data.account_id || data.id;
+      isAdmin.value = !!data.is_admin;
       Router.push("/project");
       message.success("登录成功");
       state.value.loginLoading = false;

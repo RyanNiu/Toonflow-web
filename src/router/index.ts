@@ -35,6 +35,11 @@ const router = createRouter({
           path: "/taskList",
           component: () => import("@/views/taskList/index.vue"),
         },
+        {
+          path: "/accountManage",
+          meta: { requiresAdmin: true },
+          component: () => import("@/views/accountManage/index.vue"),
+        },
       ],
     },
     {
@@ -48,6 +53,10 @@ router.beforeEach((to, from, next) => {
     next();
   } else {
     if (localStorage.getItem("token")) {
+      if (to.meta?.requiresAdmin) {
+        const isAdmin = localStorage.getItem("is_admin") === "1";
+        if (!isAdmin) return next("/project");
+      }
       next();
     } else {
       next("/login");

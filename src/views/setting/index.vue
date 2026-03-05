@@ -10,7 +10,7 @@
           <themeConfig />
         </skeleton>
       </t-tab-panel>
-      <t-tab-panel value="request" label="请求配置">
+      <t-tab-panel v-if="isAdminValue" value="request" label="请求配置">
         <skeleton title="请求地址配置" divider>
           <requestConfig />
         </skeleton>
@@ -35,12 +35,12 @@
           <promptsEdit />
         </skeleton>
       </t-tab-panel>
-      <t-tab-panel value="other" label="其他">
+      <t-tab-panel v-if="isAdminValue" value="other" label="其他">
         <skeleton title="其他配置" divider>
           <otherConfig />
         </skeleton>
       </t-tab-panel>
-      <t-tab-panel value="db" label="数据库">
+      <t-tab-panel v-if="isAdminValue" value="db" label="数据库">
         <skeleton title="数据库操作" divider>
           <dbConfig />
         </skeleton>
@@ -60,6 +60,9 @@
 </template>
 
 <script setup lang="ts">
+import { computed, watch } from "vue";
+import { storeToRefs } from "pinia";
+import userStore from "@/stores/user";
 import skeleton from "./skeleton.vue";
 import themeConfig from "./components/themeConfig.vue";
 import requestConfig from "./components/requestConfig.vue";
@@ -73,6 +76,19 @@ import about from "./components/about.vue";
 import logoutConfig from "./components/logoutConfig.vue";
 
 const activeTab = ref("theme");
+const user = userStore();
+const { isAdmin } = storeToRefs(user);
+const isAdminValue = computed(() => isAdmin.value);
+const adminOnlyTabs = new Set(["request", "other", "db"]);
+
+const ensureTabAccess = () => {
+  if (!isAdminValue.value && adminOnlyTabs.has(activeTab.value)) {
+    activeTab.value = "theme";
+  }
+};
+
+watch(isAdminValue, ensureTabAccess, { immediate: true });
+watch(activeTab, ensureTabAccess);
 </script>
 
 <style lang="scss" scoped>
