@@ -1,3 +1,4 @@
+import { ref } from "vue";
 import axios from "@/utils/axios";
 // 图片项
 export interface ImageItem {
@@ -99,15 +100,15 @@ export const typeToModeMap: Record<VideoGenerationType, VideoConfigData["mode"]>
   startFrameOptional: "startEnd",
   reference: "single",
 };
-let modelList: ModelConfig[] = [];
-async function getModelList() {
-  if (!modelList.length) {
-    const { data } = await axios.post("/setting/getVideoModelDetail");
-    modelList = data;
-    return modelList;
+const modelList = ref<ModelConfig[]>([]);
+async function getModelList(force = false) {
+  if (!force && modelList.value.length) {
+    return modelList.value;
   }
-
-  return modelList;
+  const response = await axios.post("/setting/getVideoModelDetail");
+  const nextList = Array.isArray(response) ? response : response?.data;
+  modelList.value = Array.isArray(nextList) ? nextList : [];
+  return modelList.value;
 }
 export { modelList, getModelList };
 // 视频模型列表
@@ -587,7 +588,7 @@ export { modelList, getModelList };
 
 // 根据 modelList 动态生成厂商支持的所有模式
 function getManufacturerSupportedModes(manufacturer: string, model?: string): { label: string; value: string }[] {
-  let manufacturerModels = modelList.filter((m) => m.manufacturer === manufacturer);
+  let manufacturerModels = modelList.value.filter((m) => m.manufacturer === manufacturer);
 
   // 如果指定了 model，只使用该模型的配置
   if (model) {
@@ -618,7 +619,7 @@ function getManufacturerSupportedResolutions(
   resolutions: { label: string; value: string }[];
   resolutionLabel: string;
 } {
-  let manufacturerModels = modelList.filter((m) => m.manufacturer === manufacturer);
+  let manufacturerModels = modelList.value.filter((m) => m.manufacturer === manufacturer);
 
   // 如果指定了 model，只使用该模型的配置
   if (model) {
@@ -654,7 +655,7 @@ function getManufacturerSupportedDurations(
   durationRange?: { min: number; max: number; step: number };
   durationTip?: string;
 } {
-  let manufacturerModels = modelList.filter((m) => m.manufacturer === manufacturer);
+  let manufacturerModels = modelList.value.filter((m) => m.manufacturer === manufacturer);
 
   // 如果指定了 model，只使用该模型的配置
   if (model) {
@@ -694,7 +695,7 @@ function getManufacturerSupportedDurations(
 
 // 根据 modelList 动态生成厂商的最大图片数
 function getManufacturerMaxImages(manufacturer: string, model?: string): number {
-  let manufacturerModels = modelList.filter((m) => m.manufacturer === manufacturer);
+  let manufacturerModels = modelList.value.filter((m) => m.manufacturer === manufacturer);
 
   // 如果指定了 model，只使用该模型的配置
   if (model) {
@@ -750,7 +751,7 @@ export const manufacturerConfigs: Record<string, ManufacturerConfig> = {
 
 // 根据模型名称获取模型配置
 export function getModelConfig(model: string, manufacturer: string): ModelConfig | undefined {
-  return modelList.find((m) => m.model === model && m.manufacturer === manufacturer);
+  return modelList.value.find((m) => m.model === model && m.manufacturer === manufacturer);
 }
 
 // 根据模型配置动态生成厂商配置（向后兼容）
@@ -928,6 +929,6 @@ export function getAudioSupport(manufacturer: string, model?: string): boolean {
   }
 
   // 检查该厂商是否有任何模型支持音频
-  const manufacturerModels = modelList.filter((m) => m.manufacturer === manufacturer);
+  const manufacturerModels = modelList.value.filter((m) => m.manufacturer === manufacturer);
   return manufacturerModels.some((m) => m.audio);
 }

@@ -305,7 +305,7 @@ const availableManufacturers = computed(() => {
   }));
 });
 onMounted(async () => {
-  getModelList();
+  getModelList(true);
   const res = await axios.post("/video/getManufacturer", {
     userId: Number(localStorage.getItem("userId")),
   });
@@ -316,7 +316,7 @@ onMounted(async () => {
 watch(storyboardShow, (v) => {
   if (v) {
     videoConfigs.value = [];
-    getModelList();
+    getModelList(true);
   }
 });
 

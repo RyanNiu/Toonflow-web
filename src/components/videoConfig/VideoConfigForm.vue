@@ -442,7 +442,7 @@ onMounted(async () => {
   }
 });
 onMounted(() => {
-  getModelList();
+  getModelList(true);
 });
 </script>
 

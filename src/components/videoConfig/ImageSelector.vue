@@ -78,7 +78,7 @@ const title = computed(() => {
 // 监听弹窗打开，同步 scriptId 并初始化选中状态
 watch(visible, (v) => {
   if (v) {
-    getModelList();
+    getModelList(true);
     // 同步 scriptId 到 store
     if (props.scriptId && props.scriptId !== -1) {
       currentScriptId.value = props.scriptId;
@@ -164,7 +164,7 @@ function handleCancel() {
   visible.value = false;
 }
 onMounted(() => {
-  getModelList();
+  getModelList(true);
 });
 </script>
 

@@ -149,7 +149,7 @@ const results = computed(() => {
 });
 watch(modalVisible, (v) => {
   if (v) {
-    getModelList();
+    getModelList(true);
   }
 });
 // 监听配置变化，初始化可编辑配置
@@ -270,7 +270,7 @@ watch(videoPlayerVisible, (visible) => {
   }
 });
 onMounted(() => {
-  getModelList();
+  getModelList(true);
 });
 </script>
 
