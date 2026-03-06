@@ -45,7 +45,7 @@ const { isAdmin } = storeToRefs(user);
 
 const projectMenuItems = [
   { path: "/project", label: "我的项目", icon: "folder-open" },
-  { path: "/project-users", label: "用户管理", icon: "user" },
+  // { path: "/project-users", label: "用户管理", icon: "user" },
   { path: "/project-permissions", label: "权限管理", icon: "lock-on" },
   { path: "/project-cost", label: "成本跟踪", icon: "money" },
   { path: "/project-monitor", label: "监控报表", icon: "chart" },

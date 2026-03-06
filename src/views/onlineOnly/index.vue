@@ -54,7 +54,7 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 
 const modules = [
-  { path: "/project-users", label: "用户管理", desc: "成员、角色与项目协作配置" },
+  // { path: "/project-users", label: "用户管理", desc: "成员、角色与项目协作配置" },
   { path: "/project-permissions", label: "权限管理", desc: "访问控制与权限策略设置" },
   { path: "/project-cost", label: "成本跟踪", desc: "消耗统计与成本分析看板" },
   { path: "/project-monitor", label: "监控报表", desc: "进度、质量与运行监控指标" },

@@ -33,16 +33,9 @@ import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
 import store from "@/stores";
-import userStore from "@/stores/user";
 const { activeMenu } = storeToRefs(store());
-const user = userStore();
-const { isAdmin } = storeToRefs(user);
 // ,{path:"/taskList",label:"任务列表",icon:"i-list-two"}
-const isAdminValue = computed(() => isAdmin.value || localStorage.getItem("is_admin") === "1");
-const btnList = computed(() => [
-  { path: "/project", label: "我的项目", icon: "i-folder-open" },
-  ...(isAdminValue.value ? [{ path: "/accountManage", label: "账号管理", icon: "i-user" }] : []),
-]);
+const btnList = computed(() => [{ path: "/project", label: "我的项目", icon: "i-folder-open" }]);
 
 const router = useRouter();
 function handleClick(path: string) {
