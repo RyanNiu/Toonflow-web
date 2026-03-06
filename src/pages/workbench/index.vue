@@ -43,8 +43,16 @@ import userStore from "@/stores/user";
 const user = userStore();
 const { isAdmin } = storeToRefs(user);
 
-const menuList = computed(() => [
+const projectMenuItems = [
   { path: "/project", label: "我的项目", icon: "folder-open" },
+  { path: "/project-users", label: "用户管理", icon: "user" },
+  { path: "/project-permissions", label: "权限管理", icon: "lock-on" },
+  { path: "/project-cost", label: "成本跟踪", icon: "money" },
+  { path: "/project-monitor", label: "监控报表", icon: "chart" },
+];
+
+const menuList = computed(() => [
+  ...projectMenuItems,
   ...(isAdmin.value ? [{ path: "/accountManage", label: "账号管理", icon: "user" }] : []),
   // { path: "/taskList", label: "任务列表", icon: "task" },
 ]);

@@ -24,6 +24,22 @@ const router = createRouter({
           component: () => import("@/views/project/index.vue"),
         },
         {
+          path: "/project-users",
+          component: () => import("@/views/onlineOnly/index.vue"),
+        },
+        {
+          path: "/project-permissions",
+          component: () => import("@/views/onlineOnly/index.vue"),
+        },
+        {
+          path: "/project-cost",
+          component: () => import("@/views/onlineOnly/index.vue"),
+        },
+        {
+          path: "/project-monitor",
+          component: () => import("@/views/onlineOnly/index.vue"),
+        },
+        {
           path: "/projectDetail",
           component: () => import("@/views/projectDetail/index.vue"),
         },
