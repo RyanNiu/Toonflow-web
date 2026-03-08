@@ -41,13 +41,6 @@
                   </div>
                 </template>
               </el-image>
-              <!-- 悬浮操作层 -->
-              <!-- <div class="hover-overlay">
-                <div class="action-btn">
-                  <i-edit :size="20" />
-                  <span>编辑</span>
-                </div>
-              </div> -->
             </div>
             <!-- 信息区域 -->
             <div class="info-wrapper">
@@ -106,6 +99,8 @@ const modalShow = ref(false);
 const storyboardEditorRef = ref<InstanceType<typeof storyboardEditor> | null>(null);
 
 function handleEdit(item: Storyboard) {
+  // 整图（shotIndex === 0）只展示主图，不展示历史本地上传/生成结果
+  const isGridImage = item.shotIndex === 0;
   storyboardEditorRef.value?.doFusionEdit({
     id: item.id,
     filePath: item.filePath,
@@ -113,7 +108,7 @@ function handleEdit(item: Storyboard) {
     otherImgs: [],
     prompt: item.prompt || "",
     intro: item.intro || "",
-    generateImg: item.generateImg || [],
+    generateImg: isGridImage ? [] : (item.generateImg || []),
     editPrompt: "",
   });
 }

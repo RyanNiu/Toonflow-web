@@ -12,6 +12,19 @@ export default defineConfig({
   server: {
     port: 9999,
     strictPort: true,
+    proxy: {
+      "/project": { target: "http://127.0.0.1:60000", changeOrigin: true },
+      "/other": { target: "http://127.0.0.1:60000", changeOrigin: true },
+      "/user": { target: "http://127.0.0.1:60000", changeOrigin: true },
+      "/outline": { target: "http://127.0.0.1:60000", changeOrigin: true },
+      "/novel": { target: "http://127.0.0.1:60000", changeOrigin: true },
+      "/script": { target: "http://127.0.0.1:60000", changeOrigin: true },
+      "/storyboard": { target: "http://127.0.0.1:60000", changeOrigin: true, ws: true },
+      "/assets": { target: "http://127.0.0.1:60000", changeOrigin: true },
+      "/video": { target: "http://127.0.0.1:60000", changeOrigin: true },
+      "/prompt": { target: "http://127.0.0.1:60000", changeOrigin: true },
+      "/setting": { target: "http://127.0.0.1:60000", changeOrigin: true },
+    },
   },
   plugins: [
     vue(),

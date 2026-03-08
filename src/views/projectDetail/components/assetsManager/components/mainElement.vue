@@ -203,9 +203,74 @@ const fetchScriptList = async () => {
   return data;
 };
 
+const MERGE_CELL_W = 320;
+const MERGE_CELL_H = 180;
+const MERGE_COLS = 3;
+
+async function mergeSegmentToDataUrl(segmentId: number, srcList: string[]): Promise<string | null> {
+  if (!srcList.length) return null;
+  const canvas = document.createElement("canvas");
+  const cols = Math.min(MERGE_COLS, srcList.length);
+  const rows = Math.ceil(srcList.length / cols);
+  canvas.width = cols * MERGE_CELL_W;
+  canvas.height = rows * MERGE_CELL_H;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return null;
+  ctx.fillStyle = "#1a1a1a";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  const loadImg = (src: string) =>
+    new Promise<HTMLImageElement>((resolve, reject) => {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(new Error("图片加载失败"));
+      img.src = src;
+    });
+  try {
+    for (let i = 0; i < srcList.length; i++) {
+      const img = await loadImg(srcList[i]);
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      ctx.drawImage(img, col * MERGE_CELL_W, row * MERGE_CELL_H, MERGE_CELL_W, MERGE_CELL_H);
+    }
+    return canvas.toDataURL("image/png");
+  } catch {
+    return null;
+  }
+}
+
 const fetchStoryboard = async (scriptId: number) => {
   const { data } = await axios.post("/storyboard/getStoryboard", { projectId: projectId.value, scriptId });
-  projectElements.value = data;
+  const list: ElementData[] = Array.isArray(data) ? [...data] : [];
+  if (list.length) {
+    const bySegment = new Map<number, ElementData[]>();
+    for (const item of list) {
+      const segId = (item as any).segmentId ?? 0;
+      if (!bySegment.has(segId)) bySegment.set(segId, []);
+      bySegment.get(segId)!.push(item);
+    }
+    const mergedRows: ElementData[] = [];
+    for (const [segmentId, items] of bySegment) {
+      const srcList = items.map((i) => i.filePath).filter(Boolean);
+      const dataUrl = await mergeSegmentToDataUrl(segmentId, srcList);
+      if (dataUrl) {
+        mergedRows.push({
+          id: -segmentId,
+          name: `片段${segmentId}总镜头`,
+          filePath: dataUrl,
+          intro: "",
+          prompt: "该片段所有镜头的合并图",
+          remark: "",
+          duration: 0,
+          type: "storyboard",
+          videoPrompt: "",
+        });
+      }
+    }
+    projectElements.value = [...list, ...mergedRows];
+  } else {
+    projectElements.value = list;
+  }
 };
 
 // 核心方法
@@ -341,6 +406,7 @@ const aiGenerate = (row: ElementData) => {
 };
 
 const deleteFrom = (row: ElementData) => {
+  if (row.id < 0) return message.info("合并图无需删除");
   Modal.confirm({
     title: "删除",
     content: "确认是否删除",

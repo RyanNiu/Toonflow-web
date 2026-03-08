@@ -55,6 +55,11 @@
             @checkbox-all="handleCheckboxChange">
             <vxe-column type="checkbox" width="50" align="center"></vxe-column>
             <vxe-column type="seq" title="序号" width="60" align="center"></vxe-column>
+            <vxe-column title="名称" width="140" align="center">
+              <template #default="{ row }">
+                <span>{{ row.isGridImage ? `片段${row.segmentId}整图` : `片段${row.segmentId}-镜头${row.shotIndex}` }}</span>
+              </template>
+            </vxe-column>
 
             <!-- 图片列 -->
             <vxe-column field="filePath" title="镜头图片" width="140" align="center">
@@ -132,6 +137,7 @@ import { message as antMessage } from "ant-design-vue";
 import axios from "@/utils/axios";
 import type { VxeTablePropTypes, VxeTableInstance, VxeTableEvents } from "vxe-table";
 
+
 const editConfig: VxeTablePropTypes.EditConfig = {
   trigger: "click",
   mode: "cell",
@@ -155,6 +161,8 @@ type ImageDataItem = {
   videoPromptLoading?: boolean;
   isSuperScored?: boolean;
   isVideoPromptGenerated?: boolean;
+  /** 该行为切割前的整张宫格图，导出列表中展示为 片段X整图 */
+  isGridImage?: boolean;
 };
 
 const imageData = defineModel<ImageDataItem[]>("imageData");
@@ -354,23 +362,29 @@ async function handleBatchGeneratePrompts() {
   }
 }
 const loadingBtn = ref(false);
+
 function handleOk() {
+  const selectedRows = getSelectedRows();
+  if (selectedRows.length === 0) {
+    antMessage.warning("请至少选择一项要导出的镜头");
+    return;
+  }
   loadingBtn.value = true;
 
   axios
     .post("/storyboard/keepStoryboard", {
-      results: imageData.value?.map((item) => ({
-        videoPrompt: item.videoPrompt,
-        prompt: item.prompt,
-        duration: item.duration,
-        projectId: item.projectId,
-        filePath: item.filePath,
-        type: item.type,
-        name: item.name,
-        scriptId: item.scriptId,
-        segmentId: item.segmentId,
-        shotIndex: item.shotIndex,
-      })),
+      results: selectedRows.map((item) => ({
+          videoPrompt: item.videoPrompt,
+          prompt: item.prompt,
+          duration: item.duration,
+          projectId: item.projectId,
+          filePath: item.filePath,
+          type: item.type,
+          name: item.name,
+          scriptId: item.scriptId,
+          segmentId: item.segmentId,
+          shotIndex: item.shotIndex,
+        })),
     })
     .then(() => {
       antMessage.success("保存成功");
